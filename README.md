@@ -9,15 +9,6 @@ The goal is to make one that is as easy as possible to schedule employees based 
 
 The goal is to make my wife's life easier. At the same time, I want to design it in such a way that it could be used by other managers or companies if it came to that.
 
-## User stories -- basic flow
-1. [ ] An organizer can create an account for their company.
-2. [ ] The organizer can assign admins.
-3. [ ] The organizer or admins can assign managers.
-4. [ ] The organizer or admins can create a team.
-5. [ ] The organizer, admins, or managers can assign employees to their team.
-6. [ ] The organizer, admins, or managers can assign assistants to their team.
-7. [ ] The organizer, admins, or managers can create shifts for their team.
-8. [ ] The organizer, admins, managers, or assistants can update the employee's availability based on created shifts for their team.
-9. [ ] The organizer, admins, managers, or assistants can schedule an employee for a shift.
-10. [ ] The organizer, admins, managers, or assistants cannot schedule an employee for a shift the employee is not available for.
-11. [ ] The organizer, admins, managers, or assistants can finalize the schedule and download it as a PDF.
+## Thinking out loud
+The document thinking out loud is where I will do much of my planning and deciding on the structure of the app.
+
