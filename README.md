@@ -10,5 +10,4 @@ The goal is to make one that is as easy as possible to schedule employees based 
 The goal is to make my wife's life easier. At the same time, I want to design it in such a way that it could be used by other managers or companies if it came to that.
 
 ## Thinking out loud
-The document thinking out loud is where I will do much of my planning and deciding on the structure of the app.
-
+The document PLANNING.md is where I will do much of my planning and deciding on the structure of the app.
