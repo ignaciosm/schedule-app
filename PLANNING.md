@@ -9,12 +9,12 @@
 - The organizer, admins, managers, or assistants can update the employee's availability based on created shifts for their team.
 - The organizer, admins, managers, or assistants can schedule an employee for a shift.
 - The organizer, admins, managers, or assistants cannot schedule an employee for a shift the employee is not available for.
-- The organizer, admins, managers, or assistants can finalize the schedule and download it as a PDF.
+- The organizer, admins, managers, or assistants can finalize the schedule and download it as a PDF (ideally email to all employees on the team).
 
 # Models
-I think the way I want to do this is have the Devise user model, then using single table inheritance (STI) for the other user roles. Probably the best way with the associations I want each type of user to have. Need to research how that plays into user sign ups through Devise.
+I think the way I want to do this is have the Devise user model, then using single table inheritance (STI) for the other user roles. Probably the best way with the associations I want each type of user to have. I will have the Devise `User` model and each of the "roles" will be models that inherite from `User` i.e. `Organizer < User`. [Reference](https://rails.devcamp.com/professional-rails-development-course/advanced-user-features/enabling-admin-users-using-single-table-inheritance)
 
-The gem devise_invitable will allow users to invite. The user will have a `role_id` column that will be part of the invite and like the invited email, get set in the sign up form. [Reference](http://stackoverflow.com/questions/29616495/cannot-get-devise-invitable-to-assign-a-role-when-inviting)
+The gem devise_invitable will allow users to invite. The user will have a `role_id` or `type` (see above reference link, `type` should work just as well as `role_id` for the invite) column that will be part of the invite and like the invited email, get set in the sign up form. [Reference](http://stackoverflow.com/questions/29616495/cannot-get-devise-invitable-to-assign-a-role-when-inviting)
 
 Form example:
 ```
@@ -27,19 +27,27 @@ Form example:
 ```
 
 - User
-  - first name, last name, email
-  - roles: organizer, admin, manager, assistant, employee
-  - has_one :organization
-  - has_one :team
-  - has_many :schedules
-  - has_many :weeks, through: :schedules
-  - has_many :shifts, through: :weeks (probably a better way to do this)
+  - `first_name`, `last_name`, `email`, `title`, `role_id` (or `type`)
+  - Models that inherit from `User` will act as roles: organizer, admin, manager, assistant (find better term than assistant), employee
+    - user `belongs_to :organization`
+    - user `belongs_to :team`
+    - has_many :schedules
+    - has_many :weeks, through: :schedules
+    - has_many :shifts, through: :weeks (probably a better way to do this)
+
+- Role
+  - I don't think this is necessary if I use `type`
 
 - Organization
+  - `has_many :admins`, `has_many :managers`, `has_many :assistants`, `has_many :employees`
 
 - Team
+  - `location`
+  - `has_many :schedules`
 
 - Schedule
+  - `year`, `week`
+  - `belongs_to :team`
 
 - Week
 
