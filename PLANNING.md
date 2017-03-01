@@ -12,10 +12,15 @@
 - The organizer, admins, managers, or assistants can finalize the schedule and download it as a PDF.
 
 # Models
+I think the way I want to do this is have the Devise user model, then using single table inheritance (STI) for the other user roles. Probably the best way with the associations I want each type of user to have. Need to research how that plays into user sign ups through Devise.
 - User
   - first name, last name, email
   - roles: organizer, admin, manager, assistant, employee
   - has_one :organization
+  - has_one :team
+  - has_many :schedules
+  - has_many :weeks, through: :schedules
+  - has_many :shifts, through: :weeks (probably a better way to do this)
 
 - Organization
 
