@@ -27,29 +27,40 @@ Form example:
 ```
 
 - User
-  - `first_name`, `last_name`, `email`, `title`, `role_id` (or `type`)
   - Models that inherit from `User` will act as roles: organizer, admin, manager, assistant (find better term than assistant), employee
-    - user `belongs_to :organization`
-    - user `belongs_to :team`
-    - has_many :schedules
-    - has_many :weeks, through: :schedules
-    - has_many :shifts, through: :weeks (probably a better way to do this)
+  - `first_name:string`, `last_name:string`, `email:string`, `title:string`, `role_id:integer` (or `type:string`)
+  - Associations
+    - `belongs_to :organization`
+    - `belongs_to :team`
+    - `has_many :user_schedules`
+    - `has_many :schedules, through: :user_schedules`
 
 - Role
   - I don't think this is necessary if I use `type`
 
 - Organization
-  - `has_many :admins`, `has_many :managers`, `has_many :assistants`, `has_many :employees`
+  - `name:string`, `email:string`
+  - Associations
+    - `has_many :teams`
+    - `has_many :admins`, `has_many :managers`, `has_many :assistants`,      `has_many :employees`
 
 - Team
-  - `location`
-  - `has_many :schedules`
+  - `location:string`
+  - Associations
+    - `belongs_to :organization`
+    - `has_many :schedules`
+
+- UserSchedules
+  - Associations
+  - `belongs_to :user`
+  - `belongs_to :schedule`
 
 - Schedule
-  - `year`, `week`
-  - `belongs_to :team`
-
-- Week
+  - `year:integer`, `week:integer`, `date_range:string #don't call it date_range`
+  - Associations
+    - `belongs_to :team`
+    - `has_many :user_schedules`
+    - `has_many :users, through: :user_schedules`
 
 - Shift
 
