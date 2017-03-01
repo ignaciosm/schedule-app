@@ -13,6 +13,19 @@
 
 # Models
 I think the way I want to do this is have the Devise user model, then using single table inheritance (STI) for the other user roles. Probably the best way with the associations I want each type of user to have. Need to research how that plays into user sign ups through Devise.
+
+The gem devise_invitable will allow users to invite. The user will have a `role_id` column that will be part of the invite and like the invited email, get set in the sign up form. [Reference](http://stackoverflow.com/questions/29616495/cannot-get-devise-invitable-to-assign-a-role-when-inviting)
+
+Form example:
+```
+<%= simple_form_for(User.new, url: user_invitation_path,
+                              html: { class: 'form-inline' }) do |f| %>
+  <%= f.input :email, placeholder: 'Email', label: false %>
+  <%= f.collection_select :role_id, Role.all, :id, :name, {} %>
+  <%= f.button :submit, 'Invite User', class: 'btn-primary' %>
+<% end %>
+```
+
 - User
   - first name, last name, email
   - roles: organizer, admin, manager, assistant, employee
