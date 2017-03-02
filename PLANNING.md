@@ -57,17 +57,24 @@ Form example:
   - `belongs_to :schedule`
 
 - Schedule
-  - `year:integer`, `week:integer`, `date_range:string #don't call it date_range`
+  - `year:integer`, `week:integer`, `date_range:string #don't call it that`
   - Associations
     - `belongs_to :team`
     - `has_many :user_schedules`
     - `has_many :users, through: :user_schedules`
-    - `has_many :shifts`
+    - `has_many :schedule_shifts`
+    - `has_many :shifts, through: :schedule_shifts`
 
-- Shift
-  - `year:integer`,
+- ScheduleShifts
   - Associations
     - `belongs_to :schedule`
+    - `belongs_to :shift`
+
+- Shift
+  - `day:string #don't all it that`, `start_time:time`, `end_time:time`, `role:string`
+  - Associations
+    - `has_many :schedule_shifts`
+    - `has_many :schedules, through: :schedule_shifts`
 
 ## Who gets to do what
 ### Adding users
