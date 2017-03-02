@@ -103,5 +103,12 @@ Cascading permissions
 ```
 
 # Controllers
+- Users
+- Sessions
+- Schedules
+- Shifts
+- Teams
+- Organizations
+- Welcome
 
 # Views
