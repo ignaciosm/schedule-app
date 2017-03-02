@@ -49,6 +49,7 @@ Form example:
   - Associations
     - `belongs_to :organization`
     - `has_many :schedules`
+    - `has_many :users`
 
 - UserSchedules
   - Associations
@@ -61,8 +62,12 @@ Form example:
     - `belongs_to :team`
     - `has_many :user_schedules`
     - `has_many :users, through: :user_schedules`
+    - `has_many :shifts`
 
 - Shift
+  - `year:integer`,
+  - Associations
+    - `belongs_to :schedule`
 
 ## Who gets to do what
 ### Adding users
