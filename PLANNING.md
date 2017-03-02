@@ -112,3 +112,14 @@ Cascading permissions
 - Welcome
 
 # Views
+- Home page
+- Organization sign up page
+  - Sign up page for if you have an invite code
+- Invite page (selects for admin, manager, assistant, employee)
+- Account page for each user type
+- Team creation page
+  - Team show page
+- Shift creation page
+  - Shifts show page
+- Schedule creation page
+  - Schedule show page
