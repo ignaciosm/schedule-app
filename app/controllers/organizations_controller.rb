@@ -1,4 +1,5 @@
 class OrganizationsController < ApplicationController
+  before_action :set_organization, only: [:show]
   def new
     @organization = Organization.new
   end
@@ -14,9 +15,16 @@ class OrganizationsController < ApplicationController
     end
   end
 
+  def show
+  end
+
   private
   def organization_params
     params.require(:organization).permit(:name, :email, :organizer,
                                          :password, :password_digest)
+  end
+
+  def set_organization
+    @organization = Organization.find(params[:id])
   end
 end
