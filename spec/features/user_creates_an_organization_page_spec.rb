@@ -15,7 +15,7 @@ RSpec.describe 'User creates an organization' do
     fill_in 'organization_organizer', with: org_organizer
     fill_in 'organization_password', with: org_password
     fill_in 'organization_password_confirmation', with: org_password_confirmation
-    click_on 'Submit'
+    click_on 'Create Organization'
 
     expect(page).to have_content(org_name)
   end
