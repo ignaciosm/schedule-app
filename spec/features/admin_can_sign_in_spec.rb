@@ -5,6 +5,6 @@ RSpec.feature 'Admin can sign in' do
     admin = create(:admin)
     sign_in admin
 
-    expect(page).to have_content t('admin.show.greeting')
+    expect(page).to have_content t('admin.show.greeting_html')
   end
 end
