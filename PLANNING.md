@@ -1,9 +1,32 @@
 # MVP
 ## Keeping it simple
-I have large ideas for what I want this to be. But for now, going to keep it simple and basic. The main goal is so my wife doesn't have to use a spreadsheet to make a schedule. Going to make that happen, then build on it from there.
+I have large ideas for what this could be. But for now, going to keep it simple and basic. The main goal is so my wife doesn't have to use a spreadsheet to make a schedule. Going to make that happen, then potentially build on it from there.
 
-# Eventual Plan
-# General idea of app structure
+## Things to do
+- [ ] Create single user with an email and password
+- [ ] Create 52 weekly schedules with days and dates for 2017
+- [ ] Create shifts for manager, team members, and shift leads
+- [ ] Create employees
+
+## Admin model
+- `email`, `password`, `position`
+- Associations
+  - `has_many :employees`,
+
+## Employee model
+- `name`, `position`
+- Associations
+  - `belongs_to :admin`
+  - `has_many :available_times`
+
+## Avaiable_time model
+- `day_of_week`, `start_time`, `end_time`
+
+## Shift model
+- `day_of_week`, `start_time`, `end_time`, `position`
+
+# What it could be
+## General idea of app structure
 - An organizer can create an account for their company.
 - The organizer can assign admins.
 - The organizer or admins can assign managers.
@@ -16,7 +39,7 @@ I have large ideas for what I want this to be. But for now, going to keep it sim
 - The organizer, admins, managers, or assistants cannot schedule an employee for a shift the employee is not available for.
 - The organizer, admins, managers, or assistants can finalize the schedule and download it as a PDF (ideally email to all employees on the team).
 
-# Models
+## Models
 I think the way I want to do this is have the Devise user model, then using single table inheritance (STI) for the other user roles. Probably the best way with the associations I want each type of user to have. I will have the Devise `User` model and each of the "roles" will be models that inherite from `User` i.e. `Organizer < User`. [Reference](https://rails.devcamp.com/professional-rails-development-course/advanced-user-features/enabling-admin-users-using-single-table-inheritance)
 
 The gem devise_invitable will allow users to invite. The user will have a `role_id` or `type` (see above reference link, `type` should work just as well as `role_id` for the invite) column that will be part of the invite and like the invited email, get set in the sign up form. [Reference](http://stackoverflow.com/questions/29616495/cannot-get-devise-invitable-to-assign-a-role-when-inviting)
@@ -81,8 +104,8 @@ Form example:
     - `has_many :schedule_shifts`
     - `has_many :schedules, through: :schedule_shifts`
 
-## Who gets to do what
-### Adding users
+### Who gets to do what
+#### Adding users
 ```
 Cascading permissions
 ├─ Organizer can create/invite admins
@@ -92,12 +115,12 @@ Cascading permissions
 └─ Once invited, any user can create their account
 ```
 
-### Default user role
+#### Default user role
 - When you create an organization, your account is also created and your role is defaulted to organizer.
 - When you click an invite link, your role is defaulted to the role selected when your invite was created.
 - You are not allowed to invite users with a higher role than you have.
 
-### Removing users
+#### Removing users
 ```
 Cascading permissions
 └─ Organizer can remove admins
@@ -107,7 +130,7 @@ Cascading permissions
        └─ An employee cannot remove their account
 ```
 
-# Controllers
+## Controllers
 - Users
 - Sessions
 - Schedules
@@ -116,7 +139,7 @@ Cascading permissions
 - Organizations
 - Welcome
 
-# Views
+## Views
 - Home page
 - Organization sign up page
   - Sign up page for if you have an invite code
