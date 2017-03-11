@@ -27,3 +27,7 @@ en:
   admins:
     show:
       greeting: Hello, %{email}
+
+  schedules:
+    index:
+      greeting: Schedules Index
