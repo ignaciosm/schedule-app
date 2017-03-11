@@ -5,7 +5,7 @@ RSpec.feature 'Admin can sign in' do
     admin_email = 'demo@example.com'
     admin_password = 'demoPass1'
 
-    visit new_user_session_path
+    visit new_admin_session_path
     fill_in 'admin_email', with: admin_email
     fill_in 'admin_password', with: admin_password
     click_on 'Log In'
