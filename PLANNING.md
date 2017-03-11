@@ -1,3 +1,8 @@
+# MVP
+## Keeping it simple
+I have large ideas for what I want this to be. But for now, going to keep it simple and basic. The main goal is so my wife doesn't have to use a spreadsheet to make a schedule. Going to make that happen, then build on it from there.
+
+# Eventual Plan
 # General idea of app structure
 - An organizer can create an account for their company.
 - The organizer can assign admins.
