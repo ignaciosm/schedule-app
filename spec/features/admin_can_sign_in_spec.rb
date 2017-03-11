@@ -5,6 +5,8 @@ RSpec.feature 'Admin can sign in' do
     admin = create(:admin)
     sign_in admin
 
-    expect(page).to have_content t('admin.show.greeting_html')
+    visit new_admin_session_path
+
+    expect(page).to have_content t('admins.show.greeting', email: admin.email)
   end
 end

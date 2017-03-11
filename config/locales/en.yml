@@ -22,8 +22,8 @@
 en:
   welcome:
     home:
-      greeting: "Hello world"
+      greeting: Welcome!
 
   admins:
     show:
-      greeting_html: <h1>Hello, %{email}</h1>
+      greeting: Hello, %{email}
