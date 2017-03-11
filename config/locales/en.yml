@@ -23,3 +23,7 @@ en:
   welcome:
     home:
       greeting: "Hello world"
+
+  admins:
+    show:
+      greeting_html: <h1>Hello, %{email}</h1>
