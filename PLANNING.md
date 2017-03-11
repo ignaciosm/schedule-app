@@ -11,19 +11,53 @@ I have large ideas for what this could be. But for now, going to keep it simple 
 ## Admin model
 - `email`, `password`, `position`
 - Associations
-  - `has_many :employees`,
+  - `has_many :employees`
+  - `has_many :schedules`
+  - `has_many :admin_shifts`
+  - `has_many :shifts, through: admin_shifts`
 
 ## Employee model
 - `name`, `position`
 - Associations
   - `belongs_to :admin`
-  - `has_many :available_times`
+  - `has_many :employee_shifts`
+  - `has_many :shifts, through: employee_shifts`
+- method  `shift_leads` to grab all employees who are a shift lead
+- method  `team_member` to grab all employees who are a team member
 
-## Avaiable_time model
-- `day_of_week`, `start_time`, `end_time`
+## Schedule model
+  - `biz_year`, `biz_week`
+  - Associations
+    - `belongs_to :admin`
+    - `has_many :schedule_shifts`
+    - `has_many: :shifts, through: schedule_shifts`
 
 ## Shift model
 - `day_of_week`, `start_time`, `end_time`, `position`
+- method `sundays` to grab all Sunday shifts
+- method `shift_leads` to grab `shifts.position == "shift_lead"`
+- Associations
+  - `has_many :admin_shifts`
+  - `has_many :admins, through: admin_shifts`
+  - `has_many :employee_shifts`
+  - `has_many :employees, through: employee_shifts`
+  - `has_many :schedule_shifts`
+  - `has_many: :schedules, through: schedule_shifts`
+
+## Admin_shifts model
+- Associations
+  - `belongs_to :admin`
+  - `belongs_to :shift`
+
+## Employee_shifts model
+- Associations
+  - `belongs_to :employee`
+  - `belongs_to :shift`
+
+## Schedule_shifts model
+- Associations
+  - `belongs_to :schedule`
+  - `belongs_to :shift`
 
 # What it could be
 ## General idea of app structure
