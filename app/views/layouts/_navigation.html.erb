@@ -1,2 +1,5 @@
-<%= link_to "Sign in", new_admin_session_path  %> <%= link_to "Sign out", destroy_admin_session_path, method: :delete  %>
+<%= link_to 'Home', root_path %> |
+<%= link_to "Sign in", new_admin_session_path  %> |
+<%= link_to "Sign out", destroy_admin_session_path, method: :delete  %> |
+<%= link_to 'Admin page', admin_path(current_admin) if admin_signed_in? %>
 <hr>
