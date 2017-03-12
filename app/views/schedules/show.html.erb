@@ -1,7 +1,7 @@
 <h1>
   Week of
-  <%= Date.commercial(2017, 10, 1).strftime('%m/%d') %>
-  to <%= Date.commercial(2017, 10, 7).strftime('%m/%d') %>,
+  <%= Date.commercial(@schedule.biz_year, @schedule.biz_week, 1).strftime('%m/%d') %>
+  to <%= Date.commercial(@schedule.biz_year, @schedule.biz_week, 7).strftime('%m/%d') %>,
   <%= @schedule.biz_year %>
 </h1>
 <table class="ui green celled striped table unstackable fixed">

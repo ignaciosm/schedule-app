@@ -1,10 +1,10 @@
 <tr class='right aligned'>
   <td> </td>
-  <td><%= Date.commercial(2017, 10, 1).strftime('%m/%d') %></td>
-  <td><%= Date.commercial(2017, 10, 2).strftime('%m/%d') %></td>
-  <td><%= Date.commercial(2017, 10, 3).strftime('%m/%d') %></td>
-  <td><%= Date.commercial(2017, 10, 4).strftime('%m/%d') %></td>
-  <td><%= Date.commercial(2017, 10, 5).strftime('%m/%d') %></td>
-  <td><%= Date.commercial(2017, 10, 6).strftime('%m/%d') %></td>
-  <td><%= Date.commercial(2017, 10, 7).strftime('%m/%d') %></td>
+  <td><%= Date.commercial(@schedule.biz_year, @schedule.biz_week, 1).strftime('%m/%d') %></td>
+  <td><%= Date.commercial(@schedule.biz_year, @schedule.biz_week, 2).strftime('%m/%d') %></td>
+  <td><%= Date.commercial(@schedule.biz_year, @schedule.biz_week, 3).strftime('%m/%d') %></td>
+  <td><%= Date.commercial(@schedule.biz_year, @schedule.biz_week, 4).strftime('%m/%d') %></td>
+  <td><%= Date.commercial(@schedule.biz_year, @schedule.biz_week, 5).strftime('%m/%d') %></td>
+  <td><%= Date.commercial(@schedule.biz_year, @schedule.biz_week, 6).strftime('%m/%d') %></td>
+  <td><%= Date.commercial(@schedule.biz_year, @schedule.biz_week, 7).strftime('%m/%d') %></td>
 </tr>
