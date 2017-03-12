@@ -4,6 +4,9 @@ RSpec.feature 'Admin can create new employee' do
   scenario 'they can see the employee\'s page' do
     admin = create(:admin)
     sign_in admin
+    employee_first_name = 'Tony'
+    employee_last_name = 'Stark'
+    employee_position = 'Shift Lead'
 
     visit admin_path(admin)
     click_on 'Add new employee'
