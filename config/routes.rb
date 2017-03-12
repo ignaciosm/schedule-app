@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+  resources :employees, only: [:show, :create, :new]
   devise_for :admins, path: '',
                       path_names: {
                         sign_in: 'signin',

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170312161038) do
+ActiveRecord::Schema.define(version: 20170312171008) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,16 @@ ActiveRecord::Schema.define(version: 20170312161038) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
   end
 
+  create_table "employees", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "position"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "admin_id"
+    t.index ["admin_id"], name: "index_employees_on_admin_id", using: :btree
+  end
+
   create_table "schedules", force: :cascade do |t|
     t.integer  "biz_year"
     t.integer  "biz_week"
@@ -43,5 +53,6 @@ ActiveRecord::Schema.define(version: 20170312161038) do
     t.index ["admin_id"], name: "index_schedules_on_admin_id", using: :btree
   end
 
+  add_foreign_key "employees", "admins"
   add_foreign_key "schedules", "admins"
 end
