@@ -23,6 +23,7 @@ RSpec.feature 'User clicks schedule link' do
   end
 end
 
+# Make tests easier to read
 def get_date1
   Date.commercial(@schedule.biz_year, @schedule.biz_week, 1).strftime('%m/%d')
 end
