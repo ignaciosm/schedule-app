@@ -7,6 +7,6 @@ RSpec.feature 'Admin can sign in' do
 
     visit new_admin_session_path
 
-    expect(page).to have_content t('admins.show.greeting', email: admin.email)
+    expect(page).to have_content t('admins.show.greeting', name: admin.name)
   end
 end
