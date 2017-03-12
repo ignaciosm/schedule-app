@@ -4,4 +4,5 @@ class Admin < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :schedules
+  has_many :employees
 end
