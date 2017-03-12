@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+i = 1
+
+52.times do
+  Schedule.create(biz_year: 2017, biz_week: i)
+  i += 1
+end
