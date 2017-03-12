@@ -31,6 +31,8 @@ en:
   schedules:
     index:
       greeting: Schedules Index
+    show:
+      greeting: Week of %{date1} to %{date7}, %{year}
     table:
       header_days:
         header: Week %{week}
