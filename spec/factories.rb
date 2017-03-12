@@ -7,7 +7,14 @@ FactoryGirl.define do
   factory :schedule do
     biz_year 2017
     biz_week 10
-    admin { create(:admin, email: 'demo@example1.com') }
+    admin { create(:admin, email: 'demo@example2.com') }
+  end
+
+  factory :employee do
+    first_name 'Boaty'
+    last_name 'McBoatface'
+    position 'Shift Lead'
+    admin { create(:admin, email: 'demo@example3.com') }
   end
 
 end
