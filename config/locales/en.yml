@@ -20,15 +20,26 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  welcome:
-    home:
-      greeting: Welcome!
+  date: # explore this later
+    formats:
+      default: "%Y-%m-%d"
+      short: "%b %d"
+      long: "%B %d, %Y"
 
-  admins:
+  layouts: # for the various layouts
+    navigation:
+      admin_page: Admin page
+      home: Home
+      sign_in: Sign in
+      sign_out: Sign out
+
+  admins: # for the admins views
     show:
       greeting: Hello, %{name}
+      add_employee: Add new employee
+      view_schedules: View schedules
 
-  schedules:
+  schedules: # for the schedules views
     index:
       greeting: Schedules Index
     show:
@@ -36,3 +47,7 @@ en:
     table:
       header_days:
         header: Week %{week}
+
+  employees: # for the employees views
+    form:
+      submit_button: Add employee
