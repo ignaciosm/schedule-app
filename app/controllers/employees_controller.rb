@@ -7,6 +7,7 @@ class EmployeesController < ApplicationController
 
   def create
     @employee = Employee.new(employee_params)
+    @employee.admin_id = current_admin.id
 
     if @employee.save
       redirect_to employee_path(@employee)
