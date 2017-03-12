@@ -31,3 +31,5 @@ en:
   schedules:
     index:
       greeting: Schedules Index
+    show:
+      header: Week %{week} schedule
