@@ -32,6 +32,7 @@ guard :rspec, cmd: "spring rspec", all_on_start: true do
   watch(%r{^spec/}) { "spec" }
   watch(%r{^app/}) { "spec" }
   watch('config/routes.rb') { "spec" }
+  watch(%r{^config/locales/}) { "spec" }
 
   # Feel free to open issues for suggestions and improvements
 
