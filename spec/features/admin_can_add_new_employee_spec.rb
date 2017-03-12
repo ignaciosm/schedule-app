@@ -8,7 +8,8 @@ RSpec.feature 'Admin can create new employee' do
     employee_last_name = 'Stark'
     employee_position = 'Shift Lead'
 
-    visit admin_path(admin)
+    visit root_path
+    click_on 'Admin Page'
     click_on 'Add new employee'
     fill_in 'employee_first_name', with: employee_first_name
     fill_in 'employee_last_name', with: employee_last_name
