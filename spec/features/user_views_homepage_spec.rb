@@ -6,6 +6,6 @@ RSpec.feature 'User views homepage:' do
 
     visit root_path
 
-    expect(page).to have_link schedule.year, href: schedule_path(schedule)
+    expect(page).to have_link schedule.biz_year, href: schedule_path(schedule)
   end
 end
