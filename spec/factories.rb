@@ -7,6 +7,7 @@ FactoryGirl.define do
   factory :schedule do
     biz_year 2017
     biz_week 10
+    admin { create(:admin, email: 'demo@example1.com') }
   end
 
 end
