@@ -15,6 +15,6 @@ RSpec.feature 'Admin can create new employee' do
     fill_in 'employee_position', with: employee_position
     click_on 'Add employee'
 
-    expect(page).to have_content employee_first_name
+    expect(page).to have_content ("#{employee_first_name} #{employee_last_name[0]}.")
   end
 end
