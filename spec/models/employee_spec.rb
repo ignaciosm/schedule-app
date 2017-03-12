@@ -12,3 +12,12 @@ RSpec.describe Employee, '.shift_leads' do
     expect(Employee.shift_leads).to eq [shift_lead]
   end
 end
+
+RSpec.describe Employee, '.team_member' do
+  it 'returns only the employees who are a shift lead' do
+    shift_lead = create(:employee)
+    team_member = create(:employee, :team_member)
+
+    expect(Employee.team_members).to eq [team_member]
+  end
+end
