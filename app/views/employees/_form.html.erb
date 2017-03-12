@@ -1,0 +1,12 @@
+<%= form_for(@employee) do |f| %>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %> <br><br>
+
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %> <br><br>
+
+    <%= f.label :position %>
+    <%= f.text_field :position %> <br><br>
+
+    <%= f.submit 'Add employee' %>
+<% end %>
