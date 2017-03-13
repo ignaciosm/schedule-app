@@ -9,4 +9,8 @@ class Employee < ApplicationRecord
   def self.shift_leads
     where('position = ?', 'Shift Lead')
   end
+
+  def self.team_members
+    where('position = ?', 'Team Member')
+  end
 end
