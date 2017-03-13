@@ -38,6 +38,10 @@ en:
       greeting: Hello, %{name}
       add_employee: Add new employee
       view_schedules: View schedules
+      button_header: Things you can do
+      employees_header: Your employees
+      shift_lead_label: Shift Leads
+      team_member_label: Team Members
 
   schedules: # for the schedules views
     index:
