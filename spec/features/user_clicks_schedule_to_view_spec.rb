@@ -8,7 +8,8 @@ RSpec.feature 'User clicks schedule link' do
     click_on @schedule.week_and_year
 
     expect(page).to have_content t('schedules.show.greeting',
-                                   date1: get_date1, date7: get_date7,
+                                   date1: get_date1,
+                                   date7: get_date7,
                                    year: @schedule.biz_year)
   end
 
