@@ -9,6 +9,6 @@ RSpec.feature 'admin can toggle employee status' do
     visit admin_path(admin)
     click_on 'deactivate'
 
-    expect(page).to have_css 'deactive_employee'
+    expect(page).to have_css 'inactive_employee'
   end
 end
