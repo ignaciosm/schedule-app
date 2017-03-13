@@ -8,13 +8,6 @@
   <td></td>
   <td></td>
 </tr>
-<tr class='right aligned'>
-  <td> </td>
-  <td> </td>
-  <td> </td>
-  <td> </td>
-  <td> </td>
-  <td> </td>
-  <td> </td>
-  <td> </td>
-</tr>
+<% @schedule.admin.employees.shift_leads.each do |shift_lead| %>
+  <%= render partial: 'schedules/table/shift_lead', locals: { shift_lead: shift_lead } %>
+<% end %>
