@@ -8,6 +8,6 @@ RSpec.feature 'Admins can see their employees' do
 
     visit admin_path(admin)
 
-    expect(page).to have_content employee.first_name
+    expect(page).to have_content employee.first_name_last_initial
   end
 end
