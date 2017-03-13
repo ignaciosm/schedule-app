@@ -1,5 +1,5 @@
 class EmployeesController < ApplicationController
-  before_action :set_employee, only: [:show, :deactivate]
+  before_action :set_employee, only: [:show, :toggle_status]
 
   def new
     @employee = Employee.new
@@ -19,7 +19,7 @@ class EmployeesController < ApplicationController
   def show
   end
 
-  def deactivate
+  def toggle_status
     case @employee.status
     when 'active'
       @employee.update(status: 'inactive')
