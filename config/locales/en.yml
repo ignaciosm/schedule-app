@@ -42,6 +42,7 @@ en:
       employees_header: Your employees
       shift_lead_label: Shift Leads
       team_member_label: Team Members
+      inactive_label: Inactive
 
   schedules: # for the schedules views
     index:
