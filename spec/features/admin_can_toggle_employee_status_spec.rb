@@ -7,7 +7,7 @@ RSpec.feature 'admin can toggle employee status' do
     employee = create(:employee, admin_id: admin.id)
 
     visit admin_path(admin)
-    click_link deactivate_path(employee)
+    click_on deactivate_path(employee)
 
     expect(employee.status).to eq 'deactive'
   end
