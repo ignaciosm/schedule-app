@@ -5,7 +5,7 @@ RSpec.feature 'User clicks schedule link' do
     @schedule = create(:schedule)
 
     visit root_path
-    click_on 'Week 10, 2017'
+    click_on @schedule.week_and_year
 
     expect(page).to have_content t('schedules.show.greeting',
                                    date1: get_date1, date7: get_date7,
@@ -16,7 +16,7 @@ RSpec.feature 'User clicks schedule link' do
     @schedule = create(:schedule)
 
     visit root_path
-    click_on 'Week 10, 2017'
+    click_on @schedule.week_and_year
 
     expect(page).to have_content t('schedules.table.header_days.header',
                                    week: @schedule.biz_week)
