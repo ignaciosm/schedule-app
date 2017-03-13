@@ -13,4 +13,8 @@ class Employee < ApplicationRecord
   def self.team_members
     where('position = ?', 'Team Member')
   end
+
+  def self.inactive_employees
+    where('status = ?', 'inactive')
+  end
 end

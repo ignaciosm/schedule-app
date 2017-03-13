@@ -18,3 +18,10 @@
       <%= render partial: 'employees/team_member', locals: { employee: employee } %>
     </li>
   <% end %>
+
+<h3><%= t('.inactive_label') %></h3>
+  <% @admin.employees.inactive_employees.each do |employee| %>
+    <li class="inactive_employee">
+      <%= render partial: 'employees/inactive_employee', locals: { employee: employee } %>
+    </li>
+  <% end %>
