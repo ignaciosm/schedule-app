@@ -18,6 +18,7 @@ FactoryGirl.define do
     admin { create(:admin, email: 'demo3@example.com') }
 
     trait :team_member do
+      last_name 'Smith'
       position 'Team Member'
       admin { create(:admin, email: 'demo4@example.com') }
     end
