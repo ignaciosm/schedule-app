@@ -13,7 +13,7 @@ RSpec.feature 'Admin can edit employee' do
     click_on t('employees.form.submit_button')
     employee = Employee.last
 
-    expect(employee.status).to eq 'Team Member'
+    expect(employee.position).to eq 'Team Member'
     expect(page).to have_content employee.first_name_last_initial
   end
 end
