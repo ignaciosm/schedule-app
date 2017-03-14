@@ -1,1 +1,3 @@
-<%= employee.first_name_last_initial %> | <%= link_to t('employees.deactivate'), deactivate_path(employee), method: :post %>
+<%= employee.first_name_last_initial %>
+<%= link_to t('employees.deactivate'), deactivate_path(employee), method: :post %>
+<%= link_to t('employees.edit'), edit_employee_path(employee) %>
