@@ -1,5 +1,5 @@
 class EmployeesController < ApplicationController
-  before_action :set_employee, only: [:show, :toggle_statuss]
+  before_action :set_employee, only: [:show, :toggle_status]
 
   def new
     @employee = Employee.new
