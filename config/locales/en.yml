@@ -57,5 +57,6 @@ en:
   employees: # for the employees views
     deactivate: Deactivate
     activate: Activate
+    edit: Edit
     form:
       submit_button: Add employee
