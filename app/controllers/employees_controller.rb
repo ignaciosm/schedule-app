@@ -1,5 +1,5 @@
 class EmployeesController < ApplicationController
-  before_action :set_employee, only: [:show, :toggle_status]
+  before_action :set_employee, only: [:show, :toggle_status, :edit]
 
   def new
     @employee = Employee.new
@@ -19,6 +19,9 @@ class EmployeesController < ApplicationController
   def show
   end
 
+  def edit
+  end
+
   def toggle_status
     case @employee.status
     when 'active'
@@ -32,10 +35,6 @@ class EmployeesController < ApplicationController
   private
   def employee_params
     params.require(:employee).permit(:first_name, :last_name, :position)
-  end
-
-  def status_params
-    params.require(:employee).permit(:status)
   end
 
   def set_employee
