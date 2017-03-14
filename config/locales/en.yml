@@ -37,6 +37,9 @@ en:
     show:
       greeting: Hello, %{name}
       add_employee: Add new employee
+      edit_employee: Edit
+      deactivate_employee: Deactivate
+      activate_employee: Activate
       view_schedules: View schedules
       button_header: Things you can do
       employees_header: Your employees
