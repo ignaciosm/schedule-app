@@ -9,7 +9,7 @@ RSpec.describe Employee, '.shift_leads' do
     shift_lead = create(:employee)
     team_member = create(:employee, :team_member)
 
-    expect(Employee.shift_leads).to eq [shift_lead]
+    expect(Employee.employees_by_position('Shift Lead')).to eq [shift_lead]
   end
 end
 
@@ -18,6 +18,6 @@ RSpec.describe Employee, '.team_member' do
     shift_lead = create(:employee)
     team_member = create(:employee, :team_member)
 
-    expect(Employee.team_members).to eq [team_member]
+    expect(Employee.employees_by_position('Team Member')).to eq [team_member]
   end
 end

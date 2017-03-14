@@ -15,6 +15,7 @@ FactoryGirl.define do
     first_name 'Boaty'
     last_name 'McBoatface'
     position 'Shift Lead'
+    status 'active'
     admin { create(:admin, email: 'demo3@example.com') }
 
     trait :team_member do
