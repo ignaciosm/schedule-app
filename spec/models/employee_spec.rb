@@ -4,7 +4,7 @@ RSpec.describe Employee, 'validations' do
   it {is_expected.to validate_presence_of(:position) }
 end
 
-RSpec.describe Employee, '.shift_leads' do
+RSpec.describe Employee, '.employees_by_position' do
   it 'returns only the employees who are a shift lead' do
     shift_lead = create(:employee)
     team_member = create(:employee, :team_member)
@@ -13,8 +13,8 @@ RSpec.describe Employee, '.shift_leads' do
   end
 end
 
-RSpec.describe Employee, '.team_member' do
-  it 'returns only the employees who are a shift lead' do
+RSpec.describe Employee, '.employees_by_position' do
+  it 'returns only the employees who are a team member' do
     shift_lead = create(:employee)
     team_member = create(:employee, :team_member)
 
