@@ -21,3 +21,11 @@ RSpec.describe Employee, '.team_member' do
     expect(Employee.employees_by_position('Team Member')).to eq [team_member]
   end
 end
+
+RSpec.describe Employee, '#first_name_last_initial' do
+  it 'returns the first name and last initial' do
+    shift_lead = create(:employee)
+
+    expect(shift_lead.first_name_last_initial).to eq 'Boaty M.'
+  end
+end
