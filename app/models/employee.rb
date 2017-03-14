@@ -7,10 +7,10 @@ class Employee < ApplicationRecord
   end
 
   def self.inactive_employees
-    where('status = ?', 'inactive')
+    where('status = ?', 'inactive').order('first_name')
   end
 
   def self.employees_by_position(position)
-    where('position = ?', position).where('status = ?', 'active')
+    where('position = ?', position).where('status = ?', 'active').order('first_name')
   end
 end
