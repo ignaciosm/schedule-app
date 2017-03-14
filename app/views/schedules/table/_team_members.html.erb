@@ -9,7 +9,7 @@
   <td></td>
 </tr>
 <tr class='right aligned'>
-  <% @schedule.admin.employees.team_members.each do |team_member| %>
+  <% @schedule.admin.employees.employees_by_position('Shift Lead').each do |team_member| %>
     <%= render partial: 'schedules/table/team_member', locals: { team_member: team_member } %>
   <% end %>
 </tr>

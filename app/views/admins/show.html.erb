@@ -6,14 +6,14 @@
 
 <h2><%= t('.employees_header') %></h2>
 <h3><%= t('.shift_lead_label') %></h3>
-  <% @admin.employees.shift_leads.each do |employee| %>
+  <% @admin.employees.employees_by_position('Shift Lead').each do |employee| %>
     <li class="active_employee">
       <%= render partial: 'employees/shift_lead', locals: { employee: employee } %>
     </li>
   <% end %>
 
 <h3><%= t('.team_member_label') %></h3>
-  <% @admin.employees.team_members.each do |employee| %>
+  <% @admin.employees.employees_by_position('Team Member').each do |employee| %>
     <li class="active_employee">
       <%= render partial: 'employees/team_member', locals: { employee: employee } %>
     </li>
