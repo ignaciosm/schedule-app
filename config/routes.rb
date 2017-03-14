@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
 
-  resources :employees, only: [:show, :create, :new]
+  resources :employees, only: [:show, :create, :new, :edit, :update]
   post 'employees/:id/deactivate', to: 'employees#toggle_status', as: 'deactivate'
   post 'employees/:id/activate', to: 'employees#toggle_status', as: 'activate'
   devise_for :admins, path: '',
