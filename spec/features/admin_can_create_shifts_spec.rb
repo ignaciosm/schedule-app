@@ -5,8 +5,8 @@ RSpec.feature 'Admin can create shifts' do
     admin = create(:admin)
     sign_in admin
     day_of_week = 'Monday'
-    start_time = 073000
-    end_time = 120000
+    start_time = '07:30'
+    end_time = '12:00'
     position = 'Shift Lead'
 
     visit admin_path(admin)
@@ -16,7 +16,6 @@ RSpec.feature 'Admin can create shifts' do
     fill_in 'shift_end_time', with: end_time
     choose(position)
     click_on t('shifts.form.submit_button')
-    shift = Shift.last
 
     expect(page).to have_content '07:30 am'
   end
