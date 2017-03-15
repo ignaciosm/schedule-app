@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+  resources :shifts, only: [:new, :create, :edit, :update, :index]
   resources :employees, only: [:show, :create, :new, :edit, :update]
   post 'employees/:id/deactivate', to: 'employees#toggle_status', as: 'deactivate'
   post 'employees/:id/activate', to: 'employees#toggle_status', as: 'activate'

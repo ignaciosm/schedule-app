@@ -1,0 +1,18 @@
+<%= form_for(@shift) do |f| %>
+    <%= f.label :day_of_week %>
+    <%= f.text_field :day_of_week %> <br><br>
+
+    <%= f.label :start_time %>
+    <%= f.text_field :start_time %> <br><br>
+
+    <%= f.label :end_time %>
+    <%= f.text_field :end_time %> <br><br>
+
+    <%= f.label :position %>
+    <%= f.radio_button :position, 'Shift Lead' %>
+    <%= f.label :position, 'Shift Lead', value: 'Shift Lead' %> |
+    <%= f.radio_button :position, 'Team Member' %>
+    <%= f.label :position, 'Team Member', value: 'Team Member' %> <br><br>
+
+    <%= f.submit t('.submit_button') %>
+<% end %>

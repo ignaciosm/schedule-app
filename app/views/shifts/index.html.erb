@@ -1,0 +1,5 @@
+<h1>All shifts</h1>
+
+<% @shifts.each do |shift| %>
+  <li><%= shift.start_time.to_time.strftime('%I:%M %P') %></li>
+<% end %>
