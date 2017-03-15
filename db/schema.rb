@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170313172050) do
+ActiveRecord::Schema.define(version: 20170315044752) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,6 +54,18 @@ ActiveRecord::Schema.define(version: 20170313172050) do
     t.index ["admin_id"], name: "index_schedules_on_admin_id", using: :btree
   end
 
+  create_table "shifts", force: :cascade do |t|
+    t.string   "day_of_week"
+    t.string   "start_time"
+    t.string   "end_time"
+    t.string   "position"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "admin_id"
+    t.index ["admin_id"], name: "index_shifts_on_admin_id", using: :btree
+  end
+
   add_foreign_key "employees", "admins"
   add_foreign_key "schedules", "admins"
+  add_foreign_key "shifts", "admins"
 end
