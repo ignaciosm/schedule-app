@@ -11,10 +11,10 @@ RSpec.feature 'Admin can create shifts' do
 
     visit admin_path(admin)
     click_on t('admins.show.add_shift')
-    fill_in 'schedule_day_of_week', with: day_of_week
-    fill_in 'schedule_start_time', with: start_time
-    fill_in 'schedule_end_time', with: end_time
-    fill_in 'schedule_position', with: position
+    fill_in 'shift_day_of_week', with: day_of_week
+    fill_in 'shift_start_time', with: start_time
+    fill_in 'shift_end_time', with: end_time
+    choose(position)
     click_on t('shifts.form.submit_button')
     shift = Shift.last
 
