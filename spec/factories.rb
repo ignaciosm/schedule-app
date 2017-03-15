@@ -1,4 +1,10 @@
 FactoryGirl.define do
+  factory :shift do
+    day_of_week 'Monday'
+    start_time '07:30'
+    end_time '12:00'
+    position 'Shift Lead'
+  end
   factory :admin do
     email 'demo@example.com'
     password 'demoPass1'
