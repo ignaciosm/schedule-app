@@ -51,6 +51,8 @@ en:
       greeting: Schedules Index
     show:
       greeting: Week of %{date1} to %{date7}, %{year}
+      assign_shifts: Assign all shifts
+      unassign_shifts: Unassign all shifts
     table:
       header_days:
         header: Week %{week}
