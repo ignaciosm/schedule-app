@@ -11,6 +11,6 @@ RSpec.feature 'admin can assign active shifts' do
     click_on schedule.week_and_year
     click_on t('schedules.show.assign_shifts')
 
-    expect(page).to have_content t('schedules.show.unassign_shifts')
+    expect(page).to have_content shift.start_time
   end
 end
