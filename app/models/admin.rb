@@ -5,4 +5,5 @@ class Admin < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :schedules
   has_many :employees
+  has_many :shifts
 end

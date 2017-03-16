@@ -4,6 +4,7 @@ FactoryGirl.define do
     start_time '07:30'
     end_time '12:00'
     position 'Shift Lead'
+    admin { create(:admin, email: 'demo5@example.com') }
   end
   factory :admin do
     email 'demo@example.com'
