@@ -41,6 +41,7 @@ group :test do
   gem "capybara"
   gem "database_cleaner"
   gem "email_spec"
+  gem 'poltergeist'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
