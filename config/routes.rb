@@ -4,11 +4,15 @@ Rails.application.routes.draw do
   resources :shifts, only: [:new, :create, :edit, :update, :index]
   resources :employees, only: [:show, :create, :new, :edit, :update]
 
-  post 'employees/:id/deactivate', to: 'employees#toggle_status', as: 'deactivate'
-  post 'employees/:id/activate', to: 'employees#toggle_status', as: 'activate'
+  post 'employees/:id/deactivate', to: 'employees#toggle_status',
+                                   as: 'deactivate'
+  post 'employees/:id/activate', to: 'employees#toggle_status',
+                                 as: 'activate'
 
   post 'schedules/:id/assign_shifts', to: 'schedules#assign_shifts',
                                       as: 'assign_shifts'
+  post 'schedules/:id/unassign_shifts', to: 'schedules#unassign_shifts',
+                                        as: 'unassign_shifts'
 
   devise_for :admins, path: '',
                       path_names: {

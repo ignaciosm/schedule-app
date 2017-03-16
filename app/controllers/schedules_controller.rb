@@ -1,5 +1,5 @@
 class SchedulesController < ApplicationController
-  before_action :set_schedule, only: [:show, :assign_shifts]
+  before_action :set_schedule, only: [:show, :assign_shifts, :unassign_shifts]
 
   def index
     @schedules = Schedule.all
@@ -12,6 +12,12 @@ class SchedulesController < ApplicationController
     Shift.all.map do |shift|
       ScheduleShift.create(shift_id: shift.id, schedule_id: @schedule.id)
     end
+
+    redirect_to schedule_path(@schedule)
+  end
+
+  def unassign_shifts
+    @schedule.shifts.delete_all
 
     redirect_to schedule_path(@schedule)
   end

@@ -10,7 +10,11 @@
             method: :post,
             class: 'ui tiny button green' %>
 <% else %>
-  Future button to unassign
+  <%= link_to t('schedules.show.unassign_shifts'),
+            unassign_shifts_path(@schedule),
+            method: :post,
+            class: 'ui tiny button red',
+            data: {confirm: 'Are you sure?'} %>
 <% end %>
 <table class="ui green celled striped table unstackable fixed">
   <thead>
