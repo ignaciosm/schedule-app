@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170315044752) do
+ActiveRecord::Schema.define(version: 20170316051547) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +45,15 @@ ActiveRecord::Schema.define(version: 20170315044752) do
     t.index ["admin_id"], name: "index_employees_on_admin_id", using: :btree
   end
 
+  create_table "schedule_shifts", force: :cascade do |t|
+    t.integer  "schedule_id"
+    t.integer  "shift_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["schedule_id"], name: "index_schedule_shifts_on_schedule_id", using: :btree
+    t.index ["shift_id"], name: "index_schedule_shifts_on_shift_id", using: :btree
+  end
+
   create_table "schedules", force: :cascade do |t|
     t.integer  "biz_year"
     t.integer  "biz_week"
@@ -59,13 +68,16 @@ ActiveRecord::Schema.define(version: 20170315044752) do
     t.string   "start_time"
     t.string   "end_time"
     t.string   "position"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
     t.integer  "admin_id"
+    t.string   "status",      default: "active"
     t.index ["admin_id"], name: "index_shifts_on_admin_id", using: :btree
   end
 
   add_foreign_key "employees", "admins"
+  add_foreign_key "schedule_shifts", "schedules"
+  add_foreign_key "schedule_shifts", "shifts"
   add_foreign_key "schedules", "admins"
   add_foreign_key "shifts", "admins"
 end
