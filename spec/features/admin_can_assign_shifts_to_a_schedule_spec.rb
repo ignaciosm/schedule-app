@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature 'admin can assign shifts' do
+RSpec.feature 'admin can assign active shifts' do
   scenario 'by clicking button on schedule page' do
     admin = create(:admin)
     sign_in admin
