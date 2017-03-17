@@ -10,7 +10,7 @@ class EmployeesController < ApplicationController
     @employee.admin_id = current_admin.id
 
     if @employee.save
-      redirect_to employee_path(@employee)
+      redirect_to admin_path(current_admin)
     else
       render :new
     end
