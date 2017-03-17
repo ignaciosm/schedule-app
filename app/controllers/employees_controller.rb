@@ -21,6 +21,7 @@ class EmployeesController < ApplicationController
   end
 
   def edit
+    redirect_to admin_path(current_admin) if not_your_employee
   end
 
   def update
@@ -49,5 +50,9 @@ class EmployeesController < ApplicationController
 
   def set_employee
     @employee = Employee.find(params[:id])
+  end
+
+  def not_your_employee
+    @employee.admin_id != current_admin.id
   end
 end
