@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170316052014) do
+ActiveRecord::Schema.define(version: 20170317025008) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +45,15 @@ ActiveRecord::Schema.define(version: 20170316052014) do
     t.index ["admin_id"], name: "index_employees_on_admin_id", using: :btree
   end
 
+  create_table "schedule_employees", force: :cascade do |t|
+    t.integer  "schedule_id"
+    t.integer  "employee_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["employee_id"], name: "index_schedule_employees_on_employee_id", using: :btree
+    t.index ["schedule_id"], name: "index_schedule_employees_on_schedule_id", using: :btree
+  end
+
   create_table "schedule_shifts", force: :cascade do |t|
     t.integer  "schedule_id"
     t.integer  "shift_id"
@@ -60,7 +69,6 @@ ActiveRecord::Schema.define(version: 20170316052014) do
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
     t.integer  "admin_id",   default: 1
-    t.integer  "shift_id"
     t.index ["admin_id"], name: "index_schedules_on_admin_id", using: :btree
   end
 
@@ -73,11 +81,12 @@ ActiveRecord::Schema.define(version: 20170316052014) do
     t.datetime "updated_at",                     null: false
     t.integer  "admin_id"
     t.string   "status",      default: "active"
-    t.integer  "schedule_id"
     t.index ["admin_id"], name: "index_shifts_on_admin_id", using: :btree
   end
 
   add_foreign_key "employees", "admins"
+  add_foreign_key "schedule_employees", "employees"
+  add_foreign_key "schedule_employees", "schedules"
   add_foreign_key "schedule_shifts", "schedules"
   add_foreign_key "schedule_shifts", "shifts"
   add_foreign_key "schedules", "admins"

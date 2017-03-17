@@ -1,6 +1,8 @@
 class Employee < ApplicationRecord
   validates_presence_of :first_name, :last_name, :position
   belongs_to :admin
+  has_many :schedule_employees
+  has_many :schedules, through: :schedule_employees
 
   def first_name_last_initial
     "#{first_name} #{last_name[0]}."
