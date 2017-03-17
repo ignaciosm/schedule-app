@@ -8,6 +8,6 @@
   <td></td>
   <td></td>
 </tr>
-<% @schedule.admin.employees.employees_by_position('Shift Lead').each do |shift_lead| %>
+<% @schedule.employees.employees_by_position('Shift Lead').each do |shift_lead| %>
   <%= render partial: 'schedules/table/shift_lead', locals: { shift_lead: shift_lead } %>
 <% end %>

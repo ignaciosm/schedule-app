@@ -8,8 +8,6 @@
   <td></td>
   <td></td>
 </tr>
-<tr class='right aligned'>
-  <% @schedule.admin.employees.employees_by_position('Team Member').each do |team_member| %>
-    <%= render partial: 'schedules/table/team_member', locals: { team_member: team_member } %>
-  <% end %>
-</tr>
+<% @schedule.employees.employees_by_position('Team Member').each do |team_member| %>
+  <%= render partial: 'schedules/table/team_member', locals: { team_member: team_member } %>
+<% end %>
