@@ -2,7 +2,7 @@ FactoryGirl.define do
   factory :admin do
     email { Faker::Internet.safe_email }
     password 'demoPass1'
-    name 'Demo'
+    name 'Batman'
   end
 
   factory :shift do
