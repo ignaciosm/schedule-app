@@ -4,7 +4,13 @@ FactoryGirl.define do
     start_time '07:30'
     end_time '12:00'
     position 'Shift Lead'
+    status 'active'
     admin { create(:admin, email: 'demo5@example.com') }
+
+    trait :inactive_shift do
+      status 'inactive'
+      admin { create(:admin, email: 'demo6@example.com') }
+    end
   end
   factory :admin do
     email 'demo@example.com'
