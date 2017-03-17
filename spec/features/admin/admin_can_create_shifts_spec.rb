@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.feature 'Admin can create shifts' do
-  scenario 'they can see the shift on the shift\s index' do
+  scenario 'they can see the shift on the shift index' do
     admin = create(:admin)
     sign_in admin
     day_of_week = 'Monday'
