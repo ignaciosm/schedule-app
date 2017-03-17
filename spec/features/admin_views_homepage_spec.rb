@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.feature 'Admin views homepage:' do
-  scenario 'they see a list of their schedules' do
+  scenario 'they see a list of only their schedules' do
     admin = create(:admin)
     sign_in admin
     schedule = create(:schedule, admin: admin)
