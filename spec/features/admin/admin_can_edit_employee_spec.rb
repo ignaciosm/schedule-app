@@ -9,7 +9,7 @@ RSpec.feature 'Admin can edit employee' do
     visit root_path
     click_on t('layouts.navigation.admin_page')
     click_on t('admins.show.edit_employee')
-    fill_in 'employee_position', with: 'Team Member'
+    select('Team Member')
     click_on 'Update Employee'
     employee = Employee.last
 
