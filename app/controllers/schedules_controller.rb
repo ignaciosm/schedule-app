@@ -9,7 +9,7 @@ class SchedulesController < ApplicationController
   end
 
   def assign_shifts
-    Shift.all.map do |shift|
+    Shift.all.each do |shift|
       @schedule.shifts << shift if shift.status == 'active'
     end
 
