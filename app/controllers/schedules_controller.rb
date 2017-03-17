@@ -10,7 +10,7 @@ class SchedulesController < ApplicationController
 
   def assign_shifts
     Shift.all.map do |shift|
-      @schedule.shifts << shift
+      @schedule.shifts << shift if shift.status == 'active'
     end
 
     redirect_to schedule_path(@schedule)
