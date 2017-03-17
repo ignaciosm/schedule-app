@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature 'Admin views homepage:' do
+RSpec.feature 'Admin views schedules index' do
   scenario 'they see a list of only their schedules' do
     admin = create(:admin)
     sign_in admin
@@ -9,7 +9,7 @@ RSpec.feature 'Admin views homepage:' do
     link_text = "Week #{schedule.biz_week}, #{schedule.biz_year}"
     link_text2 = "Week #{schedule2.biz_week}, #{schedule2.biz_year}"
 
-    visit root_path
+    visit schedules_path
 
     expect(page).to_not have_link link_text2, href: schedule_path(schedule2)
     expect(page).to have_link link_text, href: schedule_path(schedule)

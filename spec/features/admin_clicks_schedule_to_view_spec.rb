@@ -6,7 +6,7 @@ RSpec.feature 'Admin clicks schedule link' do
     sign_in admin
     @schedule = create(:schedule, admin: admin)
 
-    visit root_path
+    visit schedules_path
     click_on @schedule.week_and_year
 
     expect(page).to have_content t('schedules.show.greeting',
@@ -20,7 +20,7 @@ RSpec.feature 'Admin clicks schedule link' do
     sign_in admin
     @schedule = create(:schedule, admin: admin)
 
-    visit root_path
+    visit schedules_path
     click_on @schedule.week_and_year
 
     expect(page).to have_content t('schedules.table.header_days.header',

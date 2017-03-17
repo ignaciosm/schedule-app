@@ -28,6 +28,6 @@ Rails.application.routes.draw do
   resources :admins, only: [:show]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  resources :schedules, only: [:show]
-  root 'schedules#index'
+  resources :schedules, only: [:show, :index]
+  root 'welcome#home'
 end

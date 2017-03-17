@@ -26,6 +26,10 @@ en:
       short: "%b %d"
       long: "%B %d, %Y"
 
+  welcome:
+    home:
+      greeting: Welcome to the schedule tool
+
   layouts: # for the various layouts
     navigation:
       admin_page: Admin page
