@@ -8,7 +8,7 @@ RSpec.feature 'admin can toggle active shifts belong to a schedule' do
     shift = create(:shift, admin_id: admin.id)
 
     visit schedule_path(schedule)
-    click_on t('schedules.show.assign_shifts')
+    click_on t('schedules.toggle_shifts.assign_shifts')
 
     expect(page).to have_content shift.start_time
   end
@@ -20,10 +20,10 @@ RSpec.feature 'admin can toggle active shifts belong to a schedule' do
     shift = create(:shift, admin_id: admin.id)
 
     visit schedule_path(schedule)
-    click_on t('schedules.show.assign_shifts')
+    click_on t('schedules.toggle_shifts.assign_shifts')
 
     visit schedule_path(schedule)
-    click_on t('schedules.show.unassign_shifts')
+    click_on t('schedules.toggle_shifts.unassign_shifts')
 
     expect(page).to_not have_content shift.start_time
   end
