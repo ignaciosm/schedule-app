@@ -8,9 +8,9 @@ class SchedulesController < ApplicationController
   def show
   end
 
-  def assign_shifts # later change to active shifts
+  def assign_shifts
     Shift.all.map do |shift|
-      ScheduleShift.create(shift_id: shift.id, schedule_id: @schedule.id)
+      @schedule.shifts << shift
     end
 
     redirect_to schedule_path(@schedule)
