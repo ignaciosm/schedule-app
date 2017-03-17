@@ -53,6 +53,8 @@ en:
       greeting: Week of %{date1} to %{date7}, %{year}
       assign_shifts: Assign all shifts
       unassign_shifts: Unassign all shifts
+      assign_employees: Assign all employees
+      unassign_employees: Unassign all employees
     table:
       header_days:
         header: Week %{week}
