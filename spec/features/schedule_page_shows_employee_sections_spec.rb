@@ -10,6 +10,7 @@ RSpec.feature 'User views a schedule' do
 
     visit root_path
     click_on schedule.week_and_year
+    click_on t('schedules.toggle_employees.assign_employees')
 
     expect(page).to have_content admin.name
     expect(page).to have_content shift_lead.first_name_last_initial
