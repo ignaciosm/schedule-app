@@ -9,7 +9,8 @@ RSpec.feature 'Admin views schedules index' do
     link_text = "Week #{schedule.biz_week}, #{schedule.biz_year}"
     link_text2 = "Week #{schedule2.biz_week}, #{schedule2.biz_year}"
 
-    visit schedules_path
+    visit admin_path(admin)
+    click_on 'View schedules'
 
     expect(page).to_not have_link link_text2, href: schedule_path(schedule2)
     expect(page).to have_link link_text, href: schedule_path(schedule)
