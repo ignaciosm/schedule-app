@@ -51,6 +51,7 @@ en:
       greeting: Schedules Index
     show:
       greeting: Week of %{date1} to %{date7}, %{year}
+    toggle_employees:
       assign_employees: Assign all employees
       unassign_employees: Unassign all employees
     toggle_shifts:

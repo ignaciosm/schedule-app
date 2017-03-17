@@ -5,18 +5,7 @@
   <%= @schedule.biz_year %>
 </h1>
 <%= render 'toggle_shifts' %>
-<% if @schedule.employees.none? %>
-  <%= link_to t('.assign_employees'),
-            assign_employees_path(@schedule),
-            method: :post,
-            class: 'ui tiny button green' %>
-<% else %>
-  <%= link_to t('.unassign_employees'),
-            unassign_employees_path(@schedule),
-            method: :post,
-            class: 'ui tiny button red',
-            data: {confirm: 'Are you sure?'} %>
-<% end %>
+<%= render 'toggle_employees' %>
 <table class="ui green celled striped table unstackable fixed">
   <thead>
     <%= render 'schedules/table/header_days' %>

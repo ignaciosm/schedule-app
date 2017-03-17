@@ -8,7 +8,7 @@ RSpec.feature 'admin can toggle active employees belong to a schedule' do
     shift_lead = create(:employee, admin_id: admin.id)
 
     visit schedule_path(schedule)
-    click_on t('schedules.show.assign_employees')
+    click_on t('schedules.toggle_employees.assign_employees')
 
     expect(page).to have_content shift_lead.first_name_last_initial
   end
@@ -20,10 +20,10 @@ RSpec.feature 'admin can toggle active employees belong to a schedule' do
     shift_lead = create(:employee, admin_id: admin.id)
 
     visit schedule_path(schedule)
-    click_on t('schedules.show.assign_employees')
+    click_on t('schedules.toggle_employees.assign_employees')
 
     visit schedule_path(schedule)
-    click_on t('schedules.show.unassign_employees')
+    click_on t('schedules.toggle_employees.unassign_employees')
 
     expect(page).to_not have_content shift_lead.first_name_last_initial
   end

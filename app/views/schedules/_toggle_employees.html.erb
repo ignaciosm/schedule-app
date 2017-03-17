@@ -1,0 +1,12 @@
+<% if @schedule.employees.none? %>
+  <%= link_to t('.assign_employees'),
+            assign_employees_path(@schedule),
+            method: :post,
+            class: 'ui tiny button green' %>
+<% else %>
+  <%= link_to t('.unassign_employees'),
+            unassign_employees_path(@schedule),
+            method: :post,
+            class: 'ui tiny button red',
+            data: {confirm: 'Are you sure?'} %>
+<% end %>
