@@ -9,6 +9,6 @@ RSpec.describe Shift, '.active_shifts' do
     active_shift = create(:shift)
     inactive_shift = create(:shift, :inactive_shift)
 
-    expect(Shift.active_shifts('active')).to eq [active_shift]
+    expect(Shift.active_shifts).to eq [active_shift]
   end
 end
