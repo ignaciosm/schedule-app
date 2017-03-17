@@ -18,6 +18,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'faker'
+gem 'pundit'
 
 group :development, :test do
   gem 'byebug', platform: :mri
@@ -38,9 +39,9 @@ group :development do
 end
 
 group :test do
-  gem "capybara"
-  gem "database_cleaner"
-  gem "email_spec"
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'email_spec'
   gem 'poltergeist'
 end
 
