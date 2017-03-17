@@ -13,7 +13,7 @@ RSpec.feature 'Admin can create new employee' do
     click_on t('admins.show.add_employee')
     fill_in 'employee_first_name', with: employee_first_name
     fill_in 'employee_last_name', with: employee_last_name
-    fill_in 'employee_position', with: employee_position
+    choose(employee_position)
     click_on 'Create Employee'
     employee = Employee.last
 
