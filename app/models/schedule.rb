@@ -12,4 +12,8 @@ class Schedule < ApplicationRecord
   def get_dates(year, week, day)
     Date.commercial(year, week, day).strftime('%m/%d')
   end
+
+  def self.current_admins_only(admin)
+    where('admin_id = ?', admin)
+  end
 end

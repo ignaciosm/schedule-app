@@ -4,7 +4,7 @@ class SchedulesController < ApplicationController
                                       :assign_employees, :unassign_employees]
 
   def index
-    @schedules = Schedule.all.where('admin_id = ?', current_admin)
+    @schedules = Schedule.current_admins_only(current_admin)
   end
 
   def show
