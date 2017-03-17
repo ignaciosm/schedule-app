@@ -41,6 +41,7 @@ en:
     show:
       greeting: Hello, %{name}
       add_employee: Add new employee
+      add_schedule: Add a schedule
       edit_employee: Edit
       view_schedules: View schedules
       add_shift: Add new shift

@@ -10,6 +10,10 @@ class SchedulesController < ApplicationController
   def show
   end
 
+  def new
+    @schedule = Schedule.new
+  end
+
   def assign_shifts
     Shift.all.each do |shift|
       @schedule.shifts << shift if shift.status == 'active'
