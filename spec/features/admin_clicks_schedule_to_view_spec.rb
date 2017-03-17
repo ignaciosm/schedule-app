@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature 'User clicks schedule link' do
+RSpec.feature 'Admin clicks schedule link' do
   scenario 'they see the schdule' do
     admin = create(:admin)
     sign_in admin
