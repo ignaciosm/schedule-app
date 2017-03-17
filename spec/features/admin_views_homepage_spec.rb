@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.feature 'Admin views homepage:' do
   scenario 'they see a list of their schedules' do
     admin = create(:admin)
+    sign_in admin
     schedule = create(:schedule, admin: admin)
     schedule2 = create(:schedule, biz_week: 11)
     link_text = "Week #{schedule.biz_week}, #{schedule.biz_year}"

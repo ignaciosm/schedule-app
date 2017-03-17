@@ -2,7 +2,9 @@ require 'rails_helper'
 
 RSpec.feature 'User clicks schedule link' do
   scenario 'they see the schdule' do
-    @schedule = create(:schedule)
+    admin = create(:admin)
+    sign_in admin
+    @schedule = create(:schedule, admin: admin)
 
     visit root_path
     click_on @schedule.week_and_year
@@ -14,7 +16,9 @@ RSpec.feature 'User clicks schedule link' do
   end
 
   scenario 'they see the week in the table header' do
-    @schedule = create(:schedule)
+    admin = create(:admin)
+    sign_in admin
+    @schedule = create(:schedule, admin: admin)
 
     visit root_path
     click_on @schedule.week_and_year
