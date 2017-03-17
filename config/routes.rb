@@ -14,6 +14,11 @@ Rails.application.routes.draw do
   post 'schedules/:id/unassign_shifts', to: 'schedules#unassign_shifts',
                                         as: 'unassign_shifts'
 
+  post 'schedules/:id/assign_employees', to: 'schedules#assign_employees',
+                                      as: 'assign_employees'
+  post 'schedules/:id/unassign_employees', to: 'schedules#unassign_employees',
+                                        as: 'unassign_employees'
+
   devise_for :admins, path: '',
                       path_names: {
                         sign_in: 'signin',
