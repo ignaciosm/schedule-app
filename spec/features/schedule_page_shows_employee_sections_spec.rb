@@ -4,9 +4,9 @@ RSpec.feature 'User views a schedule' do
   scenario 'they see a section for each employee position' do
     admin = create(:admin)
     sign_in admin
-    schedule = create(:schedule, admin_id: admin.id)
-    shift_lead = create(:employee, admin_id: admin.id)
-    team_member = create(:employee, :team_member, admin_id: admin.id)
+    schedule = create(:schedule, admin: admin)
+    shift_lead = create(:employee, admin: admin)
+    team_member = create(:employee, position: 'Team Member', admin: admin)
 
     visit root_path
     click_on schedule.week_and_year

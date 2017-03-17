@@ -1,13 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe Shift, 'validations' do
-  # Do to decide on validations
+  # Need to decide on validations
 end
 
 RSpec.describe Shift, '.active_shifts' do
   it 'returns only the active shifts' do
     active_shift = create(:shift)
-    inactive_shift = create(:shift, :inactive_shift)
+    create(:shift, status: 'inactive')
 
     expect(Shift.active_shifts).to eq [active_shift]
   end

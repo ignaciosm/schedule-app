@@ -4,7 +4,7 @@ RSpec.feature 'admin can toggle employee status' do
   scenario 'clicking deactivate changes status to inactive' do
     admin = create(:admin)
     sign_in admin
-    create(:employee, admin_id: admin.id)
+    create(:employee, admin: admin)
 
     visit admin_path(admin)
     click_on t('employees.deactivate')
@@ -15,7 +15,7 @@ RSpec.feature 'admin can toggle employee status' do
   scenario 'clicking activate changes status to active' do
     admin = create(:admin)
     sign_in admin
-    create(:employee, admin_id: admin.id, status: 'inactive')
+    create(:employee, admin: admin, status: 'inactive')
 
     visit admin_path(admin)
     click_on t('employees.activate')

@@ -4,8 +4,8 @@ RSpec.feature 'admin can toggle active shifts belong to a schedule' do
   scenario 'by clicking button on schedule page to assign' do
     admin = create(:admin)
     sign_in admin
-    schedule = create(:schedule, admin_id: admin.id)
-    shift = create(:shift, admin_id: admin.id)
+    schedule = create(:schedule, admin: admin)
+    shift = create(:shift, admin: admin)
 
     visit schedule_path(schedule)
     click_on t('schedules.toggle_shifts.assign_shifts')
@@ -16,8 +16,8 @@ RSpec.feature 'admin can toggle active shifts belong to a schedule' do
   scenario 'by clicking button on schedule page to unassign' do
     admin = create(:admin)
     sign_in admin
-    schedule = create(:schedule, admin_id: admin.id)
-    shift = create(:shift, admin_id: admin.id)
+    schedule = create(:schedule, admin: admin)
+    shift = create(:shift, admin: admin)
 
     visit schedule_path(schedule)
     click_on t('schedules.toggle_shifts.assign_shifts')

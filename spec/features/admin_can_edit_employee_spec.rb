@@ -4,7 +4,7 @@ RSpec.feature 'Admin can edit employee' do
   scenario 'they can see the employee\'s page' do
     admin = create(:admin)
     sign_in admin
-    employee = create(:employee, admin_id: admin.id)
+    create(:employee, admin: admin)
 
     visit root_path
     click_on t('layouts.navigation.admin_page')
