@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'admins/show.html.erb' do
   context 'shows the employees by position' do
     it 'has a shift lead section' do
-      @admin = create(:admin)
+      @admin = build(:admin)
 
       render
 
@@ -11,7 +11,7 @@ RSpec.describe 'admins/show.html.erb' do
     end
 
     it 'has a team member section' do
-      @admin = create(:admin)
+      @admin = build(:admin)
 
       render
 
