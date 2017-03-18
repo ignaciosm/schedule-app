@@ -21,3 +21,12 @@ RSpec.describe Employee, '#first_name_last_initial' do
     expect(shift_lead.first_name_last_initial).to eq 'Boaty M.'
   end
 end
+
+RSpec.describe Employee, '.inactive_employees' do
+    it 'returns only inactive employees' do
+      employee1 = create(:employee)
+      employee2 = create(:employee, status: 'inactive')
+
+      expect(Employee.inactive_employees).to eq [employee2]
+    end
+  end
