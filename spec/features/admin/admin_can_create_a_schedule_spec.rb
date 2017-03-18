@@ -12,6 +12,7 @@ RSpec.feature 'admin can create a schedule' do
     fill_in 'schedule_biz_year', with: schedule_year
     fill_in 'schedule_biz_week', with: schedule_week
     click_on 'Create Schedule'
+    schedule = Schedule.last
 
     expect(page).to have_content schedule.week_and_year
   end
