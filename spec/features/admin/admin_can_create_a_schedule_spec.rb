@@ -14,6 +14,6 @@ RSpec.feature 'admin can create a schedule' do
     click_on 'Create Schedule'
     schedule = Schedule.last
 
-    expect(page).to have_content schedule.week_and_year
+    expect(page).to have_content schedule.biz_week
   end
 end
