@@ -1,7 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe Shift, 'validations' do
-  # Need to decide on validations
+  it { is_expected.to validate_presence_of(:day_of_week) }
+  it { is_expected.to validate_presence_of(:start_time) }
+  it { is_expected.to validate_presence_of(:end_time) }
+  it { is_expected.to validate_presence_of(:position) }
 end
 
 RSpec.describe Shift, '.active_shifts' do
