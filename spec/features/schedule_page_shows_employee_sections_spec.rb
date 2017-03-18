@@ -11,7 +11,7 @@ RSpec.feature 'User views a schedule' do
     visit schedule_path(schedule)
     click_on t('schedules.toggle_employees.assign_employees')
 
-    expect(page).to have_content admin.name
+    expect(page).to have_content admin.first_name
     expect(page).to have_content shift_lead.first_name_last_initial
     expect(page).to have_content team_member.first_name_last_initial
   end
