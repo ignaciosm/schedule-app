@@ -1,4 +1,5 @@
 class Schedule < ApplicationRecord
+  validates_presence_of :biz_year, :biz_week
   belongs_to :admin
   has_many :schedule_shifts
   has_many :shifts, through: :schedule_shifts
