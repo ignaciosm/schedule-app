@@ -7,7 +7,7 @@ RSpec.feature 'admin can update their account' do
     new_company = 'Batman Inc'
 
     visit admin_path(admin)
-    click_on t('admin.show.update_account')
+    click_on t('admins.show.update_account')
     fill_in 'admin_company', with: new_company
     click_on 'Update'
 
