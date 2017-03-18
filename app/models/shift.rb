@@ -1,4 +1,5 @@
 class Shift < ApplicationRecord
+  validates_presence_of :day_of_week, :start_time, :end_time, :position
   belongs_to :admin
   has_many :schedule_shifts
   has_many :schedules, through: :schedule_shifts
