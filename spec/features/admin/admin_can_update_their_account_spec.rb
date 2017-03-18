@@ -9,7 +9,7 @@ RSpec.feature 'admin can update their account' do
     visit admin_path(admin)
     click_on t('admin.show.update_account')
     fill_in 'admin_company', with: new_company
-    click_on 'Update Account'
+    click_on 'Update'
 
     expect(page).to have_content new_company
   end
