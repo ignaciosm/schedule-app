@@ -5,19 +5,11 @@ RSpec.describe Employee, 'validations' do
 end
 
 RSpec.describe Employee, '.employees_by_position' do
-  it 'returns only the employees who are a shift lead' do
+  it 'returns only the employees who\'s position is passed' do
     shift_lead = create(:employee)
-    create(:employee, position: 'Team Member')
-
-    expect(Employee.employees_by_position('Shift Lead')).to eq [shift_lead]
-  end
-end
-
-RSpec.describe Employee, '.employees_by_position' do
-  it 'returns only the employees who are a team member' do
-    create(:employee)
     team_member = create(:employee, position: 'Team Member')
 
+    expect(Employee.employees_by_position('Shift Lead')).to eq [shift_lead]
     expect(Employee.employees_by_position('Team Member')).to eq [team_member]
   end
 end
