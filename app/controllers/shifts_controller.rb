@@ -9,18 +9,18 @@ class ShiftsController < ApplicationController
   end
 
   def create
-    @shift = Shift.new(shift_params)
-    @shift.admin_id = current_admin.id
+    params[:shift][:day_of_week].each do |day|
+      @shift = Shift.new(shift_params)
+      @shift.attributes = { day_of_week: day, admin_id: current_admin.id }
 
-    if @shift.save
-      redirect_to shifts_path
-    else
-      render :new
+      return render :new unless @shift.save
     end
+    redirect_to shifts_path
   end
 
   private
   def shift_params
-    params.require(:shift).permit(:day_of_week, :start_time, :end_time, :position)
+    params.require(:shift).permit(:start_time, :end_time, :position,
+                                  :day_of_week)
   end
 end
