@@ -4,7 +4,7 @@ FactoryGirl.define do
     password 'demoPass1'
     first_name 'Bruce'
     last_name 'Wayne'
-    company 'Wayne Enterprises'
+    company { Faker::Company.name }
   end
 
   factory :shift do
