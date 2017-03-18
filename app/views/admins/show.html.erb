@@ -1,10 +1,15 @@
 <h1><%= t('.greeting', name: @admin.first_name) %></h1>
 
 <h2><%= t('.button_header') %></h2>
-<%= link_to t('.view_schedules'), schedules_path, class: 'ui button tiny' %>
-<%= link_to t('.add_employee'), new_employee_path, class: 'ui button tiny' %>
-<%= link_to t('.add_shift'), new_shift_path, class: 'ui button tiny' %>
-<%= link_to t('.add_schedule'), new_schedule_path, class: 'ui button tiny' %>
+<p>
+  <%= link_to t('.view_schedules'), schedules_path, class: 'ui button tiny' %>
+
+</p>
+<p>
+  <%= link_to t('.add_employee'), new_employee_path, class: 'ui button tiny' %>
+  <%= link_to t('.add_shift'), new_shift_path, class: 'ui button tiny' %>
+  <%= link_to t('.add_schedule'), new_schedule_path, class: 'ui button tiny' %>
+</p>
 
 <h2><%= t('.employees_header') %></h2>
 <h3><%= t('.shift_lead_label') %></h3>
