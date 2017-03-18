@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.feature 'user can create admin account' do
   scenario 'then they see their account page' do
     admin_email = 'batman@example.com'
-    admin_password = 'demoPass1'
+    admin_password = 'demoPass1@'
     admin_first_name = 'Bruce'
     admin_last_name = 'Wayne'
     admin_company = 'Wayne Enterprises'
