@@ -16,7 +16,7 @@ end
 
 RSpec.describe Employee, '#first_name_last_initial' do
   it 'returns the first name and last initial' do
-    shift_lead = create(:employee)
+    shift_lead = build(:employee)
 
     expect(shift_lead.first_name_last_initial).to eq 'Boaty M.'
   end
