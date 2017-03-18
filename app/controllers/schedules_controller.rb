@@ -14,6 +14,17 @@ class SchedulesController < ApplicationController
     @schedule = Schedule.new
   end
 
+  def create
+    @schedule = Schedule.new(schedule_params)
+    @schedule.admin = current_admin
+
+    if @schedule.save
+      redirect_to schedule_path(@schedule)
+    else
+      render :new
+    end
+  end
+
   def assign_shifts
     Shift.all.each do |shift|
       @schedule.shifts << shift if shift.status == 'active'
@@ -45,5 +56,9 @@ class SchedulesController < ApplicationController
   private
   def set_schedule
     @schedule = Schedule.find(params[:id])
+  end
+
+  def schedule_params
+    params.require(:schedule).permit(:biz_year, :biz_week)
   end
 end

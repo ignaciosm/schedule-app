@@ -1,3 +1,9 @@
 <%= form_for(@schedule) do |f| %>
+  <%= f.label :business_year %>
+  <%= f.text_field :biz_year %> <br><br>
 
+  <%= f.label :business_week %>
+  <%= f.text_field :biz_week %> <br><br>
+
+  <%= f.submit %>
 <% end %>
