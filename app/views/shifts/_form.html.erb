@@ -9,10 +9,8 @@
     <%= f.text_field :end_time %> <br><br>
 
     <%= f.label :position %>
-    <%= f.radio_button :position, 'Shift Lead' %>
-    <%= f.label :position, 'Shift Lead', value: 'Shift Lead' %> |
-    <%= f.radio_button :position, 'Team Member' %>
-    <%= f.label :position, 'Team Member', value: 'Team Member' %> <br><br>
+    <%= f.select :position, ['Shift Lead', 'Team Member'],
+                            include_blank: true %><br><br>
 
     <%= f.submit t('.submit_button') %>
 <% end %>
