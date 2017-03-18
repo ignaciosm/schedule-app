@@ -19,6 +19,6 @@ RSpec.feature 'Admin can create shifts' do
     select(position)
     click_on t('shifts.form.submit_button')
 
-    expect(page).to have_content '07:30 am'
+    expect(page).to have_content start_time
   end
 end
