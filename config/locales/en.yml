@@ -50,6 +50,7 @@ en:
       shift_lead_label: Shift Leads
       team_member_label: Team Members
       inactive_label: Inactive
+      update_account: Update your account
 
   schedules: # for the schedules views
     index:
