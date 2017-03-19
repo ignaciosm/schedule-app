@@ -9,8 +9,8 @@ FactoryGirl.define do
 
   factory :shift do
     day_of_week 'Monday'
-    start_time '07:30'
-    end_time '12:00'
+    start_time '11:00'
+    end_time '15:00'
     admin
   end
 
