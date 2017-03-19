@@ -6,9 +6,9 @@ RSpec.feature 'Admin can create shifts' do
     sign_in admin
     monday = 'shift_day_of_week_monday'
     friday = 'shift_day_of_week_friday'
-    start_time1 = '07 AM'
-    start_time2 = '30'
-    end_time1 = '12 PM'
+    start_time1 = '11 AM'
+    start_time2 = '00'
+    end_time1 = '03 PM'
     end_time2 = '00'
     position = 'Shift Lead'
 
@@ -23,6 +23,6 @@ RSpec.feature 'Admin can create shifts' do
     select(position)
     click_on t('shifts.form.submit_button')
 
-    expect(page).to have_content '07:30'
+    expect(page).to have_content '11:00'
   end
 end
