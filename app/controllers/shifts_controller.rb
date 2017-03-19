@@ -18,9 +18,9 @@ class ShiftsController < ApplicationController
                           }
 
       return render :new unless @shift.save
-      Employee.find(params[:shift][:id]).shifts << @shift
+      @employee = Employee.find(params[:shift][:id]).shifts << @shift
     end
-    redirect_to shifts_path
+    redirect_to employee_path(@employee)
   end
 
   private
