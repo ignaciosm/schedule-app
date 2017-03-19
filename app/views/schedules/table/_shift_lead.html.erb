@@ -1,10 +1,38 @@
 <tr class='right aligned'>
   <td class='left aligned'><%= shift_lead.first_name_last_initial %></td>
-  <td> </td>
-  <td> </td>
-  <td> </td>
-  <td> </td>
-  <td> </td>
-  <td> </td>
-  <td> </td>
+  <td>
+    <% shift_lead.shifts.shifts_by_day('Monday').each do |shift| %>
+      <small><%= shift.start_time_end_time unless nil? %></small>
+    <% end %>
+  </td>
+  <td>
+    <% shift_lead.shifts.shifts_by_day('Tuesday').each do |shift| %>
+      <small><%= shift.start_time_end_time unless nil? %></small>
+    <% end %>
+  </td>
+  <td>
+    <% shift_lead.shifts.shifts_by_day('Wednesday').each do |shift| %>
+      <small><%= shift.start_time_end_time unless nil? %></small>
+    <% end %>
+  </td>
+  <td>
+    <% shift_lead.shifts.shifts_by_day('Thursday').each do |shift| %>
+      <small><%= shift.start_time_end_time unless nil? %></small>
+    <% end %>
+  </td>
+  <td>
+    <% shift_lead.shifts.shifts_by_day('Friday').each do |shift| %>
+      <small><%= shift.start_time_end_time unless nil? %></small>
+    <% end %>
+  </td>
+  <td>
+    <% shift_lead.shifts.shifts_by_day('Saturday').each do |shift| %>
+      <small><%= shift.start_time_end_time unless nil? %></small>
+    <% end %>
+  </td>
+  <td>
+    <% shift_lead.shifts.shifts_by_day('Sunday').each do |shift| %>
+      <small><%= shift.start_time_end_time unless nil? %></small>
+    <% end %>
+  </td>
 </tr>
