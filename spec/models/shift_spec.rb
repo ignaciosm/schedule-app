@@ -23,3 +23,11 @@ RSpec.describe Shift, '.shifts_by_day' do
     expect(Shift.shifts_by_day('Monday')).to eq [monday]
   end
 end
+
+RSpec.describe Shift, '#start_time_end_time' do
+  it 'returns the shift times formatted' do
+    shift = create(:shift)
+
+    expect(shift.start_time_end_time).to eq '11:00 AM to 03:00 PM'
+  end
+end
