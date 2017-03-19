@@ -3,6 +3,8 @@ class Employee < ApplicationRecord
   belongs_to :admin
   has_many :schedule_employees
   has_many :schedules, through: :schedule_employees
+  has_many :employee_shifts
+  has_many :shifts, through: :employee_shifts
 
   def first_name_last_initial
     "#{first_name} #{last_name[0]}."
