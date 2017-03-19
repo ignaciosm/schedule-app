@@ -1,5 +1,5 @@
 class EmployeesController < ApplicationController
-  before_action :set_employee, only: [:toggle_status, :edit, :update]
+  before_action :set_employee, only: [:show, :toggle_status, :edit, :update]
 
   def new
     @employee = Employee.new
@@ -17,7 +17,6 @@ class EmployeesController < ApplicationController
   end
 
   def show
-    redirect_to admin_path(current_admin)
   end
 
   def edit
