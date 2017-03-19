@@ -6,20 +6,20 @@ RSpec.feature 'Admin can create shifts' do
     sign_in admin
     monday = 'shift_day_of_week_monday'
     friday = 'shift_day_of_week_friday'
-    start_time1 = '11 AM'
-    start_time2 = '00'
-    end_time1 = '03 PM'
-    end_time2 = '00'
+    start_hour = '11 AM'
+    start_minute = '00'
+    end_hour = '03 PM'
+    end_minute = '00'
     position = 'Shift Lead'
 
     visit admin_path(admin)
     click_on t('admins.show.add_shift')
     check(monday)
     check(friday)
-    select start_time1, from: 'shift_start_time_4i'
-    select start_time2, from: 'shift_start_time_5i'
-    select end_time1, from: 'shift_end_time_4i'
-    select end_time2, from: 'shift_end_time_5i'
+    select start_hour, from: 'shift_start_time_4i'
+    select start_minute, from: 'shift_start_time_5i'
+    select end_hour, from: 'shift_end_time_4i'
+    select end_minute, from: 'shift_end_time_5i'
     select(position)
     click_on t('shifts.form.submit_button')
 
