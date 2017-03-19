@@ -10,7 +10,7 @@ RSpec.feature 'Admin can create shifts' do
     start_minute = '00'
     end_hour = '03 PM'
     end_minute = '00'
-    employee = create(:employee, admin: admin_can_add_and_remove_active_employees_to_a_schedule_spec.rb)
+    employee = create(:employee, admin: admin)
 
     visit admin_path(admin)
     click_on t('admins.show.add_shift')
