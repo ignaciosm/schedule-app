@@ -4,8 +4,8 @@
   to <%= @schedule.get_dates(@schedule.biz_year, @schedule.biz_week, 7) %>,
   <%= @schedule.biz_year %>
 </h1>
-<%= render 'toggle_shifts' %>
-<%= render 'toggle_employees' %>
+<%= render 'add_remove_shifts' %>
+<%= render 'add_remove_employees' %>
 <table class="ui green celled striped table unstackable fixed">
   <thead>
     <%= render 'schedules/table/header_days' %>

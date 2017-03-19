@@ -57,10 +57,10 @@ en:
       greeting: Schedules Index
     show:
       greeting: Week of %{date1} to %{date7}, %{year}
-    toggle_employees:
+    add_remove_employees:
       add_employees: Add all employees
       remove_employees: Remove all employees
-    toggle_shifts:
+    add_remove_shifts:
       add_shifts: Add all shifts
       remove_shifts: Remove all shifts
     table:

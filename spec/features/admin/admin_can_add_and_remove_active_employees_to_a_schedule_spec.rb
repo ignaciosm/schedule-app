@@ -8,7 +8,7 @@ RSpec.feature 'admin can add and remove active employees to a schedule' do
     shift_lead = create(:employee, admin: admin)
 
     visit schedule_path(schedule)
-    click_on t('schedules.toggle_employees.add_employees')
+    click_on t('schedules.add_remove_employees.add_employees')
 
     expect(page).to have_content shift_lead.first_name_last_initial
   end
@@ -20,10 +20,10 @@ RSpec.feature 'admin can add and remove active employees to a schedule' do
     shift_lead = create(:employee, admin: admin)
 
     visit schedule_path(schedule)
-    click_on t('schedules.toggle_employees.add_employees')
+    click_on t('schedules.add_remove_employees.add_employees')
 
     visit schedule_path(schedule)
-    click_on t('schedules.toggle_employees.remove_employees')
+    click_on t('schedules.add_remove_employees.remove_employees')
 
     expect(page).to_not have_content shift_lead.first_name_last_initial
   end

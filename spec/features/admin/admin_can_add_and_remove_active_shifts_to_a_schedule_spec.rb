@@ -8,7 +8,7 @@ RSpec.feature 'admin can add and remove active shifts to a schedule' do
     shift = create(:shift, admin: admin)
 
     visit schedule_path(schedule)
-    click_on t('schedules.toggle_shifts.add_shifts')
+    click_on t('schedules.add_remove_shifts.add_shifts')
 
     expect(page).to have_content shift.start_time
   end
@@ -20,10 +20,10 @@ RSpec.feature 'admin can add and remove active shifts to a schedule' do
     shift = create(:shift, admin: admin)
 
     visit schedule_path(schedule)
-    click_on t('schedules.toggle_shifts.add_shifts')
+    click_on t('schedules.add_remove_shifts.add_shifts')
 
     visit schedule_path(schedule)
-    click_on t('schedules.toggle_shifts.remove_shifts')
+    click_on t('schedules.add_remove_shifts.remove_shifts')
 
     expect(page).to_not have_content shift.start_time
   end
