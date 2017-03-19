@@ -10,7 +10,6 @@ class ShiftsController < ApplicationController
 
   def create
     params[:shift][:day_of_week].each do |day|
-
       @shift = Shift.new(shift_params)
       @shift.attributes = { day_of_week: day,
                             admin_id: current_admin.id,
@@ -19,15 +18,14 @@ class ShiftsController < ApplicationController
                           }
 
       return render :new unless @shift.save
-      Employee.find(shift_params[:id]).shifts << @shift
+      Employee.find(params[:shift][:id]).shifts << @shift
     end
     redirect_to shifts_path
   end
 
   private
   def shift_params
-    params.require(:shift).permit(:start_time, :end_time,
-                                  :day_of_week, :id)
+    params.require(:shift).permit(:start_time, :end_time, :day_of_week)
   end
 
   def short_start_time
