@@ -1,7 +1,17 @@
 <tr class='right aligned'>
   <td class='left aligned'><%= team_member.first_name_last_initial %></td>
-  <td> </td>
-  <td> </td>
+  <td>
+    <% team_member.shifts.shifts_by_day('Monday').each do |shift| %>
+      <%= shift.start_time_end_time unless nil? %>
+    <% end %>
+  </td>
+  <td>
+    <% team_member.shifts.shifts_by_day('Tuesday').each do |shift| %>
+      <%= shift.start_time.strftime('%I:%M %p') unless nil? %>
+      to
+      <%= shift.end_time.strftime('%I:%M %p') unless nil? %>
+    <% end %>
+  </td>
   <td> </td>
   <td> </td>
   <td> </td>
