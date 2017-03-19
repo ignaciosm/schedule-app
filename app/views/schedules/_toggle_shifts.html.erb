@@ -1,11 +1,11 @@
 <% if @schedule.shifts.none? %>
   <%= link_to t('.add_shifts'),
-            assign_shifts_path(@schedule),
+            add_shifts_path(@schedule),
             method: :post,
             class: 'ui tiny button green' %>
 <% else %>
   <%= link_to t('.remove_shifts'),
-            unassign_shifts_path(@schedule),
+            remove_shifts_path(@schedule),
             method: :post,
             class: 'ui tiny button red',
             data: {confirm: 'Are you sure?'} %>

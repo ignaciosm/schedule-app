@@ -1,7 +1,7 @@
 class SchedulesController < ApplicationController
   before_action :set_schedule, only: [:show,
-                                      :assign_shifts, :unassign_shifts,
-                                      :assign_employees, :unassign_employees]
+                                      :add_shifts, :remove_shifts,
+                                      :add_employees, :remove_employees]
 
   def index
     @schedules = Schedule.current_admins_only(current_admin)
@@ -25,7 +25,7 @@ class SchedulesController < ApplicationController
     end
   end
 
-  def assign_shifts
+  def add_shifts
     Shift.all.each do |shift|
       @schedule.shifts << shift if shift.status == 'active'
     end
@@ -33,13 +33,13 @@ class SchedulesController < ApplicationController
     redirect_to schedule_path(@schedule)
   end
 
-  def unassign_shifts
+  def remove_shifts
     @schedule.shifts.delete_all
 
     redirect_to schedule_path(@schedule)
   end
 
-  def assign_employees
+  def add_employees
     Employee.all.each do |employee|
       @schedule.employees << employee if employee.status == 'active'
     end
@@ -47,7 +47,7 @@ class SchedulesController < ApplicationController
     redirect_to schedule_path(@schedule)
   end
 
-  def unassign_employees
+  def remove_employees
     @schedule.employees.delete_all
 
     redirect_to schedule_path(@schedule)

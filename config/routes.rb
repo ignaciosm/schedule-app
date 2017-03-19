@@ -9,15 +9,15 @@ Rails.application.routes.draw do
   post 'employees/:id/activate', to: 'employees#toggle_status',
                                  as: 'activate'
 
-  post 'schedules/:id/assign_shifts', to: 'schedules#assign_shifts',
-                                      as: 'assign_shifts'
-  post 'schedules/:id/unassign_shifts', to: 'schedules#unassign_shifts',
-                                        as: 'unassign_shifts'
+  post 'schedules/:id/add_shifts', to: 'schedules#add_shifts',
+                                      as: 'add_shifts'
+  post 'schedules/:id/remove_shifts', to: 'schedules#remove_shifts',
+                                        as: 'remove_shifts'
 
-  post 'schedules/:id/assign_employees', to: 'schedules#assign_employees',
-                                      as: 'assign_employees'
-  post 'schedules/:id/unassign_employees', to: 'schedules#unassign_employees',
-                                        as: 'unassign_employees'
+  post 'schedules/:id/add_employees', to: 'schedules#add_employees',
+                                      as: 'add_employees'
+  post 'schedules/:id/remove_employees', to: 'schedules#remove_employees',
+                                        as: 'remove_employees'
 
   devise_for :admins, path: '',
                       path_names: {

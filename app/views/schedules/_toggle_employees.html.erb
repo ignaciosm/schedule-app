@@ -1,11 +1,11 @@
 <% if @schedule.employees.none? %>
   <%= link_to t('.add_employees'),
-            assign_employees_path(@schedule),
+            add_employees_path(@schedule),
             method: :post,
             class: 'ui tiny button green' %>
 <% else %>
   <%= link_to t('.remove_employees'),
-            unassign_employees_path(@schedule),
+            remove_employees_path(@schedule),
             method: :post,
             class: 'ui tiny button red',
             data: {confirm: 'Are you sure?'} %>
