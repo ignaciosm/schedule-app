@@ -9,7 +9,7 @@ RSpec.feature 'User views a schedule' do
     team_member = create(:employee, position: 'Team Member', admin: admin)
 
     visit schedule_path(schedule)
-    click_on t('schedules.toggle_employees.assign_employees')
+    click_on t('schedules.toggle_employees.import_employees')
 
     expect(page).to have_content admin.first_name
     expect(page).to have_content shift_lead.first_name_last_initial

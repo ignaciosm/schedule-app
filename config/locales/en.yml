@@ -58,11 +58,11 @@ en:
     show:
       greeting: Week of %{date1} to %{date7}, %{year}
     toggle_employees:
-      assign_employees: Assign all employees
-      unassign_employees: Unassign all employees
+      import_employees: Import all employees
+      remove_employees: Remove all employees
     toggle_shifts:
-      assign_shifts: Assign all shifts
-      unassign_shifts: Unassign all shifts
+      import_shifts: Import all shifts
+      remove_shifts: Remove all shifts
     table:
       header_days:
         header: Week %{week}
