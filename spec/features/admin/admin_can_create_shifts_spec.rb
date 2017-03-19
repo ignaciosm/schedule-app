@@ -20,7 +20,7 @@ RSpec.feature 'Admin can create shifts' do
     select start_minute, from: 'shift_start_time_5i'
     select end_hour, from: 'shift_end_time_4i'
     select end_minute, from: 'shift_end_time_5i'
-    select(employee)
+    select employee.first_name_last_initial, from: 'shift[id]'
     click_on t('shifts.form.submit_button')
 
     expect(page).to have_content '11:00'
