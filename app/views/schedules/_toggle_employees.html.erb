@@ -1,5 +1,5 @@
 <% if @schedule.employees.none? %>
-  <%= link_to t('.import_employees'),
+  <%= link_to t('.add_employees'),
             assign_employees_path(@schedule),
             method: :post,
             class: 'ui tiny button green' %>

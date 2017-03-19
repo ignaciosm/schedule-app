@@ -1,5 +1,5 @@
 <% if @schedule.shifts.none? %>
-  <%= link_to t('.import_shifts'),
+  <%= link_to t('.add_shifts'),
             assign_shifts_path(@schedule),
             method: :post,
             class: 'ui tiny button green' %>
