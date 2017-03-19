@@ -4,7 +4,6 @@ class CreateShifts < ActiveRecord::Migration[5.0]
       t.string :day_of_week
       t.string :start_time
       t.string :end_time
-      t.string :position
 
       t.timestamps
     end
