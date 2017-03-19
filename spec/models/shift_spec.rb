@@ -14,3 +14,12 @@ RSpec.describe Shift, '.active_shifts' do
     expect(Shift.active_shifts).to eq [active_shift]
   end
 end
+
+RSpec.describe Shift, '.shifts_by_day' do
+  it 'returns the day of the week passed in' do
+    monday = create(:shift)
+    create(:shift, day_of_week: 'Tuesday')
+
+    expect(Shift.shifts_by_day('Monday')).to eq [monday]
+  end
+end
