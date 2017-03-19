@@ -11,7 +11,6 @@ FactoryGirl.define do
     day_of_week 'Monday'
     start_time '07:30'
     end_time '12:00'
-    position 'Shift Lead'
     admin
   end
 

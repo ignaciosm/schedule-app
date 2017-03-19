@@ -4,7 +4,6 @@ RSpec.describe Shift, 'validations' do
   it { is_expected.to validate_presence_of(:day_of_week) }
   it { is_expected.to validate_presence_of(:start_time) }
   it { is_expected.to validate_presence_of(:end_time) }
-  it { is_expected.to validate_presence_of(:position) }
 end
 
 RSpec.describe Shift, '.active_shifts' do
