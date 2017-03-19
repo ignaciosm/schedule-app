@@ -1,5 +1,5 @@
 <h3><%= @employee.first_name_last_initial %></h3>
 <h4>Shifts</h4>
 <% @employee.shifts.each do |shift| %>
-  <li><%= shift.start_time %> to <%= shift.end_time %></li>
+  <li><%= shift.start_time.strftime('%I:%M %p') %> to <%= shift.end_time.strftime('%I:%M %p') %></li>
 <% end %>
