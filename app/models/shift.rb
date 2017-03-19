@@ -10,4 +10,7 @@ class Shift < ApplicationRecord
     where('status = ?', 'active')
   end
 
+  def self.shifts_by_day(day)
+    where('day_of_week = ?', day)
+  end
 end
