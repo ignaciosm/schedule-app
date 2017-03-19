@@ -85,8 +85,8 @@ ActiveRecord::Schema.define(version: 20170319195226) do
 
   create_table "shifts", force: :cascade do |t|
     t.string   "day_of_week"
-    t.string   "start_time"
-    t.string   "end_time"
+    t.time     "start_time"
+    t.time     "end_time"
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
     t.integer  "admin_id"
