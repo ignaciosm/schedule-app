@@ -1,6 +1,5 @@
 class SchedulesController < ApplicationController
   before_action :set_schedule, only: [:show,
-                                      :add_shifts, :remove_shifts,
                                       :add_employees, :remove_employees]
 
   def index
@@ -23,20 +22,6 @@ class SchedulesController < ApplicationController
     else
       render :new
     end
-  end
-
-  def add_shifts
-    Shift.all.each do |shift|
-      @schedule.shifts << shift if shift.status == 'active'
-    end
-
-    redirect_to schedule_path(@schedule)
-  end
-
-  def remove_shifts
-    @schedule.shifts.delete_all
-
-    redirect_to schedule_path(@schedule)
   end
 
   def add_employees

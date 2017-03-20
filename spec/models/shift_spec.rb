@@ -6,15 +6,6 @@ RSpec.describe Shift, 'validations' do
   it { is_expected.to validate_presence_of(:end_time) }
 end
 
-RSpec.describe Shift, '.active_shifts' do
-  it 'returns only the active shifts' do
-    active_shift = create(:shift)
-    create(:shift, status: 'inactive')
-
-    expect(Shift.active_shifts).to eq [active_shift]
-  end
-end
-
 RSpec.describe Shift, '.shifts_by_day' do
   it 'returns the day of the week passed in' do
     monday = create(:shift)

@@ -65,15 +65,6 @@ ActiveRecord::Schema.define(version: 20170319195226) do
     t.index ["schedule_id"], name: "index_schedule_employees_on_schedule_id", using: :btree
   end
 
-  create_table "schedule_shifts", force: :cascade do |t|
-    t.integer  "schedule_id"
-    t.integer  "shift_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.index ["schedule_id"], name: "index_schedule_shifts_on_schedule_id", using: :btree
-    t.index ["shift_id"], name: "index_schedule_shifts_on_shift_id", using: :btree
-  end
-
   create_table "schedules", force: :cascade do |t|
     t.integer  "biz_year"
     t.integer  "biz_week"
@@ -87,10 +78,9 @@ ActiveRecord::Schema.define(version: 20170319195226) do
     t.string   "day_of_week"
     t.time     "start_time"
     t.time     "end_time"
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.integer  "admin_id"
-    t.string   "status",      default: "active"
     t.index ["admin_id"], name: "index_shifts_on_admin_id", using: :btree
   end
 
@@ -99,8 +89,6 @@ ActiveRecord::Schema.define(version: 20170319195226) do
   add_foreign_key "employees", "admins"
   add_foreign_key "schedule_employees", "employees"
   add_foreign_key "schedule_employees", "schedules"
-  add_foreign_key "schedule_shifts", "schedules"
-  add_foreign_key "schedule_shifts", "shifts"
   add_foreign_key "schedules", "admins"
   add_foreign_key "shifts", "admins"
 end

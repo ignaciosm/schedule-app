@@ -9,11 +9,6 @@ Rails.application.routes.draw do
   post 'employees/:id/activate', to: 'employees#toggle_status',
                                  as: 'activate'
 
-  post 'schedules/:id/add_shifts', to: 'schedules#add_shifts',
-                                      as: 'add_shifts'
-  post 'schedules/:id/remove_shifts', to: 'schedules#remove_shifts',
-                                        as: 'remove_shifts'
-
   post 'schedules/:id/add_employees', to: 'schedules#add_employees',
                                       as: 'add_employees'
   post 'schedules/:id/remove_employees', to: 'schedules#remove_employees',
