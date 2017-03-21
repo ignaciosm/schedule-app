@@ -1,9 +1,10 @@
 require 'rails_helper'
 
-RSpec.feature 'Admin can create shifts' do
-  scenario 'they can see the shift on the shift index' do
+RSpec.feature 'Admin can create shifts for employees' do
+  scenario 'they can see the shift on the schedule show page' do
     admin = create(:admin)
     sign_in admin
+    schedule = create(:schedule, admin: admin)
     monday = 'shift_day_of_week_monday'
     friday = 'shift_day_of_week_friday'
     start_hour = '11 AM'
@@ -12,6 +13,8 @@ RSpec.feature 'Admin can create shifts' do
     end_minute = '00'
     employee = create(:employee, admin: admin)
 
+    visit schedule_path(schedule)
+    click_on t('schedules.add_remove_employees.add_employees')
     visit admin_path(admin)
     click_on t('admins.show.add_shift')
     check(monday)
