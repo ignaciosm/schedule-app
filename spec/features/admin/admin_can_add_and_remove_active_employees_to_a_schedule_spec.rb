@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature 'admin can add and remove active employees to a schedule' do
+RSpec.feature 'admin can add/remove their active employees to a schedule' do
   scenario 'by clicking button on schedule page to add' do
     admin = create(:admin)
     sign_in admin
