@@ -28,6 +28,7 @@ RSpec.describe Employee, '.inactive_employees' do
     employee2 = create(:employee, status: 'inactive')
 
     expect(Employee.inactive_employees).to eq [employee2]
+    expect(Employee.inactive_employees).to_not eq [employee1]
   end
 end
 
@@ -38,5 +39,6 @@ RSpec.describe Employee, '.admins_employees' do
     employee2 = create(:employee)
 
     expect(Employee.admins_employees(admin)).to eq [employee1]
+    expect(Employee.admins_employees(admin)).to_not eq [employee2]
   end
 end
