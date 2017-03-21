@@ -23,10 +23,20 @@ RSpec.describe Employee, '#first_name_last_initial' do
 end
 
 RSpec.describe Employee, '.inactive_employees' do
-    it 'returns only inactive employees' do
-      employee1 = create(:employee)
-      employee2 = create(:employee, status: 'inactive')
+  it 'returns only inactive employees' do
+    employee1 = create(:employee)
+    employee2 = create(:employee, status: 'inactive')
 
-      expect(Employee.inactive_employees).to eq [employee2]
-    end
+    expect(Employee.inactive_employees).to eq [employee2]
   end
+end
+
+RSpec.describe Employee, '.admins_employees' do
+  it 'returns only admins employees' do
+    admin = build(:admin)
+    employee1 = create(:employee, admin: admin)
+    employee2 = create(:employee)
+
+    expect(Employee.admins_employees(admin)).to eq [employee1]
+  end
+end
