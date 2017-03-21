@@ -4,7 +4,7 @@
   to <%= @schedule.get_dates(@schedule.biz_year, @schedule.biz_week, 7) %>,
   <%= @schedule.biz_year %>
 </h1>
-<%= render 'add_remove_employees' %>
+<%= render 'add_remove_employees' if current_admin == @schedule.admin %>
 <table class="ui green celled striped table unstackable fixed">
   <thead>
     <%= render 'schedules/table/header_days' %>
