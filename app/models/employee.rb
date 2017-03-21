@@ -17,4 +17,8 @@ class Employee < ApplicationRecord
   def self.employees_by_position(position)
     where('position = ?', position).where('status = ?', 'active').order('first_name')
   end
+
+  def self.admins_employees(admin)
+    where('admin_id = ?', admin)
+  end
 end

@@ -25,7 +25,7 @@ class SchedulesController < ApplicationController
   end
 
   def add_employees
-    Employee.all.each do |employee|
+    Employee.admins_employees(current_admin).each do |employee|
       @schedule.employees << employee if employee.status == 'active'
     end
 
