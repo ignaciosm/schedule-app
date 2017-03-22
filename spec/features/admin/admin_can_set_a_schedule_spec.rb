@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature 'admin can finalize schedule' do
+RSpec.feature 'admin can set a schedule' do
   scenario 'by clicking a button and filling in employee shifts' do
     admin = create(:admin)
     sign_in admin
@@ -10,7 +10,7 @@ RSpec.feature 'admin can finalize schedule' do
     visit schedule_path(schedule)
     click_on t('schedules.add_remove_employees.add_employees')
 
-    click_on t('schedules.show.finalize_schedule')
-    expect(page).to have_content 'Finalize schedule'
+    click_on t('schedules.show.set_schedule')
+    expect(page).to have_content 'Set schedule'
   end
 end
