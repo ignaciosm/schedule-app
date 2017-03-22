@@ -10,7 +10,7 @@ RSpec.feature 'admin can finalize schedule' do
     visit schedule_path(schedule)
     click_on t('schedules.add_remove_employees.add_employees')
 
-    click_on t('schedules.finalize_schedule')
+    click_on t('schedules.show.finalize_schedule')
     expect(page).to have_content 'Finalize schedule'
   end
 end
