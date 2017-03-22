@@ -38,6 +38,10 @@ class SchedulesController < ApplicationController
     redirect_to schedule_path(@schedule)
   end
 
+  def finalize
+    @finalize_schedule = 'Finalize schedule'
+  end
+
   private
   def set_schedule
     @schedule = Schedule.find(params[:id])
