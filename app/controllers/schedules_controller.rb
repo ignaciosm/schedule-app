@@ -1,5 +1,5 @@
 class SchedulesController < ApplicationController
-  before_action :set_schedule, only: [:show, :finalize,
+  before_action :assign_schedule, only: [:show, :set_schedule,
                                       :add_employees, :remove_employees]
 
   def index
@@ -38,12 +38,12 @@ class SchedulesController < ApplicationController
     redirect_to schedule_path(@schedule)
   end
 
-  def finalize
-    @finalize_schedule = 'Finalize schedule'
+  def set_schedule
+    @set_schedule = 'Set schedule'
   end
 
   private
-  def set_schedule
+  def assign_schedule
     @schedule = Schedule.find(params[:id])
   end
 

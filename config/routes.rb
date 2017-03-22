@@ -13,7 +13,7 @@ Rails.application.routes.draw do
                                       as: 'add_employees'
   post 'schedules/:id/remove_employees', to: 'schedules#remove_employees',
                                         as: 'remove_employees'
-  get 'schedules/:id/finalize', to: 'schedules#finalize', as: 'finalize'
+  get 'schedules/:id/set_schedule', to: 'schedules#set_schedule', as: 'set_schedule'
 
   devise_for :admins, path: '',
                       path_names: {
