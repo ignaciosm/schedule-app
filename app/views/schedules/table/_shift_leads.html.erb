@@ -10,11 +10,10 @@
 </tr>
 <% @schedule.employees.employees_by_position('Shift Lead').each do |shift_lead| %>
   <% if @set_schedule.nil? %>
-    <%= render partial: 'schedules/table/shift_lead', locals: {
-                                                      shift_lead: shift_lead } %>
+    <%= render partial: 'schedules/table/shift_lead',
+               locals: { shift_lead: shift_lead } %>
   <% else %>
-    <%= render partial: 'schedules/table/shift_lead', locals: {
-                                                      shift_lead: shift_lead,
-                                                      f: f } %>
+    <%= render partial: 'schedules/table/shift_lead',
+               locals: { shift_lead: shift_lead, f: f } %>
   <% end %>
 <% end %>
