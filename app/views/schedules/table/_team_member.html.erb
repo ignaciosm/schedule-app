@@ -1,6 +1,8 @@
 <tr class='right aligned'>
   <td class='left aligned'><%= team_member.first_name_last_initial %></td>
   <td>
+    <%= f.text_field :start_time unless @set_time.nil? %>
+    <%= f.text_field :end_time unless @set_time.nil? %>
     <% team_member.shifts.shifts_by_day('Monday').each do |shift| %>
       <small><%= shift.start_time_end_time unless nil? %></small>
     <% end %>

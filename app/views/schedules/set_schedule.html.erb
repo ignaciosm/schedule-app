@@ -6,8 +6,8 @@
     <tbody>
       <%= render 'schedules/table/header_dates' %>
       <%= render 'schedules/table/managers', f: f %>
-      <%= render 'schedules/table/shift_leads' %>
-      <%= render 'schedules/table/team_members' %>
+      <%= render 'schedules/table/shift_leads', f: f %>
+      <%= render 'schedules/table/team_members', f: f %>
     </tbody>
   </table>
 <% end %>
