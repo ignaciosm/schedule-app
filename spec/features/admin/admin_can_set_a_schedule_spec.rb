@@ -11,6 +11,8 @@ RSpec.feature 'admin can set a schedule' do
     click_on t('schedules.add_remove_employees.add_employees')
 
     click_on t('schedules.show.set_schedule')
-    expect(page).to have_content 'Set schedule'
+    click_on 'Finalize schedule'
+
+    expect(page).to have_content 'Final schedule'
   end
 end
