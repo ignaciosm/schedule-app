@@ -1,5 +1,5 @@
 class EmployeesController < ApplicationController
-  before_action :set_employee, only: [:show, :toggle_status, :edit, :update]
+  before_action :assign_employee, only: [:show, :toggle_status, :edit, :update]
 
   def new
     @employee = Employee.new
@@ -47,7 +47,7 @@ class EmployeesController < ApplicationController
     params.require(:employee).permit(:first_name, :last_name, :position)
   end
 
-  def set_employee
+  def assign_employee
     @employee = Employee.find(params[:id])
   end
 
