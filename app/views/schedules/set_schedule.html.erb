@@ -1,11 +1,14 @@
-<table class="ui green celled striped table unstackable fixed">
-  <thead>
-    <%= render 'schedules/table/header_days' %>
-  </thead>
-  <tbody>
-    <%= render 'schedules/table/header_dates' %>
-    <%= render 'schedules/table/managers' %>
-    <%= render 'schedules/table/shift_leads' %>
-    <%= render 'schedules/table/team_members' %>
-  </tbody>
-</table>
+<%= form_for(@set_time) do |f| %>
+  <table class="ui green celled striped table unstackable fixed">
+    <thead>
+      <%= render 'schedules/table/header_days' %>
+    </thead>
+    <tbody>
+      <%= render 'schedules/table/header_dates' %>
+      <%= render 'schedules/table/managers', f: f %>
+      <%= render 'schedules/table/shift_leads' %>
+      <%= render 'schedules/table/team_members' %>
+    </tbody>
+  </table>
+<% end %>
+

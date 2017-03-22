@@ -40,6 +40,7 @@ class SchedulesController < ApplicationController
 
   def set_schedule
     @set_schedule = 'Set schedule'
+    @set_time = SetTime.new
   end
 
   private
