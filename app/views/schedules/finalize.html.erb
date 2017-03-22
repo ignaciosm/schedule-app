@@ -1,1 +1,11 @@
-<%= @finalize_schedule %>
+<table class="ui green celled striped table unstackable fixed">
+  <thead>
+    <%= render 'schedules/table/header_days' %>
+  </thead>
+  <tbody>
+    <%= render 'schedules/table/header_dates' %>
+    <%= render 'schedules/table/managers' %>
+    <%= render 'schedules/table/shift_leads' %>
+    <%= render 'schedules/table/team_members' %>
+  </tbody>
+</table>
