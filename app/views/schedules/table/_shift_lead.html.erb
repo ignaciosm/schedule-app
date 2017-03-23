@@ -1,40 +1,45 @@
 <tr class='right aligned'>
   <td class='left aligned'><%= shift_lead.first_name_last_initial %></td>
   <td>
-    <%= f.text_field :start_time unless @set_time.nil? %>
-    <%= f.text_field :end_time unless @set_time.nil? %>
-    <% shift_lead.shifts.shifts_by_day('Monday').each do |shift| %>
-      <small><%= shift.start_time_end_time unless nil? %></small>
-    <% end %>
+    <%= render partial: 'schedules/table/set_times',
+               locals: { employee: shift_lead, f: f } unless @set_time.nil? %>
+    <%= render partial: 'schedules/table/day_shifts',
+               locals: { employee: shift_lead, day: 'Monday'} %>
   </td>
   <td>
-    <% shift_lead.shifts.shifts_by_day('Tuesday').each do |shift| %>
-      <small><%= shift.start_time_end_time unless nil? %></small>
-    <% end %>
+    <%= render partial: 'schedules/table/set_times',
+               locals: { employee: shift_lead, f: f } unless @set_time.nil? %>
+    <%= render partial: 'schedules/table/day_shifts',
+               locals: { employee: shift_lead, day: 'Tuesday'} %>
   </td>
   <td>
-    <% shift_lead.shifts.shifts_by_day('Wednesday').each do |shift| %>
-      <small><%= shift.start_time_end_time unless nil? %></small>
-    <% end %>
+    <%= render partial: 'schedules/table/set_times',
+               locals: { employee: shift_lead, f: f } unless @set_time.nil? %>
+    <%= render partial: 'schedules/table/day_shifts',
+               locals: { employee: shift_lead, day: 'Wednesday'} %>
   </td>
   <td>
-    <% shift_lead.shifts.shifts_by_day('Thursday').each do |shift| %>
-      <small><%= shift.start_time_end_time unless nil? %></small>
-    <% end %>
+    <%= render partial: 'schedules/table/set_times',
+               locals: { employee: shift_lead, f: f } unless @set_time.nil? %>
+    <%= render partial: 'schedules/table/day_shifts',
+               locals: { employee: shift_lead, day: 'Thursday'} %>
   </td>
   <td>
-    <% shift_lead.shifts.shifts_by_day('Friday').each do |shift| %>
-      <small><%= shift.start_time_end_time unless nil? %></small>
-    <% end %>
+    <%= render partial: 'schedules/table/set_times',
+               locals: { employee: shift_lead, f: f } unless @set_time.nil? %>
+    <%= render partial: 'schedules/table/day_shifts',
+               locals: { employee: shift_lead, day: 'Friday'} %>
   </td>
   <td>
-    <% shift_lead.shifts.shifts_by_day('Saturday').each do |shift| %>
-      <small><%= shift.start_time_end_time unless nil? %></small>
-    <% end %>
+    <%= render partial: 'schedules/table/set_times',
+               locals: { employee: shift_lead, f: f } unless @set_time.nil? %>
+    <%= render partial: 'schedules/table/day_shifts',
+               locals: { employee: shift_lead, day: 'Saturday'} %>
   </td>
   <td>
-    <% shift_lead.shifts.shifts_by_day('Sunday').each do |shift| %>
-      <small><%= shift.start_time_end_time unless nil? %></small>
-    <% end %>
+    <%= render partial: 'schedules/table/set_times',
+               locals: { employee: shift_lead, f: f } unless @set_time.nil? %>
+    <%= render partial: 'schedules/table/day_shifts',
+               locals: { employee: shift_lead, day: 'Sunday'} %>
   </td>
 </tr>
