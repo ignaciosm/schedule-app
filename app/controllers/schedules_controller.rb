@@ -1,5 +1,5 @@
 class SchedulesController < ApplicationController
-  before_action :assign_schedule, only: [:show, :set_schedule,
+  before_action :assign_schedule, only: [:show, :set_schedule, :edit,
                                       :add_employees, :remove_employees]
 
   def index
@@ -22,6 +22,9 @@ class SchedulesController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
   end
 
   def add_employees
@@ -49,6 +52,6 @@ class SchedulesController < ApplicationController
   end
 
   def schedule_params
-    params.require(:schedule).permit(:biz_year, :biz_week)
+    params.require(:schedule).permit(:biz_year, :biz_week, set_times_attributes: [:start_time, :end_time, :day_of_week])
   end
 end
