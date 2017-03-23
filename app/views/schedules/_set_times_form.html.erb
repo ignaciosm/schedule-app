@@ -1,9 +1,10 @@
 <%= form_for(@schedule) do |f| %>
-<%= f.label :business_year %>
-  <%= f.text_field :biz_year %>
-  <%= f.label :business_week %>
-  <%= f.text_field :biz_week %>
-<%= f.submit 'Finalize schedule' %>
+  <%= f.label :business_year %>
+    <%= f.text_field :biz_year %>
+    <%= f.label :business_week %>
+    <%= f.text_field :biz_week %>
+  <%= f.submit 'Finalize schedule' %>
+
   <table class="ui green celled striped table unstackable fixed">
     <thead>
       <%= render 'schedules/table/header_days' %>
