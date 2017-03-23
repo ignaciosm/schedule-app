@@ -10,7 +10,7 @@ RSpec.feature 'admin can set a schedule' do
     visit schedule_path(schedule)
     click_on t('schedules.add_remove_employees.add_employees')
 
-    click_on t('schedules.show.set_schedule')
+    click_on t('schedules.show.edit_schedule')
     click_on 'Finalize schedule'
 
     expect(page).to have_content 'Final schedule'
