@@ -21,3 +21,10 @@
     <%= render 'schedules/table/team_members' %>
   </tbody>
 </table>
+
+<h3>Created shifts</h3>
+<% @schedule.shifts.each do |shift| %>
+   <p>
+    <%= shift.start_time %> to <%= shift.end_time %>
+   </p>
+<% end %>

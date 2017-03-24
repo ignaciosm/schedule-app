@@ -1,5 +1,5 @@
 class SchedulesController < ApplicationController
-  before_action :assign_schedule, only: [:show, :edit,
+  before_action :assign_schedule, only: [:show, :edit, :update,
                                       :add_employees, :remove_employees]
 
   def index
@@ -27,6 +27,14 @@ class SchedulesController < ApplicationController
   def edit
     set_schedule
     @set_shift = 'This is a shift thing'
+  end
+
+  def update
+    if @schedule.update(schedule_params)
+      redirect_to schedule_path(@schedule)
+    else
+      render :edit
+    end
   end
 
   def add_employees

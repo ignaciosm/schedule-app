@@ -19,4 +19,15 @@ class Schedule < ApplicationRecord
   def self.current_admins_only(admin)
     where('admin_id = ?', admin)
   end
+
+  def shifts_attributes=(shift_attributes)
+
+    shift_attributes.each do |shift_attrs|
+      unless shift_attrs[:start_time].blank? || shift_attrs[:end_time].blank?
+        shift = Shift.create(start_time: shift_attrs[:start_time],
+                             end_time: shift_attrs[:end_time])
+        self.schedule_shifts.build(shift_id: shift.id)
+      end
+    end
+  end
 end
