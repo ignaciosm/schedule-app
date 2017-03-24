@@ -26,6 +26,7 @@ class SchedulesController < ApplicationController
 
   def edit
     set_schedule
+    @set_shift = 'This is a shift thing'
   end
 
   def add_employees
@@ -44,7 +45,6 @@ class SchedulesController < ApplicationController
 
   def set_schedule
     @set_schedule = 'Set schedule'
-    @set_time = SetTime.new
   end
 
   private

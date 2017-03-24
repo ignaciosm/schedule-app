@@ -26,7 +26,6 @@ Rails.application.routes.draw do
                         registrations: 'registrations'
                       }
   resources :admins, only: [:show]
-  resources :set_times
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   resources :schedules, only: [:show, :index, :new, :update, :edit, :create]
