@@ -74,4 +74,4 @@ en:
 
   available_times: # for the available_times views
     form:
-      submit_button: Add available_time
+      submit_button: Add Employee available time
