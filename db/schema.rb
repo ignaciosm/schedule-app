@@ -48,10 +48,10 @@ ActiveRecord::Schema.define(version: 20170319195226) do
 
   create_table "employee_available_times", force: :cascade do |t|
     t.integer  "employee_id"
-    t.integer  "available_times_id"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
-    t.index ["available_times_id"], name: "index_employee_available_times_on_available_times_id", using: :btree
+    t.integer  "available_time_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.index ["available_time_id"], name: "index_employee_available_times_on_available_time_id", using: :btree
     t.index ["employee_id"], name: "index_employee_available_times_on_employee_id", using: :btree
   end
 
@@ -85,7 +85,7 @@ ActiveRecord::Schema.define(version: 20170319195226) do
   end
 
   add_foreign_key "available_times", "admins"
-  add_foreign_key "employee_available_times", "available_times", column: "available_times_id"
+  add_foreign_key "employee_available_times", "available_times"
   add_foreign_key "employee_available_times", "employees"
   add_foreign_key "employees", "admins"
   add_foreign_key "schedule_employees", "employees"
