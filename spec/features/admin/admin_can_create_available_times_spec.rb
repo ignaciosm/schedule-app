@@ -4,8 +4,8 @@ RSpec.feature 'Admin can create available times for employees' do
   scenario 'they can see the availability on the schedule show page' do
     admin = create(:admin)
     sign_in admin
-    monday = 'shift_day_of_week_monday'
-    friday = 'shift_day_of_week_friday'
+    monday = 'available_time_day_of_week_monday'
+    friday = 'available_time_day_of_week_friday'
     start_hour = '11 AM'
     start_minute = '00'
     end_hour = '03 PM'
