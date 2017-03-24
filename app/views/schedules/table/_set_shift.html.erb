@@ -1,6 +1,6 @@
-<%= f.fields_for :available_times, @schedule.available_times.build do |field| %>
+<%= f.fields_for :shifts, @schedule.shifts.build do |field| %>
   <%= field.text_field :start_time,
-                       name: 'schedule[available_times_attributes][][start_time]' %>
+                       name: 'schedule[shifts_attributes][][start_time]' %>
   <%= field.text_field :end_time,
-                       name: 'schedule[available_times_attributes][][end_time]' %>
+                       name: 'schedule[shifts_attributes][][end_time]' %>
 <% end %>
