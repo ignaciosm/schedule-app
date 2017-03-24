@@ -1,6 +1,6 @@
-class CreateShifts < ActiveRecord::Migration[5.0]
+class CreateAvailableTimes < ActiveRecord::Migration[5.0]
   def change
-    create_table :shifts do |t|
+    create_table :available_times do |t|
       t.string :day_of_week
       t.time :start_time
       t.time :end_time
