@@ -7,7 +7,7 @@ FactoryGirl.define do
     company { Faker::Company.name }
   end
 
-  factory :shift do
+  factory :available_time do
     day_of_week 'Monday'
     start_time '11:00'
     end_time '15:00'
