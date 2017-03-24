@@ -7,5 +7,5 @@ class Admin < ApplicationRecord
   validates_uniqueness_of :company
   has_many :schedules
   has_many :employees
-  has_many :shifts
+  has_many :available_times
 end
