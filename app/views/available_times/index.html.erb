@@ -1,0 +1,5 @@
+<h1>All available times</h1>
+
+<% @available_times.each do |available_time| %>
+  <li><%= available_time.start_time.to_time.strftime('%I:%M %P') %></li>
+<% end %>

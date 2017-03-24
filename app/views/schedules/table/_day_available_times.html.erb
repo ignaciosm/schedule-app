@@ -1,0 +1,3 @@
+<% employee.available_times.available_times_by_day(day).each do |available_time| %>
+  <small><%= available_time.start_time_end_time unless nil? %></small>
+<% end %>
