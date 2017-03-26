@@ -1,5 +1,5 @@
 class SchedulesController < ApplicationController
-  before_action :assign_schedule, only: [:show, :edit, :update,
+  before_action :assign_schedule, only: [:show, :edit, :update, :set_schedule,
                                       :add_employees, :remove_employees]
 
   def index
