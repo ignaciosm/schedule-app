@@ -3,6 +3,9 @@
   <td>
     <%= render partial: 'schedules/table/set_shift',
                locals: { f: f } unless @set_schedule.nil? %>
+    <%#= render partial: 'schedules/table/shifts',
+                         locals: { employee: team_member, day: 'Monday' }
+                         unless team_member.shifts.nil? %>
     <%= render partial: 'schedules/table/day_available_times',
                locals: { employee: team_member, day: 'Monday'} %>
   </td>
