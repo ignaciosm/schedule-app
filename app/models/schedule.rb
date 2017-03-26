@@ -5,6 +5,8 @@ class Schedule < ApplicationRecord
   has_many :available_times, through: :schedule_available_times
   has_many :schedule_employees
   has_many :employees, through: :schedule_employees
+  has_many :schedule_shifts
+  has_many :shifts, through: :schedule_shifts
 
   def week_and_year
     "Week #{biz_week}, #{biz_year}"
