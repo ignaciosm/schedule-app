@@ -57,7 +57,8 @@ en:
       greeting: Schedules Index
     show:
       greeting: Week of %{date1} to %{date7}, %{year}
-      edit_schedule: 'Set schedule'
+      edit_schedule: 'Edit schedule'
+      set_schedule: 'Set schedule'
     add_remove_employees:
       add_employees: Add all employees
       remove_employees: Remove all employees
