@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170324052222) do
+ActiveRecord::Schema.define(version: 20170326204742) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,6 +53,17 @@ ActiveRecord::Schema.define(version: 20170324052222) do
     t.datetime "updated_at",        null: false
     t.index ["available_time_id"], name: "index_employee_available_times_on_available_time_id", using: :btree
     t.index ["employee_id"], name: "index_employee_available_times_on_employee_id", using: :btree
+  end
+
+  create_table "employee_shifts", force: :cascade do |t|
+    t.integer  "schedule_id"
+    t.integer  "employee_id"
+    t.integer  "shift_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["employee_id"], name: "index_employee_shifts_on_employee_id", using: :btree
+    t.index ["schedule_id"], name: "index_employee_shifts_on_schedule_id", using: :btree
+    t.index ["shift_id"], name: "index_employee_shifts_on_shift_id", using: :btree
   end
 
   create_table "employees", force: :cascade do |t|
@@ -103,6 +114,9 @@ ActiveRecord::Schema.define(version: 20170324052222) do
   add_foreign_key "available_times", "admins"
   add_foreign_key "employee_available_times", "available_times"
   add_foreign_key "employee_available_times", "employees"
+  add_foreign_key "employee_shifts", "employees"
+  add_foreign_key "employee_shifts", "schedules"
+  add_foreign_key "employee_shifts", "shifts"
   add_foreign_key "employees", "admins"
   add_foreign_key "schedule_employees", "employees"
   add_foreign_key "schedule_employees", "schedules"
