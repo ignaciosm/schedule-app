@@ -1,0 +1,27 @@
+<h3>
+  Week of
+  <%= @schedule.get_dates(@schedule.biz_year, @schedule.biz_week, 1) %>
+  to <%= @schedule.get_dates(@schedule.biz_year, @schedule.biz_week, 7) %>,
+  <%= @schedule.biz_year %>
+</h3>
+<%= form_for(@schedule) do |f| %>
+  <%= f.label :week %>
+  <%= f.text_field :biz_week %>
+  <%= f.label :year %>
+  <%= f.text_field :biz_year %>
+
+  <%= f.submit 'Finalize schedule' %>
+
+  <table class="ui green celled striped table unstackable fixed">
+    <thead>
+      <%= render 'schedules/table/header_days' %>
+    </thead>
+    <tbody>
+      <%= render 'schedules/table/header_dates' %>
+      <%= render 'schedules/table/managers', f: f %>
+      <%= render 'schedules/table/shift_leads', f: f %>
+      <%= render 'schedules/table/team_members', f: f %>
+    </tbody>
+  </table>
+<% end %>
+
