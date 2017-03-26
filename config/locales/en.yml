@@ -44,7 +44,7 @@ en:
       add_schedule: Add a schedule
       edit_employee: Edit
       view_schedules: View schedules
-      add_available_time: Add new available_time
+      add_available_time: Add employee availability
       button_header: Things you can do
       employees_header: Your employees
       shift_lead_label: Shift Leads
