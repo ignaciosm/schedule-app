@@ -30,10 +30,19 @@ class SchedulesController < ApplicationController
   end
 
   def update
-    if @schedule.update(schedule_params)
+    schedule_params[:shifts_attributes].values.each do |shift|
+      unless shift[:start_time].blank? || shift[:end_time].blank?
+        @schedule.shifts.build(start_time: shift[:start_time],
+                               end_time: shift[:end_time],
+                               day_of_week: shift[:day_of_week],
+                               employee_id: shift[:employee_id])
+
+      end
+    end
+    if @schedule.save
       redirect_to schedule_path(@schedule)
     else
-      render :edit
+      render :set_schedule
     end
   end
 
@@ -61,6 +70,6 @@ class SchedulesController < ApplicationController
   end
 
   def schedule_params
-    params.require(:schedule).permit(:biz_year, :biz_week)
+    params.require(:schedule).permit(:biz_year, :biz_week, shifts_attributes: [:start_time, :end_time, :day_of_week, :employee_id])
   end
 end

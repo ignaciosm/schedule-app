@@ -1,1 +1,12 @@
-hello
+<%= f.fields_for :shifts, @schedule.shifts.build do |field| %>
+  <%= field.text_field :start_time,
+                        start_time: 'schedule[shifts_attributes][][start_time]' %>
+  <%= field.text_field :end_time,
+                        end_time: 'schedule[shifts_attributes][][end_time]' %>
+  <%= field.hidden_field :employee_id,
+                        employee_id: 'schedule[shifts_attributes][][employee_id]',
+                        value: employee_type(employee) %>
+  <%= field.hidden_field :day_of_week,
+                        day_of_week: 'schedule[shifts_attributes][][day_of_week]',
+                        value: day %>
+<% end %>
