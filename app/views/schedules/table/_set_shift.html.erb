@@ -1,8 +1,9 @@
 <%= f.fields_for :shifts, shifts_created?(day, employee) do |field| %>
   <%= field.text_field :start_time,
-                        start_time: 'schedule[shifts_attributes][][start_time]' %>
+                        start_time: 'schedule[shifts_attributes][][start_time]', placeholder: 'start time' %>
   <%= field.text_field :end_time,
-                        end_time: 'schedule[shifts_attributes][][end_time]' %>
+                        end_time: 'schedule[shifts_attributes][][end_time]',
+                        placeholder: 'end time' %>
   <%= field.hidden_field :employee_id,
                         employee_id: 'schedule[shifts_attributes][][employee_id]',
                         value: employee_type(employee) %>
