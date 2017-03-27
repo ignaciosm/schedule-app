@@ -23,4 +23,8 @@ class Employee < ApplicationRecord
   def self.admins_employees(admin)
     where('admin_id = ?', admin)
   end
+
+  def shifts_by_day_and_employee(day, schedule)
+    schedule.shifts.where('employee_id = ?', self.id).where('day_of_week = ?', day)
+  end
 end

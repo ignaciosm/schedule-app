@@ -8,4 +8,8 @@ class Admin < ApplicationRecord
   has_many :schedules
   has_many :employees
   has_many :available_times
+
+  def shifts_by_day_and_employee(day, schedule)
+    schedule.shifts.where('employee_id = ?', 0).where('day_of_week = ?', day)
+  end
 end

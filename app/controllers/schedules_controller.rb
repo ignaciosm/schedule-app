@@ -36,7 +36,9 @@ class SchedulesController < ApplicationController
                                end_time:    shift[:end_time],
                                day_of_week: shift[:day_of_week],
                                employee_id: shift[:employee_id])
-
+        unless updated_shift.schedules.include?(@schedule)
+          updated_shift.schedules << @schedule
+        end
       end
     end
     if @schedule.save
