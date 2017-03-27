@@ -27,4 +27,11 @@ FactoryGirl.define do
     admin
   end
 
+  factory :shift do
+    start_time '7:30 am'
+    end_time '4:00 pm'
+    day_of_week 'Monday'
+    employee_id { [FactoryGirl.create(:employee)] }
+  end
+
 end
