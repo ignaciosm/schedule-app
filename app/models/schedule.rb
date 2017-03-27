@@ -7,7 +7,7 @@ class Schedule < ApplicationRecord
   has_many :employees, through: :schedule_employees
   has_many :schedule_shifts
   has_many :shifts, through: :schedule_shifts
-  accepts_nested_attributes_for :shifts, reject_if: :reject_shifts
+  accepts_nested_attributes_for :shifts
 
   def week_and_year
     "Week #{biz_week}, #{biz_year}"
@@ -19,10 +19,6 @@ class Schedule < ApplicationRecord
 
   def self.current_admins_only(admin)
     where('admin_id = ?', admin)
-  end
-
-  def reject_shifts(attributes)
-    binding.pry
   end
   # def shifts_attributes=(shift_attributes)
   #   shift_attributes.each do |shift_attr|

@@ -26,14 +26,14 @@ class SchedulesController < ApplicationController
 
   def edit
     set_schedule
-    @set_shift = 'This is a shift thing'
   end
 
   def update
     schedule_params[:shifts_attributes].values.each do |shift|
       unless shift[:start_time].blank? || shift[:end_time].blank?
-        @schedule.shifts.build(start_time: shift[:start_time],
-                               end_time: shift[:end_time],
+        updated_shift = @schedule.shifts.find_or_initialize_by(id: shift[:id])
+        updated_shift.update(start_time:    shift[:start_time],
+                               end_time:    shift[:end_time],
                                day_of_week: shift[:day_of_week],
                                employee_id: shift[:employee_id])
 
@@ -70,6 +70,10 @@ class SchedulesController < ApplicationController
   end
 
   def schedule_params
-    params.require(:schedule).permit(:biz_year, :biz_week, shifts_attributes: [:start_time, :end_time, :day_of_week, :employee_id])
+    params.require(:schedule).permit(:biz_year, :biz_week,
+                                     shifts_attributes: [
+                                       :id, :start_time, :end_time,
+                                       :day_of_week, :employee_id
+                                     ])
   end
 end
