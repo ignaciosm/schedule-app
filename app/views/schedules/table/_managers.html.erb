@@ -12,43 +12,43 @@
   <td class='left aligned'><%= @schedule.admin.first_name %></td>
   <td>
     <%= render partial: 'schedules/table/show_shifts',
-               locals: { employee: @schedule.admin, day: 'Monday' } %>
+               locals: { employee: @schedule.admin, day: 'Monday' } unless @set_schedule %>
     <%= render partial: 'schedules/table/set_shift',
                locals: { employee: @schedule.admin, f: f, day: 'Monday' } unless @set_schedule.nil? %>
   </td>
   <td>
     <%= render partial: 'schedules/table/show_shifts',
-               locals: { employee: @schedule.admin, day: 'Tuesday' } %>
+               locals: { employee: @schedule.admin, day: 'Tuesday' } unless @set_schedule %>
     <%= render partial: 'schedules/table/set_shift',
                locals: { employee: @schedule.admin, f: f, day: 'Tuesday' } unless @set_schedule.nil? %>
   </td>
   <td>
     <%= render partial: 'schedules/table/show_shifts',
-               locals: { employee: @schedule.admin, day: 'Wednesday' } %>
+               locals: { employee: @schedule.admin, day: 'Wednesday' } unless @set_schedule %>
     <%= render partial: 'schedules/table/set_shift',
                locals: { employee: @schedule.admin, f: f, day: 'Wednesday' } unless @set_schedule.nil? %>
   </td>
   <td>
     <%= render partial: 'schedules/table/show_shifts',
-               locals: { employee: @schedule.admin, day: 'Thursday' } %>
+               locals: { employee: @schedule.admin, day: 'Thursday' } unless @set_schedule %>
     <%= render partial: 'schedules/table/set_shift',
                locals: { employee: @schedule.admin, f: f, day: 'Thursday' } unless @set_schedule.nil? %>
   </td>
   <td>
     <%= render partial: 'schedules/table/show_shifts',
-               locals: { employee: @schedule.admin, day: 'Friday' } %>
+               locals: { employee: @schedule.admin, day: 'Friday' } unless @set_schedule %>
     <%= render partial: 'schedules/table/set_shift',
                locals: { employee: @schedule.admin, f: f, day: 'Friday' } unless @set_schedule.nil? %>
   </td>
   <td>
     <%= render partial: 'schedules/table/show_shifts',
-               locals: { employee: @schedule.admin, day: 'Saturday' } %>
+               locals: { employee: @schedule.admin, day: 'Saturday' } unless @set_schedule %>
     <%= render partial: 'schedules/table/set_shift',
                locals: { employee: @schedule.admin, f: f, day: 'Saturday' } unless @set_schedule.nil? %>
   </td>
   <td>
     <%= render partial: 'schedules/table/show_shifts',
-               locals: { employee: @schedule.admin, day: 'Sunday' } %>
+               locals: { employee: @schedule.admin, day: 'Sunday' } unless @set_schedule %>
     <%= render partial: 'schedules/table/set_shift',
                locals: { employee: @schedule.admin, f: f, day: 'Sunday' } unless @set_schedule.nil? %>
   </td>
