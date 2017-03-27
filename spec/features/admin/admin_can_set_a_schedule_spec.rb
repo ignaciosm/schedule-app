@@ -5,10 +5,8 @@ RSpec.feature 'admin can set a schedule' do
     admin = create(:admin)
     sign_in admin
     schedule = create(:schedule, admin: admin)
-    shift_lead = create(:employee, admin: admin)
-    team_member = create(:employee, position: 'Team Member', admin: admin)
-    shift_lead.available_times << available_time = create(:available_time)
-    team_member.available_times << available_time = create(:available_time)
+    create(:employee, admin: admin)
+    create(:employee, position: 'Team Member', admin: admin)
     visit schedule_path(schedule)
     click_on t('schedules.add_remove_employees.add_employees')
 
