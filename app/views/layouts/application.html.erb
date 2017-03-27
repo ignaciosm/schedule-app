@@ -12,7 +12,7 @@
   </head>
 
   <body>
-    <%= render 'layouts/navigation'  %>
+    <%= render 'layouts/navigation' unless @printable_view  %>
     <%= yield %>
   </body>
 </html>

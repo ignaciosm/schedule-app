@@ -1,6 +1,7 @@
 class SchedulesController < ApplicationController
-  before_action :assign_schedule, only: [:show, :edit, :update, :set_schedule,
-                                      :add_employees, :remove_employees]
+  before_action :assign_schedule, only: [:show, :edit, :update,
+                                         :set_schedule, :print_schedule,
+                                         :add_employees, :remove_employees]
 
   def index
     @schedules = Schedule.current_admins_only(current_admin)
@@ -64,6 +65,10 @@ class SchedulesController < ApplicationController
 
   def set_schedule
     @set_schedule = 'Set schedule'
+  end
+
+  def print_schedule
+    @printable_view = true
   end
 
   private

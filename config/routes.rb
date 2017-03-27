@@ -15,6 +15,8 @@ Rails.application.routes.draw do
                                           as: 'remove_employees'
   get 'schedules/:id/set_schedule',       to: 'schedules#set_schedule',
                                           as: 'set_schedule'
+  get 'schedules/:id/print_schedule',     to: 'schedules#print_schedule',
+                                          as: 'print_schedule'
 
   devise_for :admins, path: '',
                       path_names: {
