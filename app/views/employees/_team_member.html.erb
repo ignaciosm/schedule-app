@@ -1,14 +1,16 @@
-<div>
-  <%= employee.first_name_last_initial %>
-</div>
+<div class='col-xs-12'>
+  <div class='col-xs-4'>
+    <%= employee.first_name_last_initial %>
+  </div>
 
-<div>
-  <%= link_to t('employees.deactivate'),
-              deactivate_path(employee), method: :post,
-              class: '' %>
-</div>
+  <div class='col-xs-3'>
+    <%= link_to t('employees.deactivate'),
+                deactivate_path(employee), method: :post,
+                class: 'btn btn-danger btn-xs' %>
+  </div>
 
-<div>
-  <%= link_to t('employees.edit'), edit_employee_path(employee),
-              class: '' %>
+  <div class='col-xs-2'>
+    <%= link_to t('employees.edit'), edit_employee_path(employee),
+                class: 'btn btn-primary btn-xs' %>
+  </div>
 </div>

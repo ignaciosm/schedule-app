@@ -23,6 +23,8 @@
                       admin_path(current_admin) if admin_signed_in? %>
         </li>
         <li>
+        </li>
+        <li>
           <%= link_to t('.sign_out'), destroy_admin_session_path,
                       method: :delete if admin_signed_in? %>
         </li>
