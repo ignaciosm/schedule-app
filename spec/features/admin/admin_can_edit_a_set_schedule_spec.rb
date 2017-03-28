@@ -21,8 +21,8 @@ RSpec.feature 'admin can edit a set schedule' do
     fill_in 'schedule_shifts_attributes_14_end_time', with: '6:00 pm'
     click_on 'Finalize schedule'
 
-    expect(page).to have_content '8:30 am to 4:00 pm'
-    expect(page).to have_content '2:30 pm to 7:30 pm'
-    expect(page).to have_content '12:00 pm to 6:00 pm'
+    expect(page).to have_content '8:30 am - 4:00 pm'
+    expect(page).to have_content '2:30 pm - 7:30 pm'
+    expect(page).to have_content '12:00 pm - 6:00 pm'
   end
 end
