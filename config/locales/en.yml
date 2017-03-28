@@ -28,7 +28,7 @@ en:
 
   welcome:
     home:
-      greeting: Welcome to the schedule tool
+      greeting: Nekter schedule tool
 
   layouts: # for the various layouts
     navigation:

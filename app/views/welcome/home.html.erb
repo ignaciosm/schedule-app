@@ -1,8 +1,17 @@
-<h1><%= t('.greeting') %></h1>
-<h3>
-  <%= link_to 'Create an account', new_admin_registration_path unless admin_signed_in? %>
-  <%= link_to 'Sign in', new_admin_session_path unless admin_signed_in? %>
-</h3>
-<h3>
-  Visit your account page to get started
-</h3>
+<div class='jumbotron'>
+  <div class='container'>
+    <h1><%= t('.greeting') %></h1>
+
+    <h3>
+      No more will you have to use complicated spreadsheets or complex tools to
+      generate your employees' schedules.
+    </h3>
+    <%= link_to 'Let\'s get started!', new_admin_registration_path,
+                  class: 'btn btn-primary' unless admin_signed_in? %>
+    <p>
+      <%= link_to 'Visit your account page to get started',
+                  admin_path(current_admin),
+                  class: 'btn btn-primary' if admin_signed_in? %>
+    </p>
+  </div>
+</div>
