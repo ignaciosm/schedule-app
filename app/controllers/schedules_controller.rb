@@ -64,7 +64,7 @@ class SchedulesController < ApplicationController
   end
 
   def set_schedule
-    @set_schedule = 'Set schedule'
+    @set_schedule = true
   end
 
   def print_schedule
