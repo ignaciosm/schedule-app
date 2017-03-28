@@ -1,5 +1,5 @@
-<tr class='right aligned'>
-  <td class='left aligned'><%= team_member.first_name_last_initial %></td>
+<tr>
+  <td><%= team_member.first_name_last_initial %></td>
   <td>
     <%= render partial: 'schedules/table/show_shifts',
                locals: { employee: team_member, day: 'Monday' } unless @set_schedule %>

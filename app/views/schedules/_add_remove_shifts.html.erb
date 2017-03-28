@@ -2,11 +2,11 @@
   <%= link_to t('.add_shifts'),
             add_shifts_path(@schedule),
             method: :post,
-            class: 'ui tiny button green' %>
+            class: '' %>
 <% else %>
   <%= link_to t('.remove_shifts'),
             remove_shifts_path(@schedule),
             method: :post,
-            class: 'ui tiny button red',
+            class: '',
             data: {confirm: 'Are you sure?'} %>
 <% end %>

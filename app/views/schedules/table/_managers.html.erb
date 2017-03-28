@@ -1,4 +1,4 @@
-<tr class='left aligned'>
+<tr>
   <td><strong>Managers</strong></td>
   <td></td>
   <td></td>
@@ -8,8 +8,8 @@
   <td></td>
   <td></td>
 </tr>
-<tr class='right aligned'>
-  <td class='left aligned'><%= @schedule.admin.first_name %></td>
+<tr>
+  <td><%= @schedule.admin.first_name %></td>
   <td>
     <%= render partial: 'schedules/table/show_shifts',
                locals: { employee: @schedule.admin, day: 'Monday' } unless @set_schedule %>
