@@ -54,7 +54,7 @@ en:
 
   schedules: # for the schedules views
     index:
-      greeting: Schedules Index
+      greeting: Your Schedules
     show:
       greeting: Week of %{date1} to %{date7}, %{year}
       edit_schedule: 'Edit schedule'
