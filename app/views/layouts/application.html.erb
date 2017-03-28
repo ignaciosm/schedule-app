@@ -11,6 +11,7 @@
 
   <body>
     <%= render 'layouts/navigation' unless @printable_view  %>
+    <%= render 'layouts/flash' %>
     <%= yield %>
   </body>
 </html>
