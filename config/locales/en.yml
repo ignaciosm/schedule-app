@@ -45,7 +45,7 @@ en:
       edit_employee: Edit
       view_schedules: View schedules
       add_available_time: Add employee availability
-      button_header: Things you can do
+      button_header: Administrative tasks
       employees_header: Your employees
       shift_lead_label: Shift Leads
       team_member_label: Team Members
