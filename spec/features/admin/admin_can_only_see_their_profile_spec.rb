@@ -8,6 +8,6 @@ RSpec.feature 'admin can see only their profile' do
 
     visit admin_path(admin2)
 
-    expect(page).to have_content admin.first_name
+    expect(page).to have_content admin.company
   end
 end

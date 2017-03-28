@@ -39,7 +39,7 @@ en:
 
   admins: # for the admins views
     show:
-      greeting: Hello, %{name}
+      greeting: Welcome, %{company}
       add_employee: Add new employee
       add_schedule: Add a schedule
       edit_employee: Edit
