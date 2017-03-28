@@ -12,44 +12,58 @@
   <td><%= @schedule.admin.first_name %></td>
   <td>
     <%= render partial: 'schedules/table/show_shifts',
-               locals: { employee: @schedule.admin, day: 'Monday' } unless @set_schedule %>
+               locals: { employee: @schedule.admin,
+                         day: 'Monday' } unless @set_schedule %>
     <%= render partial: 'schedules/table/set_shift',
-               locals: { employee: @schedule.admin, f: f, day: 'Monday' } unless @set_schedule.nil? %>
+               locals: { employee: @schedule.admin, f: f,
+                         day: 'Monday' } unless @set_schedule.nil? %>
   </td>
   <td>
     <%= render partial: 'schedules/table/show_shifts',
-               locals: { employee: @schedule.admin, day: 'Tuesday' } unless @set_schedule %>
+               locals: { employee: @schedule.admin,
+                         day: 'Tuesday' } unless @set_schedule %>
     <%= render partial: 'schedules/table/set_shift',
-               locals: { employee: @schedule.admin, f: f, day: 'Tuesday' } unless @set_schedule.nil? %>
+               locals: { employee: @schedule.admin, f: f,
+                         day: 'Tuesday' } unless @set_schedule.nil? %>
   </td>
   <td>
     <%= render partial: 'schedules/table/show_shifts',
-               locals: { employee: @schedule.admin, day: 'Wednesday' } unless @set_schedule %>
+               locals: { employee: @schedule.admin,
+                         day: 'Wednesday' } unless @set_schedule %>
     <%= render partial: 'schedules/table/set_shift',
-               locals: { employee: @schedule.admin, f: f, day: 'Wednesday' } unless @set_schedule.nil? %>
+               locals: { employee: @schedule.admin, f: f,
+                         day: 'Wednesday' } unless @set_schedule.nil? %>
   </td>
   <td>
     <%= render partial: 'schedules/table/show_shifts',
-               locals: { employee: @schedule.admin, day: 'Thursday' } unless @set_schedule %>
+               locals: { employee: @schedule.admin,
+                         day: 'Thursday' } unless @set_schedule %>
     <%= render partial: 'schedules/table/set_shift',
-               locals: { employee: @schedule.admin, f: f, day: 'Thursday' } unless @set_schedule.nil? %>
+               locals: { employee: @schedule.admin, f: f,
+                         day: 'Thursday' } unless @set_schedule.nil? %>
   </td>
   <td>
     <%= render partial: 'schedules/table/show_shifts',
-               locals: { employee: @schedule.admin, day: 'Friday' } unless @set_schedule %>
+               locals: { employee: @schedule.admin,
+                         day: 'Friday' } unless @set_schedule %>
     <%= render partial: 'schedules/table/set_shift',
-               locals: { employee: @schedule.admin, f: f, day: 'Friday' } unless @set_schedule.nil? %>
+               locals: { employee: @schedule.admin, f: f,
+                         day: 'Friday' } unless @set_schedule.nil? %>
   </td>
   <td>
     <%= render partial: 'schedules/table/show_shifts',
-               locals: { employee: @schedule.admin, day: 'Saturday' } unless @set_schedule %>
+               locals: { employee: @schedule.admin,
+                         day: 'Saturday' } unless @set_schedule %>
     <%= render partial: 'schedules/table/set_shift',
-               locals: { employee: @schedule.admin, f: f, day: 'Saturday' } unless @set_schedule.nil? %>
+               locals: { employee: @schedule.admin, f: f,
+                         day: 'Saturday' } unless @set_schedule.nil? %>
   </td>
   <td>
     <%= render partial: 'schedules/table/show_shifts',
-               locals: { employee: @schedule.admin, day: 'Sunday' } unless @set_schedule %>
+               locals: { employee: @schedule.admin,
+                         day: 'Sunday' } unless @set_schedule %>
     <%= render partial: 'schedules/table/set_shift',
-               locals: { employee: @schedule.admin, f: f, day: 'Sunday' } unless @set_schedule.nil? %>
+               locals: { employee: @schedule.admin, f: f,
+                         day: 'Sunday' } unless @set_schedule.nil? %>
   </td>
 </tr>

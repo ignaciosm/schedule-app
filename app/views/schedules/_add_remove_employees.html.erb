@@ -2,11 +2,11 @@
   <%= link_to t('.add_employees'),
             add_employees_path(@schedule),
             method: :post,
-            class: '' %>
+            class: 'btn btn-success btn-xs' %>
 <% else %>
   <%= link_to t('.remove_employees'),
             remove_employees_path(@schedule),
             method: :post,
-            class: '',
+            class: 'btn btn-danger btn-xs',
             data: {confirm: 'Are you sure?'} %>
 <% end %>

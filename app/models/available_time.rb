@@ -9,6 +9,6 @@ class AvailableTime < ApplicationRecord
   end
 
   def start_time_end_time
-    start_time.strftime('%I:%M %p') + ' to ' + end_time.strftime('%I:%M %p')
+    start_time.strftime('%I:%M %p') + ' - ' + end_time.strftime('%I:%M %p')
   end
 end

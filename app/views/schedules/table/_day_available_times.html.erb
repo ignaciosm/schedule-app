@@ -1,6 +1,8 @@
 <hr>
 <small>Availability</small>
-<% employee.available_times.available_times_by_day(day).each do |available_time| %>
-  <li><small><%= available_time.start_time_end_time unless nil? %></small></li>
-<% end %>
+<ul class='list-unstyled'>
+  <% employee.available_times.available_times_by_day(day).each do |available_time| %>
+    <li><small><%= available_time.start_time_end_time unless nil? %></small></li>
+  <% end %>
+</ul>
 
