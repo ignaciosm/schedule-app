@@ -29,7 +29,8 @@
       <div>
         <% @admin.employees.employees_by_position('Shift Lead').each do |employee| %>
           <div class='active_employee'>
-            <%= render partial: 'employees/shift_lead', locals: { employee: employee } %>
+            <%= render partial: 'employees/shift_lead',
+                       locals: { employee: employee } %>
           </div>
         <% end %>
       </div>
@@ -38,7 +39,8 @@
       <div>
         <% @admin.employees.employees_by_position('Team Member').each do |employee| %>
           <div class='active_employee'>
-            <%= render partial: 'employees/team_member', locals: { employee: employee } %>
+            <%= render partial: 'employees/team_member',
+                       locals: { employee: employee } %>
           </div>
         <% end %>
       </div>
@@ -47,7 +49,8 @@
       <div>
         <% @admin.employees.inactive_employees.each do |employee| %>
           <div class='inactive_employee'>
-            <%= render partial: 'employees/inactive_employee', locals: { employee: employee } %>
+            <%= render partial: 'employees/inactive_employee',
+                       locals: { employee: employee } %>
           </div>
         <% end %>
       </div>
