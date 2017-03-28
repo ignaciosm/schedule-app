@@ -1,5 +1,5 @@
 <%= link_to t('.home'), root_path %> |
-<%= link_to t('.sign_in'), new_admin_session_path  %> |
-<%= link_to t('.sign_out'), destroy_admin_session_path, method: :delete if current_admin %> |
+<%= link_to t('.sign_in'), new_admin_session_path unless admin_signed_in? %> |
+<%= link_to t('.sign_out'), destroy_admin_session_path, method: :delete if admin_signed_in? %> |
 <%= link_to t('.admin_page'), admin_path(current_admin) if admin_signed_in? %>
 <hr>

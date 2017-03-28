@@ -1,1 +1,8 @@
 <h1><%= t('.greeting') %></h1>
+<h3>
+  <%= link_to 'Create an account', new_admin_registration_path unless admin_signed_in? %>
+  <%= link_to 'Sign in', new_admin_session_path unless admin_signed_in? %>
+</h3>
+<h3>
+  Visit your account page to get started
+</h3>
