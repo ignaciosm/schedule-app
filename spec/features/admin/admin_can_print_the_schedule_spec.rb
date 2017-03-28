@@ -23,6 +23,6 @@ RSpec.feature 'admin can print a set schedule' do
     expect(page).to have_content '7:30 am to 4:00 pm'
     expect(page).to have_content '2:30 pm to 7:30 pm'
     expect(page).to have_content '12:00 pm to 6:00 pm'
-    expect(page).to have_content 'Print schedule'
+    expect(page).to have_content 'Printable schedule'
   end
 end
