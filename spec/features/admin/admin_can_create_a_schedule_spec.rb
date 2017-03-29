@@ -9,12 +9,12 @@ RSpec.feature 'admin can create a schedule' do
 
     visit admin_path(admin)
     click_on t('admins.show.add_schedule')
-    fill_in 'schedule_biz_year', with: schedule_year
-    fill_in 'schedule_biz_week', with: schedule_week
+    fill_in 'schedule_business_year', with: schedule_year
+    fill_in 'schedule_business_week', with: schedule_week
     click_on 'Create Schedule'
     schedule = Schedule.last
 
-    expect(page).to have_content schedule.biz_week
+    expect(page).to have_content schedule.business_week
   end
 
   scenario 're-renders page when submitting improper data' do
@@ -24,9 +24,9 @@ RSpec.feature 'admin can create a schedule' do
 
     visit admin_path(admin)
     click_on t('admins.show.add_schedule')
-    fill_in 'schedule_biz_year', with: schedule_year
+    fill_in 'schedule_business_year', with: schedule_year
     click_on 'Create Schedule'
 
-    expect(page).to have_content 'Biz week can\'t be blank'
+    expect(page).to have_content 'Business week can\'t be blank'
   end
 end
