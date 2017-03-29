@@ -19,4 +19,21 @@ RSpec.feature 'Admin can create new employee' do
 
     expect(page).to have_content employee.first_name_last_initial
   end
+
+  scenario 're-renders page when submitting improper data' do
+    admin = create(:admin)
+    sign_in admin
+    employee_first_name = 'Tony'
+    employee_last_name = 'Stark'
+
+    visit root_path
+    click_on t('layouts.navigation.admin_page')
+    click_on t('admins.show.add_employee')
+    fill_in 'employee_first_name', with: employee_first_name
+    fill_in 'employee_last_name', with: employee_last_name
+    click_on 'Create Employee'
+    employee = Employee.last
+
+    expect(page).to have_content 'Position can\'t be blank'
+  end
 end
