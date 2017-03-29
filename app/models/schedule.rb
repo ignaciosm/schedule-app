@@ -20,14 +20,4 @@ class Schedule < ApplicationRecord
   def self.current_admins_only(admin)
     where('admin_id = ?', admin)
   end
-  # def shifts_attributes=(shift_attributes)
-  #   shift_attributes.each do |shift_attr|
-  #     shift_attr.values.each do |shift_attribute|
-  #       binding.pry
-  #       shift = Shift.create(start_time: shift_attribute[:start_time],
-  #                           end_time: shift_attribute[:end_time])
-  #       self.schedule_shifts.build(shift_id: shift.id)
-  #     end
-  #   end
-  # end
 end
