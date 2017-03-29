@@ -26,7 +26,7 @@ I have large ideas for what this could be. But for now, going to keep it simple 
 - method  `team_member` to grab all employees who are a team member
 
 ## Schedule model
-  - `biz_year`, `biz_week`
+  - `business_year`, `business_week`
   - Associations
     - `belongs_to :admin`
     - `has_many :schedule_shifts`

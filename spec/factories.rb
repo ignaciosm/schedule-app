@@ -15,8 +15,8 @@ FactoryGirl.define do
   end
 
   factory :schedule do
-    biz_year 2017
-    biz_week 10
+    business_year 2017
+    business_week 10
     admin
   end
 

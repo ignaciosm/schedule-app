@@ -9,6 +9,6 @@
 i = 1
 
 52.times do
-  Schedule.create(biz_year: 2017, biz_week: i)
+  Schedule.create(business_year: 2017, business_week: i)
   i += 1
 end

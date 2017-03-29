@@ -1,5 +1,5 @@
 class Schedule < ApplicationRecord
-  validates_presence_of :biz_year, :biz_week
+  validates_presence_of :business_year, :business_week
   belongs_to :admin
   has_many :schedule_available_times
   has_many :available_times, through: :schedule_available_times
@@ -10,7 +10,7 @@ class Schedule < ApplicationRecord
   accepts_nested_attributes_for :shifts
 
   def week_and_year
-    "Week #{biz_week}, #{biz_year}"
+    "Week #{business_week}, #{business_year}"
   end
 
   def get_dates(year, week, day)

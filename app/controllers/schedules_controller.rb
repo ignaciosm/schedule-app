@@ -77,7 +77,7 @@ class SchedulesController < ApplicationController
   end
 
   def schedule_params
-    params.require(:schedule).permit(:biz_year, :biz_week,
+    params.require(:schedule).permit(:business_year, :business_week,
                                      shifts_attributes: [
                                        :id, :start_time, :end_time,
                                        :day_of_week, :employee_id
