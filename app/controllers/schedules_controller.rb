@@ -38,6 +38,7 @@ class SchedulesController < ApplicationController
         end
       end
     end
+    flash[:complete] = 'You have set the schedule'
     redirect_to schedule_path(@schedule)
   end
 

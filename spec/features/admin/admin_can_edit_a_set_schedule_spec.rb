@@ -24,5 +24,6 @@ RSpec.feature 'admin can edit a set schedule' do
     expect(page).to have_content '8:30 am - 4:00 pm'
     expect(page).to have_content '2:30 pm - 7:30 pm'
     expect(page).to have_content '12:00 pm - 6:00 pm'
+    expect(page).to have_content 'You have set the schedule'
   end
 end

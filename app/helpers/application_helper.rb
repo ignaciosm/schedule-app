@@ -11,6 +11,7 @@ module ApplicationHelper
         'alert-info'     # Blue
       else
         flash_type.to_s
+        'alert-info'
     end
   end
 end
