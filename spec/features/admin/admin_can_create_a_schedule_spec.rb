@@ -16,4 +16,17 @@ RSpec.feature 'admin can create a schedule' do
 
     expect(page).to have_content schedule.biz_week
   end
+
+  scenario 're-renders page when submitting improper data' do
+    admin = create(:admin)
+    sign_in admin
+    schedule_year = 2017
+
+    visit admin_path(admin)
+    click_on t('admins.show.add_schedule')
+    fill_in 'schedule_biz_year', with: schedule_year
+    click_on 'Create Schedule'
+
+    expect(page).to have_content 'Biz week can\'t be blank'
+  end
 end
