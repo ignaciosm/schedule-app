@@ -1,4 +1,5 @@
 <%= form_for(@available_time) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
   Day of week (select all that apply): <br>
   <%= render 'form_checkboxes', f: f %><br> <br>
 

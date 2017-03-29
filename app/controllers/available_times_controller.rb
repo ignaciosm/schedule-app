@@ -9,8 +9,11 @@ class AvailableTimesController < ApplicationController
   end
 
   def create
+    @available_time = AvailableTime.new(available_time_params)
+    if params[:available_time][:day_of_week].nil?
+      return render :new
+    end
     params[:available_time][:day_of_week].each do |day|
-      @available_time = AvailableTime.new(available_time_params)
       @available_time.attributes = { day_of_week: day,
                             admin_id: current_admin.id,
                             start_time: short_start_time,

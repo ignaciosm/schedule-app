@@ -1,12 +1,13 @@
 <%= form_for(@employee) do |f| %>
-    <%= f.label :first_name %>
-    <%= f.text_field :first_name %> <br><br>
+  <%= render 'shared/error_messages', object: f.object %>
+  <%= f.label :first_name %>
+  <%= f.text_field :first_name %> <br><br>
 
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name %> <br><br>
+  <%= f.label :last_name %>
+  <%= f.text_field :last_name %> <br><br>
 
-    <%= f.label :position %>
-    <%= f.select :position, ['Shift Lead', 'Team Member'], include_blank: true %> <br><br>
+  <%= f.label :position %>
+  <%= f.select :position, ['Shift Lead', 'Team Member'], include_blank: true %> <br><br>
 
-    <%= f.submit %>
+  <%= f.submit %>
 <% end %>
