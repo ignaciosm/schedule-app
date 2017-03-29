@@ -38,11 +38,7 @@ class SchedulesController < ApplicationController
         end
       end
     end
-    if @schedule.save
-      redirect_to schedule_path(@schedule)
-    else
-      render :set_schedule
-    end
+    redirect_to schedule_path(@schedule)
   end
 
   def add_employees

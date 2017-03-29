@@ -6,11 +6,6 @@
     <%= @schedule.business_year %>
   </h3>
   <%= form_for(@schedule) do |f| %>
-    <%= f.label :week %>
-    <%= f.text_field :business_week %>
-    <%= f.label :year %>
-    <%= f.text_field :business_year %>
-
     <%= f.submit 'Finalize schedule' %>
 
     <table class="table table-striped table-bordered table-hover">
