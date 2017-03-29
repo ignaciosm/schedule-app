@@ -8,11 +8,11 @@ module SchedulesHelper
     end
   end
 
-  def shifts_created?(day, employee)
-    if @schedule.shifts.shifts_by_day_and_employee(day, employee).count == 0
+  def shifts_created?(day, employee, schedule)
+    if schedule.shifts.shifts_by_day_and_employee(day, employee).count == 0
       @schedule.shifts.build
     else
-      @schedule.shifts.shifts_by_day_and_employee(day, employee)
+      schedule.shifts.shifts_by_day_and_employee(day, employee)
     end
   end
 end
