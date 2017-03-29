@@ -7,3 +7,9 @@ RSpec.describe Shift, '.shifts_by_day(day)' do
     expect(Shift.shifts_by_day('Tuesday')).to eq [shift2]
   end
 end
+
+RSpec.describe Shift, 'shifts_by_employee(employee)' do
+  it 'returns shift by employee' do
+
+  end
+end
