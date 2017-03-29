@@ -10,7 +10,7 @@
   <%= f.time_select :end_time, { minute_step: 15, ampm: true, prompt: true } %> <br><br>
 
   <%= f.label :employee %>
-  <%= f.collection_select :id, current_admin.employees, :id, :first_name_last_initial, include_blank: true %> <br><br>
+  <%= f.collection_select :id, current_admin.employees, :id, :first_name_last_initial, { prompt: 'Choose an employee' }, { required: true } %> <br><br>
 
   <%= f.submit t('.submit_button') %>
 <% end %>

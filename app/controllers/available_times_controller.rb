@@ -11,6 +11,7 @@ class AvailableTimesController < ApplicationController
   def create
     @available_time = AvailableTime.new(available_time_params)
     if params[:available_time][:day_of_week].nil?
+      flash[:error] = "You must select at least one day"
       return render :new
     end
     params[:available_time][:day_of_week].each do |day|
