@@ -23,7 +23,7 @@ RSpec.feature 'Admin can create available times for employees' do
     select employee.first_name_last_initial, from: 'available_time[id]'
     click_on t('available_times.form.submit_button')
 
-    expect(page).to have_content '11:00'
+    expect(page).to have_content 'You have successfully added the employee\'s availability'
   end
 
   scenario 're-renders page with flash error with improper data' do

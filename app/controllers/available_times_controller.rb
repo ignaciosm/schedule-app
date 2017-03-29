@@ -20,8 +20,8 @@ class AvailableTimesController < ApplicationController
       @employee = Employee.find(params[:available_time][:id])
       @employee.available_times << @available_time
     end
-
-    redirect_to employee_path(@employee)
+    flash[:success] = 'You have successfully added the employee\'s availability'
+    redirect_to admin_path(current_admin)
   end
 
   private
