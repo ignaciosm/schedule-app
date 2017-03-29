@@ -1,6 +1,10 @@
 class EmployeesController < ApplicationController
   before_action :assign_employee, only: [:show, :toggle_status, :edit, :update]
 
+  def index
+    redirect_to admin_path(current_admin)
+  end
+
   def new
     @employee = Employee.new
   end
