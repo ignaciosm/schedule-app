@@ -1,5 +1,5 @@
 class SchedulesController < ApplicationController
-  before_action :assign_schedule, only: [:show, :edit, :update,
+  before_action :assign_schedule, only: [:show, :update,
                                          :set_schedule, :print_schedule,
                                          :add_employees, :remove_employees]
 
@@ -23,10 +23,6 @@ class SchedulesController < ApplicationController
     else
       render :new
     end
-  end
-
-  def edit
-    set_schedule
   end
 
   def update
