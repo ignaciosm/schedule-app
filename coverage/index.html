@@ -14,27 +14,27 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2017-03-28T19:33:31-07:00">2017-03-28T19:33:31-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2017-03-28T19:53:40-07:00">2017-03-28T19:53:40-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">97.63%</span></span>
+    (<span class="covered_percent"><span class="green">97.83%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.56
+         2.55
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>38</b> files in total.
-    <b>548</b> relevant lines. 
-    <span class="green"><b>535</b> lines covered</span> and
-    <span class="red"><b>13</b> lines missed </span>
+    <b>39</b> files in total.
+    <b>554</b> relevant lines. 
+    <span class="green"><b>542</b> lines covered</span> and
+    <span class="red"><b>12</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -182,12 +182,12 @@
       
       <tr>
         <td class="strong"><a href="#39c05460946d6c2b09c6a794a2854fe8dbe0a244" class="src_link" title="app/models/shift.rb">app/models/shift.rb</a></td>
-        <td class="red strong">73.33 %</td>
+        <td class="red strong">80.0 %</td>
         <td>26</td>
         <td>15</td>
-        <td>11</td>
-        <td>4</td>
-        <td>6.1</td>
+        <td>12</td>
+        <td>3</td>
+        <td>6.3</td>
       </tr>
       
       <tr>
@@ -398,6 +398,16 @@
         <td>3</td>
         <td>0</td>
         <td>1.7</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#ed03c9f6cd181083f88eec134535ef88ed4458ef" class="src_link" title="spec/models/shift_spec.rb">spec/models/shift_spec.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>9</td>
+        <td>6</td>
+        <td>6</td>
+        <td>0</td>
+        <td>1.0</td>
       </tr>
       
       <tr>
@@ -2645,11 +2655,11 @@
         <div class="source_table" id="39c05460946d6c2b09c6a794a2854fe8dbe0a244">
   <div class="header">
     <h3>app/models/shift.rb</h3>
-    <h4><span class="red">73.33 %</span> covered</h4>
+    <h4><span class="red">80.0 %</span> covered</h4>
     <div>
       <b>15</b> relevant lines. 
-      <span class="green"><b>11</b> lines covered</span> and
-      <span class="red"><b>4</b> lines missed.</span>
+      <span class="green"><b>12</b> lines covered</span> and
+      <span class="red"><b>3</b> lines missed.</span>
     </div>
   </div>
   
@@ -2698,8 +2708,8 @@
           <code class="ruby">  def self.shifts_by_day(day)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="8">
-          
+        <li class="covered" data-hits="2" data-linenumber="8">
+          <span class="hits">2</span>
           
           <code class="ruby">    where(&#39;day_of_week = ?&#39;, day)</code>
         </li>
@@ -5945,6 +5955,78 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="4">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
+        <div class="source_table" id="ed03c9f6cd181083f88eec134535ef88ed4458ef">
+  <div class="header">
+    <h3>spec/models/shift_spec.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>6</b> relevant lines. 
+      <span class="green"><b>6</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">RSpec.describe Shift, &#39;.shifts_by_day(day)&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  it &#39;returns shifts by day&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    shift1 = create(:shift)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    shift2 = create(:shift, day_of_week: &#39;Tuesday&#39;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="5">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(Shift.shifts_by_day(&#39;Monday&#39;)).to eq [shift1]</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="7">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(Shift.shifts_by_day(&#39;Tuesday&#39;)).to eq [shift2]</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="8">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="9">
           
           
           <code class="ruby">end</code>
