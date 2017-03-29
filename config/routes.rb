@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
 
   resources :available_times, only: [:new, :create, :edit, :update, :index]
-  resources :employees, only: [:index, :show, :create, :new, :edit, :update]
+  resources :employees, only: [:show, :create, :new, :edit, :update]
 
   post 'employees/:id/deactivate',        to: 'employees#toggle_status',
                                           as: 'deactivate'
