@@ -96,10 +96,10 @@ ActiveRecord::Schema.define(version: 20170327024930) do
   end
 
   create_table "schedules", force: :cascade do |t|
-    t.integer  "biz_year"
-    t.integer  "biz_week"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "business_year"
+    t.integer  "business_week"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.integer  "admin_id"
     t.index ["admin_id"], name: "index_schedules_on_admin_id", using: :btree
   end
