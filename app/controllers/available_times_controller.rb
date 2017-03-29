@@ -1,9 +1,4 @@
 class AvailableTimesController < ApplicationController
-
-  def index
-    @available_times = AvailableTime.all
-  end
-
   def new
     @available_time = AvailableTime.new
   end
