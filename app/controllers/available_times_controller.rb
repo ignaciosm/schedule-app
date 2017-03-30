@@ -5,8 +5,8 @@ class AvailableTimesController < ApplicationController
   end
 
   def create
-    generate_available_time
     params[:available_time][:day_of_week].each do |day|
+      generate_available_time
       @available_time.attributes = { day_of_week: day,
                                      admin_id: current_admin.id,
                                      start_time: short_start_time,
