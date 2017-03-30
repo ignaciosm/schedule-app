@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
 
+  match '/404', to: 'errors#not_found', via: :all
+  match '/500', to: 'errors#internal_server_error', via: :all
+
   resources :available_times, only: [:new, :create, :edit, :update]
   resources :employees, only: [:show, :create, :new, :edit, :update]
 
