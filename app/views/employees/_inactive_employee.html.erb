@@ -4,13 +4,12 @@
   </div>
 
   <div class='col-xs-3'>
-    <%= link_to t('employees.activate'),
-                  activate_path(employee), method: :post,
-                  class: 'btn btn-success btn-xs' %>
+    <%= link_to t('employees.activate'), activate_path(employee), method: :post,
+                class: 'btn btn-success btn-xs' %>
   </div>
 
   <div class='col-xs-2'>
     <%= link_to t('employees.edit'), edit_employee_path(employee),
-              class: 'btn btn-primary btn-xs' %>
+                class: 'btn btn-primary btn-xs' %>
   </div>
 </div>
