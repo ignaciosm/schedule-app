@@ -30,9 +30,11 @@ end
 
 # Make tests easier to read
 def get_date1
-  Date.commercial(@schedule.business_year, @schedule.business_week, 1).strftime('%m/%d')
+  Date.commercial(@schedule.business_year,
+                  @schedule.business_week, 1).strftime('%m/%d')
 end
 
 def get_date7
-  Date.commercial(@schedule.business_year, @schedule.business_week, 7).strftime('%m/%d')
+  Date.commercial(@schedule.business_year,
+                  @schedule.business_week, 7).strftime('%m/%d')
 end

@@ -7,8 +7,8 @@ RSpec.feature 'admin can print a set schedule' do
     schedule = create(:schedule, admin: admin)
     schedule.employees << shift_lead  = create(:employee, admin: admin)
     schedule.employees << team_member = create(:employee,
-                                               position: 'Team Member',
-                                               admin: admin)
+                                               admin: admin,
+                                               position: 'Team Member')
     schedule.shifts << build(:shift, employee_id: 0)
     schedule.shifts << build(:shift, employee_id: shift_lead.id,
                                      start_time:  '2:30 pm',
