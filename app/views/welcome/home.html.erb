@@ -7,10 +7,9 @@
       generate your employees' schedules.
     </h3>
     <%= link_to 'Let\'s get started!', new_admin_registration_path,
-                  class: 'btn btn-primary' unless admin_signed_in? %>
+                class: 'btn btn-primary' unless admin_signed_in? %>
     <p>
-      <%= link_to 'Visit your account page to get started',
-                  admin_path(current_admin),
+      <%= link_to 'Visit your account page to get started', admin_path(current_admin),
                   class: 'btn btn-primary' if admin_signed_in? %>
     </p>
   </div>
