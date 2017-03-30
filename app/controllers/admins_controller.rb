@@ -6,6 +6,7 @@ class AdminsController < ApplicationController
   end
 
   private
+
   def assign_employee
     @admin = Admin.find(params[:id])
   end

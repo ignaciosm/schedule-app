@@ -16,8 +16,7 @@ class EmployeesController < ApplicationController
     end
   end
 
-  def show
-  end
+  def show() end
 
   def edit
     redirect_to admin_path(current_admin) if not_your_employee

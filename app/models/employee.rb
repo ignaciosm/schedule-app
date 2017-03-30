@@ -27,4 +27,8 @@ class Employee < ApplicationRecord
   def shifts_by_day_and_employee(day, schedule)
     schedule.shifts.where('employee_id = ?', self.id).where('day_of_week = ?', day)
   end
+
+  def self.assign_employee_times(id, time)
+    find(id).available_times << time
+  end
 end
