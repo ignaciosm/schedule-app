@@ -1,10 +1,16 @@
 <%= form_for(@schedule) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
-  <%= f.label :business_year %>
-  <%= f.text_field :business_year %> <br><br>
+  <p>
+    <%= f.label :business_year %>
+    <%= f.text_field :business_year %>
+  </p>
 
-  <%= f.label :business_week %>
-  <%= f.text_field :business_week %> <br><br>
+  <p>
+    <%= f.label :business_week %>
+    <%= f.text_field :business_week %>
+  </p>
 
-  <%= f.submit %>
+  <p>
+    <%= f.submit %>
+  </p>
 <% end %>
