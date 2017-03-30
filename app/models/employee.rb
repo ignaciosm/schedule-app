@@ -17,7 +17,9 @@ class Employee < ApplicationRecord
   end
 
   def self.employees_by_position(position)
-    where('position = ?', position).where('status = ?', 'active').order('first_name')
+    where('position = ?', position)
+      .where('status = ?', 'active')
+      .order('first_name')
   end
 
   def self.admins_employees(admin)
@@ -25,7 +27,8 @@ class Employee < ApplicationRecord
   end
 
   def shifts_by_day_and_employee(day, schedule)
-    schedule.shifts.where('employee_id = ?', self.id).where('day_of_week = ?', day)
+    schedule.shifts.where('employee_id = ?', id)
+            .where('day_of_week = ?', day)
   end
 
   def self.assign_employee_times(id, time)
