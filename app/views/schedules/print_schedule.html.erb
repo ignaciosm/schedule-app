@@ -1,8 +1,8 @@
 <div class='container-fluid'>
   <h2>
     Week of
-    <%= @schedule.get_dates(@schedule.business_year, @schedule.business_week, 1) %>
-    to <%= @schedule.get_dates(@schedule.business_year, @schedule.business_week, 7) %>,
+    <%= @schedule.grab_dates(@schedule.business_year, @schedule.business_week, 1) %>
+    to <%= @schedule.grab_dates(@schedule.business_year, @schedule.business_week, 7) %>,
     <%= @schedule.business_year %>
 
   </h2>

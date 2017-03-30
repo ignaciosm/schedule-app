@@ -13,7 +13,7 @@ class Schedule < ApplicationRecord
     "Week #{business_week}, #{business_year}"
   end
 
-  def get_dates(year, week, day)
+  def grab_dates(year, week, day)
     Date.commercial(year, week, day).strftime('%m/%d')
   end
 
