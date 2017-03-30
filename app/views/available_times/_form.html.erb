@@ -1,16 +1,28 @@
 <%= form_for(@available_time) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
-  Day of week (select all that apply): <br>
-  <%= render 'form_checkboxes', f: f %><br> <br>
+  <p>
+    Day of week (select all that apply): <br>
+    <%= render 'form_checkboxes', f: f %>
+  </p>
 
-  <%= f.label :start_time %>
-  <%= f.time_select :start_time, { minute_step: 15, ampm: true, prompt: true } %> <br><br>
+  <p>
+    <%= f.label :start_time %>
+    <%= f.time_select :start_time, { minute_step: 15, ampm: true, prompt: true } %>
+  </p>
 
-  <%= f.label :end_time %>
-  <%= f.time_select :end_time, { minute_step: 15, ampm: true, prompt: true } %> <br><br>
+  <p>
+    <%= f.label :end_time %>
+    <%= f.time_select :end_time, { minute_step: 15, ampm: true, prompt: true } %>
+  </p>
 
-  <%= f.label :employee %>
-  <%= f.collection_select :id, current_admin.employees, :id, :first_name_last_initial, { prompt: 'Choose an employee' }, { required: true } %> <br><br>
+  <p>
+    <%= f.label :employee %>
+    <%= f.collection_select :id, current_admin.employees, :id,
+                            :first_name_last_initial,
+                            { prompt: 'Choose an employee' }, { required: true } %>
+  </p>
 
-  <%= f.submit t('.submit_button') %>
+  <p>
+    <%= f.submit t('.submit_button') %>
+  </p>
 <% end %>
