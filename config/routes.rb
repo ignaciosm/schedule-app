@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-
-  match '/404', to: 'errors#not_found', via: :all
+  match '/404', to: 'errors#not_found',             via: :all
   match '/500', to: 'errors#internal_server_error', via: :all
 
   resources :available_times, only: [:new, :create, :edit, :update]
-  resources :employees, only: [:show, :create, :new, :edit, :update]
+  resources :employees,       only: [:show, :create, :new, :edit, :update]
 
   post 'employees/:id/deactivate',        to: 'employees#toggle_status',
                                           as: 'deactivate'
@@ -30,9 +30,7 @@ Rails.application.routes.draw do
                       controllers: {
                         registrations: 'registrations'
                       }
-  resources :admins, only: [:show]
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
+  resources :admins,    only: [:show]
   resources :schedules, only: [:show, :index, :new, :update, :create]
   root 'welcome#home'
 end
