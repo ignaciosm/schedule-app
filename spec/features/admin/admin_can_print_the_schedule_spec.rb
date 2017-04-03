@@ -9,7 +9,13 @@ RSpec.feature 'admin can print a set schedule' do
     schedule.employees << team_member = create(:employee,
                                                admin: admin,
                                                position: 'Team Member')
-    schedule.shifts << build(:shift, employee_id: 0)
+    # Note for below: employee_id is always 0 for admin shifts. This is to keep
+    # the id for the admin separate from the ids of the employees. Since there
+    # is only ever one admin per schedule, this works. It will need to be changed
+    # in the future if there are multiple admins.
+    schedule.shifts << build(:shift, employee_id: 0,
+                                     start_time:  '7:30 am',
+                                     end_time:    '4:00 pm')
     schedule.shifts << build(:shift, employee_id: shift_lead.id,
                                      start_time:  '2:30 pm',
                                      end_time:    '7:30 pm')
