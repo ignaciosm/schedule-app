@@ -4,11 +4,9 @@ RSpec.feature 'admin can edit a set schedule' do
   scenario 'by clicking a button and updating employee shifts' do
     admin = create(:admin)
     sign_in admin
-    schedule    = create(:schedule, admin: admin)
-    shift_lead  = create(:employee, admin: admin)
-    team_member = create(:employee, admin: admin, position: 'Team Member')
-    shift_lead.available_times  << available_time = create(:available_time)
-    team_member.available_times << available_time = create(:available_time)
+    schedule = create(:schedule, admin: admin)
+    create(:employee, admin: admin)
+    create(:employee, admin: admin, position: 'Team Member')
     visit schedule_path(schedule)
     click_on t('schedules.add_remove_employees.add_employees')
 
