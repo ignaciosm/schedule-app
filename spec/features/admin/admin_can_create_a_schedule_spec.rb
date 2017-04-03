@@ -12,9 +12,8 @@ RSpec.feature 'admin can create a schedule' do
     fill_in 'schedule_business_year', with: schedule_year
     fill_in 'schedule_business_week', with: schedule_week
     click_on 'Create Schedule'
-    schedule = Schedule.last
 
-    expect(page).to have_content schedule.business_week
+    expect(page).to have_content('Week of 03/27 to 04/02, 2017')
   end
 
   scenario 're-renders page when submitting improper data' do
