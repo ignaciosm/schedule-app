@@ -4,10 +4,12 @@ RSpec.feature 'Admins can see their employees' do
   scenario 'from their account page' do
     admin = create(:admin)
     sign_in admin
-    employee = create(:employee, admin: admin)
+    create(:employee, admin: admin,
+                      first_name: 'Boaty',
+                      last_name:  'McBoatface')
 
     visit admin_path(admin)
 
-    expect(page).to have_content employee.first_name_last_initial
+    expect(page).to have_content('Boaty M.')
   end
 end
