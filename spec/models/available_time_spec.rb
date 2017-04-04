@@ -8,10 +8,12 @@ end
 
 RSpec.describe AvailableTime, '.available_times_by_day' do
   it 'returns the day of the week passed in' do
-    monday = create(:available_time)
-    create(:available_time, day_of_week: 'Tuesday')
+    monday  = create(:available_time)
+    tuesday = create(:available_time, day_of_week: 'Tuesday')
 
-    expect(AvailableTime.available_times_by_day('Monday')).to eq [monday]
+    expect(AvailableTime.available_times_by_day('Monday')).to     eq [monday]
+    expect(AvailableTime.available_times_by_day('Monday')).to_not eq [tuesday]
+    expect(AvailableTime.available_times_by_day('Tuesday')).to    eq [tuesday]
   end
 end
 
