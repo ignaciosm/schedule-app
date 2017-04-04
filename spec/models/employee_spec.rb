@@ -6,7 +6,7 @@ end
 
 RSpec.describe Employee, '.employees_by_position' do
   it 'returns only the employees who\'s position is passed' do
-    shift_lead  = create(:employee)
+    shift_lead  = create(:employee, position: 'Shift Lead')
     team_member = create(:employee, position: 'Team Member')
 
     expect(Employee.employees_by_position('Shift Lead')).to   eq [shift_lead]
@@ -24,7 +24,7 @@ end
 
 RSpec.describe Employee, '.inactive_employees' do
   it 'returns only inactive employees' do
-    employee1 = create(:employee)
+    employee1 = create(:employee) # status is active on creation by default
     employee2 = create(:employee, status: 'inactive')
 
     expect(Employee.inactive_employees).to      eq [employee2]
