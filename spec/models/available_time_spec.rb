@@ -17,7 +17,8 @@ end
 
 RSpec.describe AvailableTime, '#start_time_end_time' do
   it 'returns the available_time times formatted' do
-    available_time = create(:available_time)
+    available_time = create(:available_time, start_time: '11:00',
+                                             end_time:   '15:00')
 
     expect(available_time.start_time_end_time).to eq '11:00 AM - 03:00 PM'
   end
