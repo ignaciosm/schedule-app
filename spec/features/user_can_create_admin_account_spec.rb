@@ -17,6 +17,6 @@ RSpec.feature 'user can create admin account' do
     fill_in   'admin_company',                with: admin_company
     click_on  'Sign up'
 
-    expect(page).to have_content admin_company
+    expect(page).to have_content('Wayne Enterprises')
   end
 end
