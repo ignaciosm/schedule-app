@@ -11,7 +11,7 @@ RSpec.feature 'admin can create a schedule' do
     click_on t('admins.show.add_schedule')
     fill_in 'schedule_business_year', with: schedule_year
     fill_in 'schedule_business_week', with: schedule_week
-    click_on 'Create Schedule'
+    click_on t('helpers.submit.create', model: Schedule)
 
     expect(page).to have_content('Week of 03/27 to 04/02, 2017')
   end
@@ -24,7 +24,7 @@ RSpec.feature 'admin can create a schedule' do
     visit admin_path(admin)
     click_on t('admins.show.add_schedule')
     fill_in 'schedule_business_year', with: schedule_year
-    click_on 'Create Schedule'
+    click_on t('helpers.submit.create', model: Schedule)
 
     expect(page).to have_content 'Business week can\'t be blank'
   end
