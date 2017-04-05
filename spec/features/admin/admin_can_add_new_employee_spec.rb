@@ -30,7 +30,7 @@ RSpec.feature 'Admin can create new employee' do
     click_on  t('admins.show.add_employee')
     fill_in   'employee_first_name',  with: employee_first_name
     fill_in   'employee_last_name',   with: employee_last_name
-    click_on  'Create Employee'
+    click_on  t('employees.new.create_employee')
 
     expect(page).to have_content 'Position can\'t be blank'
   end
