@@ -18,7 +18,7 @@ RSpec.feature 'Admin can sign out' do
     sign_in admin
 
     visit admin_path(admin)
-    click_on 'Sign out'
+    click_on t('layouts.navigation.sign_out')
 
     expect(page).to have_content 'Signed out successfully.'
   end
