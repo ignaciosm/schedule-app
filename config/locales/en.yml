@@ -32,8 +32,8 @@ en:
 
   helpers:
     submit:
-      create: "Create %{model}"
-      update: "Update %{model}"
+      create: Create %{model}
+      update: Update %{model}
 
   welcome:
     home:
@@ -66,9 +66,11 @@ en:
       greeting: Your Schedules
     show:
       greeting:           Week of %{date1} to %{date7}, %{year}
-      edit_schedule:      'Edit schedule'
-      set_schedule:       'Set schedule'
-      print_schedule:     'Print schedule'
+      edit_schedule:      Edit schedule
+      set_schedule:       Set schedule
+      print_schedule:     Print schedule
+    set_schedule:
+      submit: Finalize schedule
     add_remove_employees:
       add_employees:    Add all employees
       remove_employees: Remove all employees
