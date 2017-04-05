@@ -35,7 +35,7 @@ class SchedulesController < ApplicationController
         add_schedule?
       end
     end
-    flash[:complete] = 'You have set the schedule'
+    flash[:complete] = t('flash.set_schedule')
     redirect_to schedule_path(@schedule)
   end
 

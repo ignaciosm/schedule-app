@@ -16,7 +16,7 @@ class AvailableTimesController < ApplicationController
       Employee.assign_employee_times(params[:available_time][:id],
                                      @available_time)
     end
-    flash[:success] = 'You have successfully added availability'
+    flash[:success] = t('flash.added_availability')
     redirect_to admin_path(current_admin)
   end
 
@@ -39,7 +39,7 @@ class AvailableTimesController < ApplicationController
   def no_days_selected?
     if params[:available_time][:day_of_week].nil?
       generate_available_time
-      flash[:error] = 'You must select at least one day'
+      flash[:error] = t('flash.select_one_day')
       render :new
     end
   end

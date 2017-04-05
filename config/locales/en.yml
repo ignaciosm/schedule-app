@@ -25,6 +25,10 @@ en:
       default:  "%Y-%m-%d"
       short:    "%b %d"
       long:     "%B %d, %Y"
+  flash:
+    added_availability: You have successfully added availability
+    select_one_day: You must select at least one day
+    set_schedule: You have set the schedule
 
   welcome:
     home:
@@ -77,3 +81,4 @@ en:
   available_times: # for the available_times views
     form:
       submit_button: Add Employee available time
+
