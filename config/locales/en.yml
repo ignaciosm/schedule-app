@@ -30,6 +30,11 @@ en:
     select_one_day: You must select at least one day
     set_schedule: You have set the schedule
 
+  helpers:
+    submit:
+      create: "Create %{model}"
+      update: "Update %{model}"
+
   welcome:
     home:
       greeting: Schedule Tool
