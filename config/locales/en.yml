@@ -37,7 +37,7 @@ en:
 
   welcome:
     home:
-      greeting: Schedule Tool
+      greeting: Schedule App
 
   layouts: # for the various layouts
     navigation:

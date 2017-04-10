@@ -1,16 +1,22 @@
-<div class='jumbotron'>
-  <div class='container'>
-    <h1><%= t('.greeting') %></h1>
-
-    <h3>
-      No longer will you have to use complicated spreadsheets or complex tools to
-      generate your employees' schedules.
-    </h3>
-    <%= link_to 'Let\'s get started!', new_admin_registration_path,
+<header class="main-header">
+  <div class="title">
+    <h1 class="header-h1"><%= t('.greeting') %></h1>
+    <div class="header-text">
+      Create a schedule without the spreadsheet fuss
+    </div>
+      <p>
+        <%= link_to 'Let\'s get started!', new_admin_registration_path,
                 class: 'btn btn-primary' unless admin_signed_in? %>
-    <p>
-      <%= link_to 'Visit your account page to get started', admin_path(current_admin),
+      </p>
+      <p>
+        <%= link_to 'Visit your account page to get started', admin_path(current_admin),
                   class: 'btn btn-primary' if admin_signed_in? %>
-    </p>
+      </p>
   </div>
-</div>
+</header>
+<footer class="container">
+  <small>
+    &copy; 2017 Developed by <%= link_to "Brian Emory", 'http://www.brianemory.com' %> |
+    <%= link_to 'GitHub', 'https://github.com/thebrianemory/schedule-app' %>
+  </small>
+</footer>

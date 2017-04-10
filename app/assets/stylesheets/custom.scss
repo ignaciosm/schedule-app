@@ -28,3 +28,37 @@
   font-weight: bold;
   font-size: 1.1em;
 }
+
+// Welcome page //
+.main-header {
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.5)
+  ), url('/assets/background.jpg') center no-repeat;
+  height: 768px;
+  margin-top: -20px;
+  margin-bottom: 30px;
+}
+
+.title {
+  position: relative;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+}
+
+.header-h1 {
+  text-transform: uppercase;
+  margin: 0;
+  font-size: 3em;
+  white-space: nowrap;
+  color: white;
+}
+
+.header-text {
+  margin: 0;
+  font-size: 1.5em;
+  color: white;
+}
