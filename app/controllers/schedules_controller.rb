@@ -25,18 +25,7 @@ class SchedulesController < ApplicationController
   end
 
   def update
-    schedule_params[:shifts_attributes].values.each do |shift|
-      unless shift[:start_time].blank? || shift[:end_time].blank?
-        @updated_shift = @schedule.shifts.find_or_initialize_by(id: shift[:id])
-        @updated_shift.update(start_time:  shift[:start_time],
-                              end_time:    shift[:end_time],
-                              day_of_week: shift[:day_of_week],
-                              employee_id: shift[:employee_id])
-        add_schedule?
-      end
-    end
-    flash[:complete] = t('flash.set_schedule')
-    redirect_to schedule_path(@schedule)
+
   end
 
   def add_employees
