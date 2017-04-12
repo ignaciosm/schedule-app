@@ -16,10 +16,12 @@ Rails.application.routes.draw do
                                           as: 'add_employees'
   post 'schedules/:id/remove_employees',  to: 'schedules#remove_employees',
                                           as: 'remove_employees'
-  get 'schedules/:id/set_schedule',       to: 'schedules#set_schedule',
+  get  'schedules/:id/set_schedule',      to: 'schedules#set_schedule',
                                           as: 'set_schedule'
-  get 'schedules/:id/print_schedule',     to: 'schedules#print_schedule',
+  get  'schedules/:id/print_schedule',    to: 'schedules#print_schedule',
                                           as: 'print_schedule'
+  post 'schedules/:id/set_schedule',      to: 'shifts#set_shifts',
+                                          as: 'set_shifts'
 
   devise_for :admins, path: '',
                       path_names: {
@@ -31,6 +33,6 @@ Rails.application.routes.draw do
                         registrations: 'registrations'
                       }
   resources :admins,    only: [:show]
-  resources :schedules, only: [:show, :index, :new, :update, :create]
+  resources :schedules, only: [:show, :index, :new, :create]
   root 'welcome#home'
 end
