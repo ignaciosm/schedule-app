@@ -5,7 +5,7 @@
     to <%= @schedule.grab_dates(@schedule.business_year, @schedule.business_week, 7) %>,
     <%= @schedule.business_year %>
   </h3>
-  <%= form_for(@schedule) do |f| %>
+  <%= form_for @schedule, url: set_shifts_path, method: 'post' do |f| %>
     <%= f.submit t('.submit') %>
 
     <table class="table table-striped table-bordered table-hover">
