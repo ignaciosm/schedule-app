@@ -19,10 +19,12 @@ RSpec.feature 'admin can edit a set schedule' do
 
     click_on  t('schedules.show.set_schedule')
     fill_in   'schedule_shifts_attributes_0_start_time', with: '8:30 am'
+    fill_in   'schedule_shifts_attributes_7_start_time', with: ''
+    fill_in   'schedule_shifts_attributes_7_end_time',   with: ''
     click_on  'Finalize schedule'
 
-    expect(page).to have_content '8:30 am - 4:00 pm'
-    expect(page).to have_content '12:00 pm - 6:00 pm'
-    expect(page).to have_content 'You have set the schedule'
+    expect(page).to     have_content '8:30 am - 4:00 pm'
+    expect(page).to_not have_content '12:00 pm - 6:00 pm'
+    expect(page).to     have_content 'You have set the schedule'
   end
 end
