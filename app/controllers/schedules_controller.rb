@@ -1,5 +1,5 @@
 class SchedulesController < ApplicationController
-  before_action :assign_schedule, only: [:show, :update,
+  before_action :assign_schedule, only: [:show,
                                          :set_schedule, :print_schedule,
                                          :add_employees, :remove_employees]
 
@@ -22,10 +22,6 @@ class SchedulesController < ApplicationController
     else
       render :new
     end
-  end
-
-  def update
-
   end
 
   def add_employees
@@ -57,16 +53,6 @@ class SchedulesController < ApplicationController
   end
 
   def schedule_params
-    params.require(:schedule).permit(:business_year, :business_week,
-                                     shifts_attributes: [
-                                       :id, :start_time, :end_time,
-                                       :day_of_week, :employee_id
-                                     ])
-  end
-
-  def add_schedule?
-    unless @updated_shift.schedules.include?(@schedule)
-      @updated_shift.schedules << @schedule
-    end
+    params.require(:schedule).permit(:business_year, :business_week)
   end
 end
