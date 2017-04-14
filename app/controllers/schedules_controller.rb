@@ -3,12 +3,14 @@ class SchedulesController < ApplicationController
                                          :set_schedule, :print_schedule,
                                          :add_employees, :remove_employees]
   before_action :load_employees, only: [:show, :set_schedule, :print_schedule]
+  before_action :load_employee_times, only: [:show, :set_schedule, :print_schedule]
 
   def index
     @schedules = Schedule.current_admins_only(current_admin)
   end
 
   def show
+
   end
 
   def new
@@ -61,5 +63,12 @@ class SchedulesController < ApplicationController
   def load_employees
     @team_members = @schedule.employees.employees_by_position('Team Member')
     @shift_leads  = @schedule.employees.employees_by_position('Shift Lead')
+  end
+
+  def load_employee_times
+    @employee_times = {}
+    @schedule.employees.each_with_object({}) do |employee|
+      @employee_times[employee] = employee.available_times
+    end
   end
 end
