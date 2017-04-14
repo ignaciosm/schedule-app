@@ -2,12 +2,14 @@ class SchedulesController < ApplicationController
   before_action :assign_schedule, only: [:show,
                                          :set_schedule, :print_schedule,
                                          :add_employees, :remove_employees]
+  before_action :load_employees, only: [:show, :set_schedule, :print_schedule]
 
   def index
     @schedules = Schedule.current_admins_only(current_admin)
   end
 
-  def show() end
+  def show
+  end
 
   def new
     @schedule = Schedule.new
@@ -54,5 +56,10 @@ class SchedulesController < ApplicationController
 
   def schedule_params
     params.require(:schedule).permit(:business_year, :business_week)
+  end
+
+  def load_employees
+    @team_members = @schedule.employees.employees_by_position('Team Member')
+    @shift_leads  = @schedule.employees.employees_by_position('Shift Lead')
   end
 end

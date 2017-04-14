@@ -8,7 +8,7 @@
   <td></td>
   <td></td>
 </tr>
-<% @schedule.employees.employees_by_position('Team Member').each do |team_member| %>
+<% @team_members.each do |team_member| %>
   <% if @set_schedule.nil? %>
     <%= render partial: 'schedules/table/team_member',
                locals: { team_member: team_member } %>
