@@ -1,7 +1,7 @@
 <hr>
 <small>Availability</small>
 <ul class='list-unstyled'>
-  <% @employee_times[employee].select { |time| time.day_of_week == day }.each do |available_time| %>
+  <% select_employee_times(day, employee, @employee_times).each do |available_time| %>
     <li><small><%= available_time.start_time_end_time unless nil? %></small></li>
   <% end %>
 </ul>

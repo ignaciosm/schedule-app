@@ -11,4 +11,8 @@ module SchedulesHelper
       schedule.shifts.shifts_by_day_and_employee(day, employee)
     end
   end
+
+  def select_employee_times(day, employee, employee_times)
+    employee_times[employee].select { |time| time.day_of_week == day }
+  end
 end
