@@ -15,4 +15,11 @@ module SchedulesHelper
   def select_employee_times(day, employee, employee_times)
     employee_times[employee].select { |time| time.day_of_week == day }
   end
+
+  def select_shifts_by_day_and_employee(day, employee, schedule_shifts)
+    emp_id = employee.class == Admin ? 0 : employee.id
+    schedule_shifts.select do |shift|
+      shift.employee_id == emp_id && shift.day_of_week == day
+    end
+  end
 end
