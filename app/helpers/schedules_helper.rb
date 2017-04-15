@@ -4,11 +4,11 @@ module SchedulesHelper
     employee.class == Admin ? 0 : employee.id
   end
 
-  def shifts_created?(day, employee, schedule)
-    if schedule.shifts.shifts_by_day_and_employee(day, employee).count.zero?
+  def shifts_created?(day, employee, schedule_shifts)
+    if select_shifts_by_day_and_employee(day, employee, schedule_shifts).count.zero?
       @schedule.shifts.build
     else
-      schedule.shifts.shifts_by_day_and_employee(day, employee)
+      select_shifts_by_day_and_employee(day, employee, schedule_shifts)
     end
   end
 

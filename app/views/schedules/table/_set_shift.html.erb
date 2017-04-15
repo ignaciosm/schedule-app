@@ -1,4 +1,4 @@
-<%= f.fields_for :shifts, shifts_created?(day, employee, @schedule) do |field| %>
+<%= f.fields_for :shifts, shifts_created?(day, employee, @schedule_shifts) do |field| %>
   <%= field.text_field :start_time,
                         start_time: 'schedule[shifts_attributes][][start_time]',
                         placeholder: 'start time' %>
