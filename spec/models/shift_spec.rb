@@ -21,18 +21,7 @@ RSpec.describe Shift, 'shifts_by_employee(employee)' do
   end
 end
 
-RSpec.describe Shift, '.shifts_by_day_and_employee(day, employee)' do
-  it 'returns shifts by employee' do
-    employee  = create(:employee)
-    shift1    = create(:shift, employee_id: employee.id, day_of_week: 'Monday')
-    shift2    = create(:shift, employee_id: employee.id, day_of_week: 'Tuesday')
-
-    expect(Shift.shifts_by_day_and_employee('Monday', employee)).to     eq [shift1]
-    expect(Shift.shifts_by_day_and_employee('Monday', employee)).to_not eq [shift2]
-  end
-end
-
-  # Note: employee_id is always 0 for admin shifts. This is to keep
-  # the id for the admin separate from the ids of the employees. Since there
-  # is only ever one admin per schedule, this works. It will need to be changed
-  # in the future if there are multiple admins.
+# Note: employee_id is always 0 for admin shifts. This is to keep
+# the id for the admin separate from the ids of the employees. Since there
+# is only ever one admin per schedule, this works. It will need to be changed
+# in the future if there are multiple admins.

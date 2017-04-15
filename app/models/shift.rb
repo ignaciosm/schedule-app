@@ -13,12 +13,4 @@ class Shift < ApplicationRecord
       where('employee_id = ?', employee.id)
     end
   end
-
-  def self.shifts_by_day_and_employee(day, employee)
-    if employee.class == Admin
-      where('employee_id = ?', 0).where('day_of_week = ?', day)
-    else
-      where('employee_id = ?', employee.id).where('day_of_week = ?', day)
-    end
-  end
 end
