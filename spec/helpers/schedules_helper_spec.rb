@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe SchedulesHelper, '#shifts_created?(day, employee, schedule)' do
+RSpec.describe SchedulesHelper, '#shifts_created?(day, employee, schedule_shifts)' do
   it 'returns shifts by day and employee' do
     schedule = create(:schedule)
     schedule.employees  << shift_lead  = create(:employee)
@@ -10,7 +10,7 @@ RSpec.describe SchedulesHelper, '#shifts_created?(day, employee, schedule)' do
                                                 end_time:    '7:30 pm',
                                                 day_of_week: 'Monday')
 
-    shifts = helper.shifts_created?('Monday', shift_lead, schedule)
+    shifts = helper.shifts_created?('Monday', shift_lead, schedule.shifts)
     expect(shifts).to eq [shift]
   end
 end
