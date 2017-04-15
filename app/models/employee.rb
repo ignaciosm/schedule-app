@@ -24,11 +24,6 @@ class Employee < ApplicationRecord
     where('admin_id = ?', admin)
   end
 
-  def shifts_by_day_and_employee(day, schedule)
-    schedule.shifts.where('employee_id = ?', id)
-            .where('day_of_week = ?', day)
-  end
-
   def self.assign_employee_times(id, time)
     find(id).available_times << time
   end
