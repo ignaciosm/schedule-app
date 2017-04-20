@@ -29,8 +29,7 @@ class ShiftsController < ApplicationController
   end
 
   def add_schedule?
-    unless @updated_shift.schedules.include?(@schedule)
-      @updated_shift.schedules << @schedule
-    end
+    return if @updated_shift.schedules.include?(@schedule)
+    @updated_shift.schedules << @schedule
   end
 end
