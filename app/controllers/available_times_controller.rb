@@ -37,11 +37,10 @@ class AvailableTimesController < ApplicationController
   end
 
   def no_days_selected?
-    if params[:available_time][:day_of_week].nil?
-      generate_available_time
-      flash[:error] = t('flash.select_one_day')
-      render :new
-    end
+    return unless params[:available_time][:day_of_week].nil?
+    generate_available_time
+    flash[:error] = t('flash.select_one_day')
+    render :new
   end
 
   def generate_available_time
