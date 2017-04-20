@@ -1,5 +1,5 @@
 class AdminsController < ApplicationController
-  before_action :authenticate_admin!, :assign_employee
+  before_action :authenticate_admin!, :assign_admin
 
   def show
     redirect_to admin_path(current_admin) if not_your_profile
@@ -7,8 +7,8 @@ class AdminsController < ApplicationController
 
   private
 
-  def assign_employee
-    @admin = Admin.find(params[:id])
+  def assign_admin
+    @admin ||= Admin.find(params[:id])
   end
 
   def not_your_profile
