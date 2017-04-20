@@ -12,6 +12,6 @@ class AdminsController < ApplicationController
   end
 
   def not_your_profile
-    @admin.id != current_admin.id
+    @admin != current_admin
   end
 end

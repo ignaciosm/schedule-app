@@ -48,10 +48,10 @@ class EmployeesController < ApplicationController
   end
 
   def assign_employee
-    @employee = Employee.find(params[:id])
+    @employee ||= Employee.find(params[:id])
   end
 
   def not_your_employee
-    @employee.admin_id != current_admin.id
+    @employee.admin != current_admin
   end
 end
