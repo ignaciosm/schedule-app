@@ -13,9 +13,7 @@ class SchedulesController < ApplicationController
     @schedules = Schedule.current_admins_only(current_admin)
   end
 
-  def show
-
-  end
+  def show() end
 
   def new
     @schedule = Schedule.new
