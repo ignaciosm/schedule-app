@@ -1,8 +1,8 @@
 <% if @schedule.employees.none? %>
-  <%= link_to t('.add_employees'), add_employees_path(@schedule),
+  <%= link_to t('.add_employees'), schedule_associate_employees_path(@schedule),
               method: :post, class: 'btn btn-success btn-xs' %>
 <% else %>
-  <%= link_to t('.remove_employees'), remove_employees_path(@schedule),
-              method: :post, class: 'btn btn-danger btn-xs',
+  <%= link_to t('.remove_employees'), schedule_associate_employee_path(@schedule),
+              method: :delete, class: 'btn btn-danger btn-xs',
               data: {confirm: 'Are you sure?'} %>
 <% end %>

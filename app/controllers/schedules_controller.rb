@@ -1,6 +1,5 @@
 class SchedulesController < ApplicationController
-  before_action :assign_schedule,       only: [:show, :print_schedule,
-                                               :add_employees, :remove_employees]
+  before_action :assign_schedule,       only: [:show, :print_schedule]
   before_action :load_employees,        only: [:show, :print_schedule]
   before_action :load_employee_times,   only: [:show, :print_schedule]
   before_action :load_schedule_shifts,  only: [:show, :print_schedule]
@@ -24,20 +23,6 @@ class SchedulesController < ApplicationController
     else
       render :new
     end
-  end
-
-  def add_employees
-    Employee.admins_employees(current_admin).each do |employee|
-      @schedule.employees << employee if employee.status == 'active'
-    end
-
-    redirect_to schedule_path(@schedule)
-  end
-
-  def remove_employees
-    @schedule.employees.delete_all
-
-    redirect_to schedule_path(@schedule)
   end
 
   def print_schedule
