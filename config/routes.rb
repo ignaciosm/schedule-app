@@ -5,12 +5,14 @@ Rails.application.routes.draw do
   match '/500', to: 'errors#internal_server_error', via: :all
 
   resources :available_times, only: [:new, :create, :edit, :update]
-  resources :employees,       only: [:show, :create, :new, :edit, :update]
+  resources :employees,       only: [:show, :create, :new, :edit, :update] do
+    resources :status, only: :update
+  end
 
-  post 'employees/:id/deactivate',        to: 'employees#toggle_status',
-                                          as: 'deactivate'
-  post 'employees/:id/activate',          to: 'employees#toggle_status',
-                                          as: 'activate'
+  # post 'employees/:id/deactivate',        to: 'employees#toggle_status',
+  #                                         as: 'deactivate'
+  # post 'employees/:id/activate',          to: 'employees#toggle_status',
+  #                                         as: 'activate'
   get  'schedules/:id/print_schedule',    to: 'schedules#print_schedule',
                                           as: 'print_schedule'
 
@@ -25,7 +27,7 @@ Rails.application.routes.draw do
                       }
   resources :admins,    only: [:show]
   resources :schedules, only: [:show, :index, :new, :create] do
-    resources :shifts, only: [:index, :create]
+    resources :shifts,              only: [:index, :create]
     resources :associate_employees, only: [:create, :destroy]
   end
   root 'welcome#home'

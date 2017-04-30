@@ -1,5 +1,5 @@
 class EmployeesController < ApplicationController
-  before_action :assign_employee, only: [:show, :toggle_status, :edit, :update]
+  before_action :assign_employee, only: [:show, :edit, :update]
 
   def new
     @employee = Employee.new
@@ -29,16 +29,6 @@ class EmployeesController < ApplicationController
     else
       render :edit
     end
-  end
-
-  def toggle_status
-    case @employee.status
-    when 'active'
-      @employee.update(status: 'inactive')
-    when 'inactive'
-      @employee.update(status: 'active')
-    end
-    redirect_to admin_path(current_admin)
   end
 
   private
