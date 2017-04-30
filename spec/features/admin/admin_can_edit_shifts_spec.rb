@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature 'admin can edit a set schedule' do
+RSpec.feature 'admin can edit shifts' do
   scenario 'by clicking a button and updating employee shifts' do
     admin = create(:admin)
     sign_in admin

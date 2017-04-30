@@ -1,5 +1,6 @@
 class ShiftsController < ApplicationController
-  def set_shifts
+  def create
+
     @schedule = Schedule.find(params[:id])
     shift_params[:shifts_attributes].values.each do |shift|
       if shift[:start_time].blank? && shift[:end_time].blank?
