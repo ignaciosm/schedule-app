@@ -69,14 +69,16 @@ en:
       edit_schedule:      Edit schedule
       set_schedule:       Set schedule
       print_schedule:     Print schedule
-    set_schedule:
-      submit: Finalize schedule
     add_remove_employees:
       add_employees:    Add all employees
       remove_employees: Remove all employees
     table:
       header_days:
         header: Week %{week}
+
+  shifts:
+    index:
+      submit: Finalize schedule
 
   employees: # for the employees views
     deactivate: Deactivate

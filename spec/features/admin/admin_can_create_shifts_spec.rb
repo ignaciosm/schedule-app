@@ -19,7 +19,7 @@ RSpec.feature 'admin can create shifts' do
     fill_in   'schedule_shifts_attributes_14_start_time', with: '12:00 pm'
     fill_in   'schedule_shifts_attributes_14_end_time',   with: '4:00 pm'
     fill_in   'schedule_shifts_attributes_15_end_time',   with: '7:00 pm'
-    click_on  t('schedules.set_schedule.submit')
+    click_on  t('shifts.index.submit')
 
     expect(page).to     have_content '7:30 am - 4:00 pm'
     expect(page).to     have_content '3:30 pm - 7:30 pm'

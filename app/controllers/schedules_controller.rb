@@ -1,13 +1,9 @@
 class SchedulesController < ApplicationController
-  before_action :assign_schedule,       only: [:show,
-                                               :set_schedule,  :print_schedule,
+  before_action :assign_schedule,       only: [:show, :print_schedule,
                                                :add_employees, :remove_employees]
-  before_action :load_employees,        only: [:show, :set_schedule,
-                                               :print_schedule]
-  before_action :load_employee_times,   only: [:show, :set_schedule,
-                                               :print_schedule]
-  before_action :load_schedule_shifts,  only: [:show, :set_schedule,
-                                               :print_schedule]
+  before_action :load_employees,        only: [:show, :print_schedule]
+  before_action :load_employee_times,   only: [:show, :print_schedule]
+  before_action :load_schedule_shifts,  only: [:show, :print_schedule]
 
   def index
     @schedules = Schedule.current_admins_only(current_admin)
@@ -42,10 +38,6 @@ class SchedulesController < ApplicationController
     @schedule.employees.delete_all
 
     redirect_to schedule_path(@schedule)
-  end
-
-  def set_schedule
-    @set_schedule = true
   end
 
   def print_schedule

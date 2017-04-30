@@ -9,7 +9,7 @@
   <p>
     <% if current_admin == @schedule.admin %>
       <%= render 'add_remove_employees' %>
-      <%= link_to t('.set_schedule'), set_schedule_path(@schedule),
+      <%= link_to t('.set_schedule'), schedule_shifts_path(@schedule),
                   class: 'btn btn-default btn-xs' %>
     <% end %>
 
