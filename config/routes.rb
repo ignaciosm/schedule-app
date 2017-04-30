@@ -8,11 +8,6 @@ Rails.application.routes.draw do
   resources :employees,       only: [:show, :create, :new, :edit, :update] do
     resources :status, only: :update
   end
-
-  # post 'employees/:id/deactivate',        to: 'employees#toggle_status',
-  #                                         as: 'deactivate'
-  # post 'employees/:id/activate',          to: 'employees#toggle_status',
-  #                                         as: 'activate'
   get  'schedules/:id/print_schedule',    to: 'schedules#print_schedule',
                                           as: 'print_schedule'
 

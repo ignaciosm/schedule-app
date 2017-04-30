@@ -1,3 +1,5 @@
+# Employees are created with the status of active by default
+
 class StatusController < ApplicationController
   def update
     @employee = Employee.find(params[:employee_id])
