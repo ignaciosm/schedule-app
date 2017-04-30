@@ -11,11 +11,6 @@ Rails.application.routes.draw do
                                           as: 'deactivate'
   post 'employees/:id/activate',          to: 'employees#toggle_status',
                                           as: 'activate'
-
-  # post 'schedules/:id/add_employees',     to: 'schedules#add_employees',
-  #                                         as: 'add_employees'
-  # post 'schedules/:id/remove_employees',  to: 'schedules#remove_employees',
-  #                                         as: 'remove_employees'
   get  'schedules/:id/print_schedule',    to: 'schedules#print_schedule',
                                           as: 'print_schedule'
 
