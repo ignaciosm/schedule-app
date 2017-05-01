@@ -7,16 +7,16 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'rails', '~> 5.0.2'
-gem 'pg', '~> 0.18'
-gem 'puma', '~> 3.0'
+gem 'rails',          '~> 5.1'
+gem 'pg',             '~> 0.18'
+gem 'puma',           '~> 3.0'
 gem 'bootstrap-sass', '~> 3.3.6'
-gem 'sass-rails', '~> 5.0'
-gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.2'
+gem 'sass-rails',     '~> 5.0'
+gem 'uglifier',       '>= 1.3.0'
+gem 'coffee-rails',   '~> 4.2'
 gem 'jquery-rails'
-gem 'turbolinks', '~> 5'
-gem 'jbuilder', '~> 2.5'
+gem 'turbolinks',     '~> 5'
+gem 'jbuilder',       '~> 2.5'
 gem 'devise'
 gem 'faker'
 
@@ -30,8 +30,8 @@ group :development, :test do
 end
 
 group :development do
-  gem 'web-console', '>= 3.3.0'
-  gem 'listen', '~> 3.0.5'
+  gem 'web-console',  '>= 3.3.0'
+  gem 'listen',       '~> 3.0.5'
   gem 'spring'
   gem 'spring-watcher-listen'
   gem 'spring-commands-rspec'
