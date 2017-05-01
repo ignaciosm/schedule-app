@@ -1,14 +1,16 @@
 class SchedulesController < ApplicationController
-  before_action :assign_schedule,       only: [:show, :print_schedule]
-  before_action :load_employees,        only: [:show, :print_schedule]
-  before_action :load_employee_times,   only: [:show, :print_schedule]
-  before_action :load_schedule_shifts,  only: [:show, :print_schedule]
+  before_action :assign_schedule,       only: [:show]
+  before_action :load_employees,        only: [:show]
+  before_action :load_employee_times,   only: [:show]
+  before_action :load_schedule_shifts,  only: [:show]
+  before_action :print_schedule?, only: [:show]
 
   def index
     @schedules = Schedule.current_admins_only(current_admin)
   end
 
-  def show() end
+  def show
+  end
 
   def new
     @schedule = Schedule.new
@@ -23,10 +25,6 @@ class SchedulesController < ApplicationController
     else
       render :new
     end
-  end
-
-  def print_schedule
-    @printable_view = true
   end
 
   private
@@ -53,5 +51,9 @@ class SchedulesController < ApplicationController
 
   def load_schedule_shifts
     @schedule_shifts = @schedule.shifts
+  end
+
+  def print_schedule?
+    @printable_view = true if params[:print]
   end
 end

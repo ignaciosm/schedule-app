@@ -22,4 +22,19 @@ module SchedulesHelper
       shift.employee_id == emp_id && shift.day_of_week == day
     end
   end
+
+  def which_buttons?(schedule, admin, printable)
+    if admin == schedule.admin && @printable_view.nil?
+      concat(render(partial: "add_remove_employees"))
+      link_to(t('.set_schedule'), schedule_shifts_path(@schedule),
+                   class: 'btn btn-default btn-xs')
+    end
+  end
+
+  def print_view?(schedule, admin, printable)
+    if @printable_view.nil?
+      link_to(t('.print_schedule'), schedule_path(@schedule, print: true),
+                target: '_blank', class: 'btn btn-default btn-xs')
+    end
+  end
 end

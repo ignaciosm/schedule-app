@@ -26,9 +26,9 @@ RSpec.feature 'admin can print a set schedule' do
     visit schedule_path(schedule)
     click_on t('schedules.show.print_schedule')
 
-    expect(page).to have_content '7:30 am - 4:00 pm'
-    expect(page).to have_content '2:30 pm - 7:30 pm'
-    expect(page).to have_content '12:00 pm - 6:00 pm'
-    expect(page).to have_content 'Printable schedule'
+    expect(page).to     have_content '7:30 am - 4:00 pm'
+    expect(page).to     have_content '2:30 pm - 7:30 pm'
+    expect(page).to     have_content '12:00 pm - 6:00 pm'
+    expect(page).not_to have_content 'Set schedule'
   end
 end

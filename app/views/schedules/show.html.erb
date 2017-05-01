@@ -7,14 +7,8 @@
   </h1>
 
   <p>
-    <% if current_admin == @schedule.admin %>
-      <%= render 'add_remove_employees' %>
-      <%= link_to t('.set_schedule'), schedule_shifts_path(@schedule),
-                  class: 'btn btn-default btn-xs' %>
-    <% end %>
-
-    <%= link_to t('.print_schedule'), print_schedule_path(@schedule),
-                target: '_blank', class: 'btn btn-default btn-xs' %>
+    <%= which_buttons?(@schedule, current_admin, @printable_view) %>
+    <%= print_view?(@schedule, current_admin, @printable_view) %>
   </p>
 
   <table class="table table-striped table-bordered table-hover">

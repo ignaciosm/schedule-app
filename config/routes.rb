@@ -8,9 +8,6 @@ Rails.application.routes.draw do
   resources :employees,       only: [:show, :create, :new, :edit, :update] do
     resources :status, only: :update
   end
-  get  'schedules/:id/print_schedule',    to: 'schedules#print_schedule',
-                                          as: 'print_schedule'
-
   devise_for :admins, path: '',
                       path_names: {
                         sign_in: 'signin',
@@ -25,5 +22,6 @@ Rails.application.routes.draw do
     resources :shifts,              only: [:index, :create]
     resources :associate_employees, only: [:create, :destroy]
   end
+
   root 'welcome#home'
 end
